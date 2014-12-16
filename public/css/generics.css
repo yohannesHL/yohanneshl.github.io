@@ -1,0 +1,155 @@
+/*
+ * Container
+ *
+ * Center the page content.
+ */
+
+.container {
+  max-width: 38rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-fluid {
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+ * Flex box
+ */
+.flex-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.flex--justify-fs {
+  justify-content: flex-start;
+}
+
+.flex--justify-between {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.flex--justify-center {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex--justify-around {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.flex--justify-evenly {
+  justify-content: space-evenly;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex-column {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex--wrap {
+  -webkit-flex-wrap: wrap !important;
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
+}
+
+.flex--grow {
+  flex-grow: 1;
+}
+
+.flex--shrink {
+  flex-shrink: 1;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.gs-1 {
+  margin: 8px;
+}
+
+.gs-2 {
+  margin: 16px;
+}
+
+.gs-3 {
+  margin: 24px;
+}
+
+.gs-top-1,
+.gs-vert-1 {
+  margin-top: 8px;
+}
+
+.gs-bot-1,
+.gs-vert-1 {
+  margin-bottom: 8px;
+}
+
+.gs-left-1,
+.gs-hori-1 {
+  margin-left: 8px;
+}
+
+.gs-right-1,
+.gs-hori-1 {
+  margin-right: 8px;
+}
+
+.ps-1 {
+  padding: 8px;
+}
+
+.ps-2 {
+  padding: 16px;
+}
+
+.ps-3 {
+  padding: 24px;
+}
+
+.color--bg-alt {
+  background: #f2f2f2;
+}
+
+.color--bg {
+  background: #fafaf8fa;
+}
+
+.shadow--bg-alt {
+  box-shadow: inset 1px 1px 20px 5px rgba(0, 0, 0, 0.07);
+}
+
+.list {
+  list-style-type: circle;
+  margin: 0;
+}
+
+.list li {
+  padding: 2px;
+}

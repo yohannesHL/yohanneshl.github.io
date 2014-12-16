@@ -1,0 +1,84 @@
+.header {
+  background: white;
+}
+
+.header::after {
+  content: '';
+  box-shadow: 0 10px 5px 1px #3339;
+  height: 0 ;
+  bottom: 12px;
+  position: absolute;
+  z-index: -1;
+  width: auto;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.header--alt {
+  box-shadow: 0 1px 15px 1px #3335;
+  box-shadow: 0 -10px 15px -20px #3335;
+    clear: both;
+    margin-top: 5px;
+}
+.header__title {
+  padding: 16px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.header__link,
+.header__link:hover {
+  color: #333333;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.social__list {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
+.social__link {
+  display: block;
+  color: #333;
+  font-size: 12px;
+  margin: 0 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.social__link:hover,
+.social__link:focus {
+  color: #2f2f2f;
+  text-decoration: none;
+}
+
+.social__link--github {
+  color: #2f2f2f;
+}
+
+.social__link--linkedin:hover,
+.social__link--linkedin:focus {
+  color: #23527c;
+}
+
+.social__link--email:hover,
+.social__link--email:focus {
+  color: #960c0c;
+}
+
+.social__link--rss:hover,
+.social__link--rss:focus {
+  color: #da5225;
+}

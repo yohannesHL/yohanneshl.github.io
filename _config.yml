@@ -1,0 +1,37 @@
+# Dependencies
+markdown:            kramdown
+highlighter:         rouge
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+# relative_permalinks: true
+#pretty
+permalink:           /blog/:year/:month/:day/:title/
+#categories:
+#  projects:
+#    permalink:           projects/:year/:month/:day/:title/
+collections:
+  projects:
+    output: true
+
+title:               'Yohannes Libanos'
+tagline:             'Full-Stack Engineer'
+description:         'A Technical blog about web development and few other things.'
+url: 'http://yohanneshl.github.io'
+baseurl:              '/'
+paginate:            3
+paginate_path: "blog/page:num/"
+
+author:
+  name:              Yohannes Libanos
+  role:              '&middot Full-Stack Engineer'
+  url:               https://github.com/yohanneshl
+  github:            https://github.com/yohanneshl
+  linkedin:          https://www.linkedin.com/in/yohanneslibanos
+
+# Custom vars
+
+plugins:
+  - "jekyll-paginate"
+  - "jekyll-github-metadata"

@@ -1,0 +1,42 @@
+@import './header.css';
+@import './hero.css';
+@import './work.css';
+@import './project.css';
+
+
+/*
+ * Portfolio
+ *
+ */
+.portfolio-item__link {
+  display: block;
+  position: absolute;
+  bottom: 60px;
+  right: 25;
+  width: 75px;
+  padding: 8px;
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+  border: 1px solid #9f9f9f;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.portfolio-item__link:hover {
+  background: hsl(0, 0%, 100%);
+  color: #606060;
+  border-color: #9f9f9f;
+}
+
+.portfolio-item {
+  padding: 0;
+}
+
+.portfolio-item__inner {
+  height: 100%;
+}
+
+.portfolio-item__inner__thumbnail {
+  
+}
