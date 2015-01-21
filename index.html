@@ -1,52 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <title>Yohannes Libanos</title>
+    <title>Yohannes Libanos - Portfolio</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1><strong>Yohannes </strong>Libanos</h1>
-
-        <a href="https://github.com/yohannesHL" class="button"><small>Follow me on</small> GitHub</a>
+    <div class="container">
+      <div class="row" id="header">
+        <div class="col-md-2">&nbsp;<!--img class="title-logo" src="images/logo.png"-->
+        </div>
+        <div class="col-md-10 text-right text-uppercase">
+          <h1 class="title-super text-thin">Yohannes<strong> Libanos</strong> </h1>
+          <h4><strong>Front-End Engineer</strong>
+          </h4>
+        </div>
       </div>
-    </header>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome </h3>
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-
-<pre><code>$ hello world
-</code></pre>
-
-<p>Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-
-        </section>
-
-        <aside id="sidebar">
-         <!--blog nav/ taglist-->
-
-        </aside>
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <img class="img-responsive" src="images/header.jpg">
+        </div>
+      </div>
+    <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-muted">Featured Work</h2>
+        </div>
+      </div>
+      <div class="row text-center text-uppercase">
+        <div class="col-md-6">
+          <!--img class="img-responsive" src="images/555.jpeg" data-toggle="modal" data-target="#project1"-->
+          <h3>Website Performance Optimisation</h3>
+          <p>
+            <a class="portfolio-link" href="/website-optimization-project">Interactive Website Performance Optimisation</a>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <!--img class="img-responsive" src="images/555.jpeg" data-toggle="modal" data-target="#project2"-->
+          <h3>Interactive Resume</h3>
+          <p>
+            <a class="portfolio-link" href="/frontend-nanodegree-resume">Interactive Resume</a>
+          </p>
+        </div>
+      </div>
+      <div class="row text-center text-uppercase">
+      <div class="col-md-6">
+        <!--img class="img-responsive" src="images/555.jpeg" data-toggle="modal" data-target="#project3"-->
+        <h3>Mockup to Website</h3>
+        <p>
+          <a class="portfolio-link" href="/mockup-to-website">Mockup to Website</a>
+        </p>
+      </div>
       </div>
     </div>
 
-<script src="javascripts/main.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="project1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Favorite App Page</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive" src="images/555.jpeg">
+            This was my first project in this class. I learned a lot about HTML and CSS.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="project2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">My Own Framework</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive" src="images/555.jpeg">
+            My second project was to build my own small CSS framework I could use for future projects. I used my framework to create
+            the first version of my portfolio page.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="project3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Portfolio with Bootstrap</h4>
+          </div>
+          <div class="modal-body">
+            <img class="img-responsive" src="images/555.jpeg">
+            In this project I learned how to use Bootstrap and applied it to the second version of portfolio page.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
