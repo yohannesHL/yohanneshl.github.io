@@ -1,0 +1,10 @@
+---
+layout: page
+title: Projects
+---
+{% for project in site.categories.projects %}
+
+ <a href="{{project.url}}" >{{ project.title}}</a><br>
+
+
+{% endfor %}

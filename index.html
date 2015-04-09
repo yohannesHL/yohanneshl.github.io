@@ -1,0 +1,39 @@
+---
+layout: default
+title: Home
+---
+<div class="hero">
+<h1> What I Do</h1>
+<h3>I Create Beautiful Websites and Apps</h3>
+<ul>
+    <li>+ Interface Design</li>
+    <li>+ Website Design</li>
+    <li>+ Code Delivery</li>
+</ul>
+</div>
+<div class="projects">
+<h1> Featured Work</h1>
+{{ site.category.projects}}
+    {% for project in site.projects limit:2%} {% if project.index %} {% else %}
+    <div class="project">
+        <h2>{{ project.title }}</h2>
+        <div class="project-image">
+            <a href="{{ project.url}}" onmouseover="overlayIt(this)"><img src="{{site.baseurl}}/public/img/{{project.thumbnail}}">
+                <ul class="project-fields">
+                    {% for field in project.field %}
+                    <li>
+                        {{ field }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </a>
+        </div>
+    </div>
+    {% endif %} {% endfor %}
+</div> <a class="more-projects" href="projects"> more projects </a>
+<hr>
+<script>
+function overlayIt(that) {
+    that.childNodes[2].classList.toggle("show");
+}
+</script>

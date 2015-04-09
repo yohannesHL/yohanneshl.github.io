@@ -1,0 +1,34 @@
+# Dependencies
+markdown:            redcarpet
+highlighter:         pygments
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+relative_permalinks: true
+#pretty
+permalink:           blog/:year/:month/:day/:title/
+categories:
+  projects:
+    permalink:           projects/:year/:month/:day/:title/
+#collections:
+#  projects:
+#    output: true
+# Setup
+title:               ''
+tagline:             ''
+description:         'A  personal blog about web development and other tinkerings'
+url: 'http://localhost:4000'
+baseurl:              '/'  #buging
+paginate:            5
+#paginate_path: "blog/page:num/"
+# About/contact
+author:
+  name:              Yohannes Libanos
+  role:              '&middot Front-End Engineer'
+  url:               https://twitter.com/mdo
+  email:             email@gmail.com
+
+github:              https://github.com/yohanneshl
+linkedin:            https://www.linkedin.com/in/yohanneslibanos
+# Custom vars
