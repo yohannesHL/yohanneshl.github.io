@@ -2,23 +2,41 @@
 layout: default
 title: Home
 ---
+<!-- Place in the <head>, after the three links -->
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider();
+  });
+</script>
+
 <div class="hero">
-<h1> What I Do</h1>
+<h1> What I Do?</h1>
 <h3>I Create Beautiful Websites and Apps</h3>
+
 <ul>
-    <li>+ Interface Design</li>
-    <li>+ Website Design</li>
-    <li>+ Code Delivery</li>
+    <li> <i class="fa fa-leaf fa-4x"></i>Interface Design</li>
+    <li> <i class="fa fa-globe fa-4x"></i>Website Design</li>
+    <li> <i class="fa fa-code fa-4x"></i>Code Delivery</li>
 </ul>
 </div>
-<div class="projects">
+<div class="featured-projects">
 <h1> Featured Work</h1>
-{{ site.category.projects}}
-    {% for project in site.projects limit:2%} {% if project.index %} {% else %}
+<script>//alert({{ site.projects.size}})
+<!-- Place somewhere in the <body> of your page -->
+
+
+
+</script><div class="flexslider">
+  <ul class="slides">
+    {% for project in site.projects %} {% if project.thumbnail %}
+<li>
+ {%assign pro_name=project.url | replace_first: site.url%}
+  {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
+   {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
     <div class="project">
         <h2>{{ project.title }}</h2>
         <div class="project-image">
-            <a href="{{ project.url}}" onmouseover="overlayIt(this)"><img src="{{site.baseurl}}/public/img/{{project.thumbnail}}">
+            <a href="{{ project.url}}" onmouseover="overlayIt(this)"><img class="project-item-thumb" src="{{site.url}}/public/img/projects/{{pro_name}}/{{project.thumbnail}}">
                 <ul class="project-fields">
                     {% for field in project.field %}
                     <li>
@@ -28,11 +46,14 @@ title: Home
                 </ul>
             </a>
         </div>
-    </div>
+    </div></li>
     {% endif %} {% endfor %}
+      </ul>
+</div>
 </div> <a class="more-projects" href="projects"> more projects </a>
 <hr>
 <script>
+// TODO: use jquery to handle mouseout /over
 function overlayIt(that) {
     that.childNodes[2].classList.toggle("show");
 }

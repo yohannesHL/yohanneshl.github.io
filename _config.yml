@@ -7,21 +7,23 @@ highlighter:         pygments
 # Use of `relative_permalinks` ensures post links from the index work properly.
 relative_permalinks: true
 #pretty
-permalink:           blog/:year/:month/:day/:title/
-categories:
-  projects:
-    permalink:           projects/:year/:month/:day/:title/
-#collections:
+permalink:           /blog/:year/:month/:day/:title/
+#categories:
 #  projects:
-#    output: true
+#    permalink:           projects/:year/:month/:day/:title/
+collections:
+  projects:
+    output: true
+
+
 # Setup
 title:               ''
 tagline:             ''
-description:         'A  personal blog about web development and other tinkerings'
+description:         'A  personal blog about web development and other interests'
 url: 'http://localhost:4000'
-baseurl:              '/'  #buging
-paginate:            5
-#paginate_path: "blog/page:num/"
+baseurl:              '/'
+paginate:            2
+paginate_path: "blog/page:num/"
 # About/contact
 author:
   name:              Yohannes Libanos

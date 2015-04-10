@@ -1,35 +1,59 @@
---- layout: default permalink: projects/ ---
+---
+layout: default
+---
+<!-- Place in the <head>, after the three links -->
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider();
+  });
+</script>
+
 <div class="project">
-    <h1 class="project-title">{{ page.title }}</h1>
-    <span class="project-date">{{ page.date | date_to_string }}
-  <span class="project-tags inline"><i class="fa fa-tag scale-50"></i> :
+  <h1 class="project-title">{{ page.title }}</h1>
+  <span class="project-date">{{ page.date | date_to_string }}
+  <!-- TODO: filter by skill-->
+
+  <div class="post-categories inline">Category:
   <ul class="inline">
-  {% for tag in page.tags %}
-  <li><a href="{{site.baseurl}}/blog/tags/#{{tag}}">{{tag}}</a></li>
+  {% for field in page.fields %}
+  <li><a href="{{site.url}}/project/fields/#{{field}}">{{field}}</a></li>
+  {% endfor %}
+  </ul></div>
+  </span>
+  <br>
+
+  {{ content }}
+
+  <div class="client-details">
+     <h2>Client</h2>
+  <span><strong>Udacity</strong></span>
+<p>Objective:
+  </p><p>Outcomes:</p>
+  </div>
+<div class="project-galery">
+  <h2> Galery</h2>
+
+
+  <div class="flexslider">
+  <ul class="slides">
+
+ {%assign pro_name=page.url | replace_first: site.url%}
+  {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
+   {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
+
+{% for image in page.images %}
+  <li><img src="{{site.url}}/public/img/projects/{{pro_name}}/{{image}}"></a></li>
+  {% endfor %}
+  </ul>
+</div>
+   <span class="project-skills post-categories inline">
+
+  <i class="fa fa-code fa-2x" style="transform:scale(0.7,0.7);"></i>
+  <ul class="inline" style="float:right">
+  {% for skill in page.skills %}
+  <li><a href="{{site.url}}/projects/skills/#{{skill}}">{{skill}}</a></li>
   {% endfor %}
   </ul></span>
-    <div class="post-categories inline">Filed in:
-        <ul class="inline">
-            {% for cat in page.categories %}
-            <li><a href="{{site.baseurl}}/blog/categories/#{{cat}}">{{cat}}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    </span>
-    {{ content }}
 </div>
-<div class="related">
-    <h2>Related Projects</h2>
-    <ul class="related-posts">
-        {% for post in site.related_posts limit:3 %}
-        <li>
-            <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+<!-- todo : related projects-->
+

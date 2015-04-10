@@ -1,0 +1,18 @@
+---
+layout: page
+title: Projects
+index: true
+permalink: projects/
+---
+
+<!-- *** TODO :
+add skills view via ajax lookup <a href="skills/">Skills</a>
+*** -->
+<div class="projects-list">
+{% for project in site.projects %}
+<div class="project-item">
+  <a href="{{project.url}}" >{{ project.title}}</a><br>
+{{ project.excerpt}}
+</div>
+{% endfor %}
+</div>

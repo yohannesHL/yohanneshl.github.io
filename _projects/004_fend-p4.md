@@ -1,0 +1,16 @@
+---
+layout: project
+title: Mobile Website Performance Optimisation
+skills: [Chrome Developer Tools, Javascript, Node.js, Grunt.js]
+fields: [Front-End, Optimisation]
+date: 2013-01-11 00:00:00
+thumbnail: thumb.png
+project_url: https://yohanneshl.github.io/frontend-nanodegree-mobile-portfolio/production/
+images: [2.png]
+---
+##Mobile and Desktop Website Performance Optimization for speed - using chrome developer tools, ngrok, pagespeed index, node.js and grunt.js .
+
+
+Here I demonstrate how to perform mobile website optimization of the critical rendering path and frame rate to minimize page loading time and improve speed of website. Chrome developer tools is used to analyse performance measures and ngrok+pagespeed index is used to measure performance via pagespeed index API. I have used grunt to automate most of the optimization tasks.
+
+Issuing the command ```grunt production``` fires up the optimization process. This automated repetitive tasks suchas minimizing html/css/js, optimizing images, inlining css/js/images, linting, start up server and measure psi etc.

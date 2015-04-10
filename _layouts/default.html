@@ -5,7 +5,46 @@
 
   <body >
 
+    <script>
 
+function _onHashChange(tagOrCat) {
+  var tag, activeFlag="active-" + tagOrCat;
+
+  if (location.hash){
+        tag = document.querySelector(location.hash);
+try{
+       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+}catch(excep){
+  console.log('Error:',excep);
+  return
+}
+          for(i=0; i<posts.length; i++){
+            posts[i].classList.remove(activeFlag);
+          }
+
+        tag.classList.add(activeFlag);
+
+      } else{
+        tag = document.querySelectorAll('.section-' + tagOrCat);
+for(var i=0; i<tag.length; i++){
+           tag.item(i).classList.add(activeFlag);
+
+}
+
+      }
+
+ }
+
+ function onHashTagChange() {
+    _onHashChange('tag');
+}
+function onHashCatChange() {
+    _onHashChange('cat');
+}
+function onHashSkillChange() {
+    _onHashChange('skill');
+}
+    </script>
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
@@ -15,12 +54,7 @@
       <div class="container content">
         {{ content }}
       </div>
-      <!-- footer -->
-      <footer>
-        <p>
-        &copy; {{ site.time | date: '%Y' }}. All rights reserved.
-      </p>
-      </footer>
+
     </div>
 
 <!-- **** to remove ***
@@ -44,6 +78,8 @@
       })(document);
     </script>
     -->
+
+
     {% include footer.html %}
   </body>
 </html>

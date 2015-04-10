@@ -1,0 +1,77 @@
+---
+layout: default
+title: Skills
+permalink: projects/skills/
+---
+
+
+{% capture site_projects %}{% for pro in site.projects %}{%if site.projects contains pro.skills%}{%else%}{{ pro.skills | join: ','}}{%endif%}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign proj_words = site_projects  | split:',' | sort %}
+
+{% capture skills %}{% for pro in proj_words %}{%if proj_words[forloop.index] == pro or pro == empty%}{%else%}{{ pro | join: ','}}{%endif%}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign unique_words = skills | split:',' | sort %}
+
+{% capture word_count_str %}
+{% for this_word in unique_words %}
+ {% assign this_word_count =  0 %}
+     {% for item in (0..proj_words.size) %}
+        {% if this_word == proj_words[item] %}
+           {% capture this_word_count %}
+             {{ this_word_count | plus: 1 }}
+           {% endcapture %}
+        {% endif %}
+      {% endfor %}
+      {{this_word_count| prepend: ',' }}
+{% endfor %}
+{% endcapture %}
+{% assign word_count = word_count_str | remove_first: ','| replace: ',0,', ',' | split:',' %}
+
+<!--{{word_count_str}}|{{word_count}}|
+{{word_count|size}}
+|{{word_count[5]}}
+|{{word_count_str[5]}}
+-->
+<!--
+http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-pure-liquid.html
+-->
+ <div id="skills">
+  <h2> Projects  by Skill</h2>
+  <br>
+    <ul class="tag-box inline">
+    {% for item in (0..unique_words.size) %}
+      {% assign this_word =  unique_words[item] | strip_newlines %}
+
+
+
+{%if this_word == empty or this_word == null or word_count[item] == 0 %}{%else%}
+    <li>
+      <a class="tag-label" href="#{{ this_word | cgi_escape }}">{{ this_word }} <span>{{ word_count[item] }}</span>
+      </a></li>
+      {%endif%}
+    {% endfor %}
+    </ul>
+<br>
+<br>
+    <!-- posts by skill -->
+  <div class="posts-by-skill">
+   {% for item in (0..unique_words.size) %}{% unless forloop.last %}
+     {% capture this_word %}{{ unique_words[item] | strip_newlines }}{% endcapture %}
+   <section class="section-skill" id="{{ this_word | cgi_escape }}">
+   <h2>{{ this_word | capitalize}}</h2>
+   <ul class="posts-in-skill">
+
+     {% for post in site.projects%}{% if post.title != null and  post.skills contains this_word%}
+     <li itemscope><span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %d, %Y" }}</time></span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+     {% endif %}{% endfor %}
+   </ul>
+   </section>
+   {% endunless %}{% endfor %}
+   </div>
+ </div>
+
+ <script>
+
+
+onHashSkillChange();
+  window.addEventListener("hashchange", onHashSkillChange, false);
+</script>
