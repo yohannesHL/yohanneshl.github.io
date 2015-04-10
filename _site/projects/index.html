@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>
+         Projects &middot;  
+    </title>
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/public/favicon.ico">
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/syntax.css">
+    <link rel="stylesheet" href="/public/css/lanyon.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+
+    <!--
+
+  -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="/public/js/jquery.flexslider.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+
+  <body >
+
+    <script>
+
+function _onHashChange(tagOrCat) {
+  var tag, activeFlag="active-" + tagOrCat;
+
+  if (location.hash){
+        tag = document.querySelector(location.hash);
+try{
+       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+}catch(excep){
+  console.log('Error:',excep);
+  return
+}
+          for(i=0; i<posts.length; i++){
+            posts[i].classList.remove(activeFlag);
+          }
+
+        tag.classList.add(activeFlag);
+
+      } else{
+        tag = document.querySelectorAll('.section-' + tagOrCat);
+for(var i=0; i<tag.length; i++){
+           tag.item(i).classList.add(activeFlag);
+
+}
+
+      }
+
+ }
+
+ function onHashTagChange() {
+    _onHashChange('tag');
+}
+function onHashCatChange() {
+    _onHashChange('cat');
+}
+function onHashSkillChange() {
+    _onHashChange('skill');
+}
+    </script>
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+    <header class="masthead">
+    <div class="container">
+        <h3 class="masthead-title">
+            <!--a href="/" title="Home"></a>
+            <small></small-->
+          </h3>
+        <nav>
+            <ul class="menu-bar">
+                <li class="menu-item">
+                
+                    <a class="" href="/">Home</a>
+
+
+                </li>
+                <!-- -->      
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/about/ ">About Me</a>
+                </li>
+                   
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/blog/ ">Blog</a>
+                </li>
+                               
+                <!---->
+                <li class="menu-item">
+                    <a class=" active" href="/projects/ ">Projects</a>
+                </li>
+                    
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+      <div class="container content">
+        <div class="page">
+<div style="text-align:center; height:100px; width:100%; margin:10px 0;">
+  <h1 class="page-title" >Projects</h1>
+  </div>
+  <!-- *** TODO :
+add skills view via ajax lookup <a href="skills/">Skills</a>
+*** -->
+<div class="projects-list">
+
+<div class="project-item">
+  <a href="/projects/001_fend-p1.html" >Mockup to Website</a><br>
+
+</div>
+
+<div class="project-item">
+  <a href="/projects/002_fend-p2.html" >Interactive Resume</a><br>
+
+</div>
+
+<div class="project-item">
+  <a href="/projects/003_fend-p3.html" >HTML5 Arcade Game Clone</a><br>
+
+</div>
+
+<div class="project-item">
+  <a href="/projects/004_fend-p4.html" >Mobile Website Performance Optimisation</a><br>
+
+</div>
+
+</div>
+</div>
+
+      </div>
+
+    </div>
+
+<!-- **** to remove ***
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    -->
+
+
+         <!-- footer -->
+      <footer>
+        <p>
+        &copy; 2015. All rights reserved.
+      </p>
+      </footer>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>
+         Interactive Resume &middot;  
+    </title>
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/public/favicon.ico">
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/syntax.css">
+    <link rel="stylesheet" href="/public/css/lanyon.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+
+    <!--
+
+  -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="/public/js/jquery.flexslider.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+
+  <body >
+
+    <script>
+
+function _onHashChange(tagOrCat) {
+  var tag, activeFlag="active-" + tagOrCat;
+
+  if (location.hash){
+        tag = document.querySelector(location.hash);
+try{
+       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+}catch(excep){
+  console.log('Error:',excep);
+  return
+}
+          for(i=0; i<posts.length; i++){
+            posts[i].classList.remove(activeFlag);
+          }
+
+        tag.classList.add(activeFlag);
+
+      } else{
+        tag = document.querySelectorAll('.section-' + tagOrCat);
+for(var i=0; i<tag.length; i++){
+           tag.item(i).classList.add(activeFlag);
+
+}
+
+      }
+
+ }
+
+ function onHashTagChange() {
+    _onHashChange('tag');
+}
+function onHashCatChange() {
+    _onHashChange('cat');
+}
+function onHashSkillChange() {
+    _onHashChange('skill');
+}
+    </script>
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+    <header class="masthead">
+    <div class="container">
+        <h3 class="masthead-title">
+            <!--a href="/" title="Home"></a>
+            <small></small-->
+          </h3>
+        <nav>
+            <ul class="menu-bar">
+                <li class="menu-item">
+                
+                    <a class="" href="/">Home</a>
+
+
+                </li>
+                <!-- -->      
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/about/ ">About Me</a>
+                </li>
+                   
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/blog/ ">Blog</a>
+                </li>
+                               
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/projects/ ">Projects</a>
+                </li>
+                    
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+      <div class="container content">
+        <!-- Place in the <head>, after the three links -->
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider();
+  });
+</script>
+
+<div class="project">
+  <h1 class="project-title">Interactive Resume</h1>
+  <span class="project-date">11 Jan 2013
+  <!-- TODO: filter by skill-->
+
+  <div class="post-categories inline">Category:
+  <ul class="inline">
+  
+  <li><a href="http://localhost:4000/project/fields/#Front-End">Front-End</a></li>
+  
+  <li><a href="http://localhost:4000/project/fields/#User-Experience">User-Experience</a></li>
+  
+  </ul></div>
+  </span>
+  <br>
+
+  <p>In this is project i&#39;ve used Javascript, jQuery and templating techniques to create a dynamic resume page. Real and Fake data was used for the content. All essential code for displaying resume sections were incapsulated within namespaces and adhere to the udacity <a href="https://udacity.github.io/frontend-nanodegree-styleguide/">style guide</a>.</p>
+
+
+  <div class="client-details">
+     <h2>Client</h2>
+  <span><strong>Udacity</strong></span>
+<p>Objective:
+  </p><p>Outcomes:</p>
+  </div>
+<div class="project-galery">
+  <h2> Galery</h2>
+
+
+  <div class="flexslider">
+  <ul class="slides">
+
+ 
+  
+   
+
+
+  <li><img src="http://localhost:4000/public/img/projects/002_fend-p2/1.png"></a></li>
+  
+  <li><img src="http://localhost:4000/public/img/projects/002_fend-p2/2.png"></a></li>
+  
+  </ul>
+</div>
+   <span class="project-skills post-categories inline">
+
+  <i class="fa fa-code fa-2x" style="transform:scale(0.7,0.7);"></i>
+  <ul class="inline" style="float:right">
+  
+  <li><a href="http://localhost:4000/projects/skills/#HTML5">HTML5</a></li>
+  
+  <li><a href="http://localhost:4000/projects/skills/#CSS3">CSS3</a></li>
+  
+  <li><a href="http://localhost:4000/projects/skills/#Javascript">Javascript</a></li>
+  
+  <li><a href="http://localhost:4000/projects/skills/#jQuery.js">jQuery.js</a></li>
+  
+  <li><a href="http://localhost:4000/projects/skills/#Google Maps">Google Maps</a></li>
+  
+  <li><a href="http://localhost:4000/projects/skills/#Polymer">Polymer</a></li>
+  
+  </ul></span>
+</div>
+<!-- todo : related projects-->
+
+
+      </div>
+
+    </div>
+
+<!-- **** to remove ***
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    -->
+
+
+         <!-- footer -->
+      <footer>
+        <p>
+        &copy; 2015. All rights reserved.
+      </p>
+      </footer>
+  </body>
+</html>

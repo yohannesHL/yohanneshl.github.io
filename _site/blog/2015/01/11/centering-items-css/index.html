@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>
+         Centering Items in CSS &middot;  
+    </title>
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="/public/favicon.ico">
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+    <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/syntax.css">
+    <link rel="stylesheet" href="/public/css/lanyon.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+
+    <!--
+
+  -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="/public/js/jquery.flexslider.min.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+
+  <body >
+
+    <script>
+
+function _onHashChange(tagOrCat) {
+  var tag, activeFlag="active-" + tagOrCat;
+
+  if (location.hash){
+        tag = document.querySelector(location.hash);
+try{
+       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+}catch(excep){
+  console.log('Error:',excep);
+  return
+}
+          for(i=0; i<posts.length; i++){
+            posts[i].classList.remove(activeFlag);
+          }
+
+        tag.classList.add(activeFlag);
+
+      } else{
+        tag = document.querySelectorAll('.section-' + tagOrCat);
+for(var i=0; i<tag.length; i++){
+           tag.item(i).classList.add(activeFlag);
+
+}
+
+      }
+
+ }
+
+ function onHashTagChange() {
+    _onHashChange('tag');
+}
+function onHashCatChange() {
+    _onHashChange('cat');
+}
+function onHashSkillChange() {
+    _onHashChange('skill');
+}
+    </script>
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+    <header class="masthead">
+    <div class="container">
+        <h3 class="masthead-title">
+            <!--a href="/" title="Home"></a>
+            <small></small-->
+          </h3>
+        <nav>
+            <ul class="menu-bar">
+                <li class="menu-item">
+                
+                    <a class="" href="/">Home</a>
+
+
+                </li>
+                <!-- -->      
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/about/ ">About Me</a>
+                </li>
+                   
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/blog/ ">Blog</a>
+                </li>
+                               
+                <!---->
+                <li class="menu-item">
+                    <a class="" href="/projects/ ">Projects</a>
+                </li>
+                    
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+      <div class="container content">
+        <div class="post">
+  <h1 class="post-title">Centering Items in CSS</h1>
+  <span class="post-date">11 Jan 2015
+  <span class="post-tags inline">
+  <ul class="inline">
+  <li><i class="fa fa-tags "></i> &nbsp;</li>
+  
+  <li><a href="http://localhost:4000/blog/tags/#css3">css3</a></li>
+  
+  </ul></span>
+  <div class="post-categories inline">
+  <ul class="inline">
+  <li><i class="fa fa-folder-open "></i> &nbsp;</li>
+  
+  <li><a href="http://localhost:4000/blog/categories/#front-end">front-end</a></li>
+  
+  <li><a href="http://localhost:4000/blog/categories/#design">design</a></li>
+  
+  </ul></div></span>
+
+  <p>In this tutorial I will demonstrate two useful techniques to center any item in any orientation. After this tutorial you will be able to center any item :</p>
+
+<ul>
+<li>horizontally (center_h)</li>
+<li>vertically ( center_v)</li>
+<li>dead center ( center-center)</li>
+</ul>
+
+<p><strong>Problem</strong>: Say you have a div element called box. The box has fixed height and width like so:</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.box</span> <span class="p">{</span>
+<span class="k">height</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="k">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You want to position the box right at the center of the page. Is there a native css attribute that ican use to achieve this. Unfortunately there isn&#39;t an native attribute, like text alighn, that can be tweeked that works across older browsers. Flexible boxes are a good candidate but they are a recent inovation, see <a href="http://caniuse.com/felxiblebox">caniuse</a>.
+So what are your options?</p>
+
+<p><img src="http://localhost:4000/public/img/posts/11012015_centering.png" alt="CenteredImage">
+The red circle is centered relative to flexbox-center(blue). The 3 red squares are centered relative to body. Note that the square in the center (center-center) may look purple because its covered by the flexbox</p>
+
+<h1>Using Margin auto</h1>
+
+<h3>Center horizontally:</h3>
+
+<p>First off  centring horizontally is pretty straight forward  we set
+<code>css
+margin : 0 auto;
+</code></p>
+
+<p>Which lets the browser auto update left and right margin values like so:</p>
+
+<blockquote>
+<p><em>margin-left = margin-right = (containterWidth - boxWidth)/2</em></p>
+</blockquote>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.center-h</span> <span class="p">{</span>
+<span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2>Center vertically</h2>
+
+<p>Unfortunatly you can&#39;t set <strong>margin-top = margin-bottom = auto</strong> to center vertically. This doesnt work.</p>
+
+<p>It turns out that this is imposible due to the fact that the auto property will always use the width not the height of the element.</p>
+
+<h1>Using Margin Offsets and absolute positioning</h1>
+
+<p>Using margin offsets is tried and tested technique and it works well.
+You set positioning to absolute and set left/top to 50%. The trick is to offset the margin by half of the boxes dimensions. eg. you wanted to center the box vertically you would set <em>margin-top: -50px</em>.</p>
+
+<h3>Center horizontally:</h3>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.center-h</span> <span class="p">{</span>
+<span class="c">/* we want the use % reletive to width of screen, not container */</span>
+ <span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+ <span class="k">margin</span><span class="o">:</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">-50px</span><span class="p">;</span> <span class="c">/* offset by half the width of box  */</span>
+ <span class="k">left</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Center vertically:</h3>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.center-v</span> <span class="p">{</span>
+ <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+ <span class="k">margin</span><span class="o">:</span> <span class="m">-50px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+ <span class="k">top</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Center both axis:</h3>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.center-center</span> <span class="p">{</span>
+<span class="k">position</span><span class="o">:</span><span class="k">absolute</span><span class="p">;</span>
+<span class="k">margin</span><span class="o">:-</span><span class="m">50px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">-50px</span><span class="p">;</span>
+<span class="k">left</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="k">top</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h1>Flexible boxes</h1>
+
+<p>Flexible boxes are a more recent addition to CSS3. It is intended for creating responsive layouts that behave in a predictable way across varying screen sizes. Flexible box is a layout mode, to use it on any element you just set <em>display: flex;</em></p>
+
+<h3>Horizontal center using flexbox</h3>
+
+<p>To center horizontally only  Any child of this flex container will be horizontally centered</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.flexbox-center-h</span> <span class="p">{</span>
+ <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span>
+ <span class="n">flex</span><span class="o">-</span><span class="k">direction</span><span class="o">:</span> <span class="n">column</span><span class="p">;</span>
+ <span class="n">align</span><span class="o">-</span><span class="n">items</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Vertical center using flexbox</h3>
+
+<p>For vertical centering  Similarly any child of this flex container will be vertically centered</p>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.flexbox-center-v</span> <span class="p">{</span>
+
+ <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span>
+ <span class="n">flex</span><span class="o">-</span><span class="k">direction</span><span class="o">:</span> <span class="n">row</span><span class="p">;</span>
+ <span class="n">align</span><span class="o">-</span><span class="n">items</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Center both axis using flexbox:</h3>
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/*</span>
+<span class="c"> * items will be centered vertically/horizontally</span>
+<span class="c"> * depending on flex-direction</span>
+<span class="c"> */</span>
+ <span class="nc">.flexbox-center</span> <span class="p">{</span>
+   <span class="k">display</span><span class="o">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="n">flex</span><span class="o">-</span><span class="k">direction</span><span class="o">:</span> <span class="n">column</span><span class="p">;</span>
+   <span class="n">align</span><span class="o">-</span><span class="n">items</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To put the item dead center we’ll need to include the following code in the child element:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/* this centers flex items in the middle*/
+.flex-item-center {
+  margin: auto;
+}
+</code></pre></div>
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="http://localhost:4000/blog/2015/01/01/centering-items-css%20-%20Copy/">
+            Centering Items in CSS
+            <small>01 Jan 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://localhost:4000/blog/2013/12/31/whats-jekyll/">
+            What's Jekyll?
+            <small>31 Dec 2013</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="http://localhost:4000/blog/2013/12/03/whats-jekyll%20-%20Copy/">
+            What's Jekyll?
+            <small>03 Dec 2013</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+      </div>
+
+    </div>
+
+<!-- **** to remove ***
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+    -->
+
+
+         <!-- footer -->
+      <footer>
+        <p>
+        &copy; 2015. All rights reserved.
+      </p>
+      </footer>
+  </body>
+</html>
