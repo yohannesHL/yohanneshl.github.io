@@ -1,14 +1,19 @@
-<header class="masthead">
-    <div class="container">
-        <h3 class="masthead-title">
-            <!--a href="/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small-->
-          </h3>
-        <nav>
+<header class="row masthead">
+    <div class="col-xs-12">
+        <!--h3 class="masthead-title">
+            <a href="/" title="Home">{{ site.title }}</a>
+            <small>{{ site.tagline }}</small>
+          </h3-->
+        <nav >
+<!--button type="button" class="menu-toggle"> <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button-->
             <ul class="menu-bar">
                 <li class="menu-item">
                 {% assign furl = page.url | replace_first: 'index.html'%}
-                    <a class="{% if  furl == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+                    <a class="{% if  furl == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">
+                    <!--i class="glyphicon glyphicon-home"></i--><span>Home</span></a>
 
 
                 </li>
@@ -20,5 +25,6 @@
                 {% endif %} {% endif %}{% endfor %}
             </ul>
         </nav>
+
     </div>
 </header>

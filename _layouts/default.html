@@ -39,46 +39,34 @@ for(var i=0; i<tag.length; i++){
     _onHashChange('tag');
 }
 function onHashCatChange() {
-    _onHashChange('cat');
+    _onHashChange('category');
 }
 function onHashSkillChange() {
     _onHashChange('skill');
 }
+
+$(function(){
+
+
+$('.menu-toggle').click(function(){
+  $(this).toggle('active');
+
+});
+
+});
     </script>
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
+
+    <div class="container-fluid">
     {% include header.html %}
 
-
-      <div class="container content">
+    <div class="row">
+      <div class="col-xs-12 content">
         {{ content }}
       </div>
-
     </div>
 
-<!-- **** to remove ***
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script>
-    -->
-
+    </div>
 
     {% include footer.html %}
   </body>

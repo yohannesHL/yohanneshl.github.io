@@ -8,7 +8,7 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>
-         Mockup to Website &middot;  
+         Mockup to Website &middot; The Blog of Yohannes 
     </title>
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
@@ -16,20 +16,18 @@
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
     <!-- CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/poole.css">
     <link rel="stylesheet" href="/public/css/syntax.css">
     <link rel="stylesheet" href="/public/css/lanyon.css">
     <link rel="stylesheet" href="/public/css/main.css">
-
-    <!--
-
-  -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="/public/js/jquery.flexslider.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="/public/js/jquery.flexslider.min.js"></script>
 
     <style>
 
@@ -73,26 +71,40 @@ for(var i=0; i<tag.length; i++){
     _onHashChange('tag');
 }
 function onHashCatChange() {
-    _onHashChange('cat');
+    _onHashChange('category');
 }
 function onHashSkillChange() {
     _onHashChange('skill');
 }
+
+$(function(){
+
+
+$('.menu-toggle').click(function(){
+  $(this).toggle('active');
+
+});
+
+});
     </script>
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-    <header class="masthead">
-    <div class="container">
-        <h3 class="masthead-title">
-            <!--a href="/" title="Home"></a>
-            <small></small-->
-          </h3>
-        <nav>
+
+    <div class="container-fluid">
+    <header class="row masthead">
+    <div class="col-xs-12">
+        <!--h3 class="masthead-title">
+            <a href="/" title="Home">The Blog of Yohannes</a>
+            <small>A Technical Blog</small>
+          </h3-->
+        <nav >
+<!--button type="button" class="menu-toggle"> <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button-->
             <ul class="menu-bar">
                 <li class="menu-item">
                 
-                    <a class="" href="/">Home</a>
+                    <a class="" href="/">
+                    <!--i class="glyphicon glyphicon-home"></i--><span>Home</span></a>
 
 
                 </li>
@@ -114,12 +126,13 @@ function onHashSkillChange() {
                     
             </ul>
         </nav>
+
     </div>
 </header>
 
 
-
-      <div class="container content">
+    <div class="row">
+      <div class="col-xs-12 content">
         <!-- Place in the <head>, after the three links -->
 <script type="text/javascript" charset="utf-8">
   $(window).load(function() {
@@ -132,24 +145,30 @@ function onHashSkillChange() {
   <span class="project-date">11 Jan 2013
   <!-- TODO: filter by skill-->
 
-  <div class="post-categories inline">Category:
+  <div class="post-categories inline">
   <ul class="inline">
+  <li><i class="fa fa-folder-open "></i> &nbsp;</li>
   
-  <li><a href="http://localhost:4000/project/fields/#Front-End">Front-End</a></li>
+  <li><a href="http://yohanneshl.github.io/project/fields/#Front-End">Front-End</a></li>
   
   </ul></div>
   </span>
+  <a href="https://github.com/yohanneshl/mockup-to-website" style="float:right"><i class="fa fa-play"></i> View Live</a>
   <br>
 
-  <p>Here I demonstrate usage of bootstrap framework to create develop a mockup to an actual webpage.</p>
+  <p>Here I demonstrate usage of bootstrap framework to transform a mockup to an actual webpage.</p>
+
+<p>The udacity algorithm compaired the origional mockup with the generated web page and measure the total mismatch between the two in percentage.</p>
+
+<p>The goal was to get a mismatch score of 4% or lower. I was able to get a missmatch of 0% and produce a pixel perfect match to teh original.</p>
 
 
-  <div class="client-details">
+  <!--div class="client-details">
      <h2>Client</h2>
   <span><strong>Udacity</strong></span>
 <p>Objective:
   </p><p>Outcomes:</p>
-  </div>
+  </div-->
 <div class="project-gallery">
   <h2> Gallery</h2>
 
@@ -162,20 +181,19 @@ function onHashSkillChange() {
    
 
 
-  <li><img src="http://localhost:4000/public/img/projects/001_fend-p1/2.png"></a></li>
-  
   </ul>
 </div>
    <span class="project-skills post-categories inline">
 
-  <i class="fa fa-code fa-2x" style="transform:scale(0.7,0.7);"></i>
+
   <ul class="inline" style="float:right">
+  <li><i class="fa fa-code" ></i></li>
   
-  <li><a href="http://localhost:4000/projects/skills/#HTML5">HTML5</a></li>
+  <li><a href="http://yohanneshl.github.io/projects/skills/#HTML5">HTML5</a></li>
   
-  <li><a href="http://localhost:4000/projects/skills/#CSS3">CSS3</a></li>
+  <li><a href="http://yohanneshl.github.io/projects/skills/#CSS3">CSS3</a></li>
   
-  <li><a href="http://localhost:4000/projects/skills/#Bootstrap">Bootstrap</a></li>
+  <li><a href="http://yohanneshl.github.io/projects/skills/#Bootstrap">Bootstrap</a></li>
   
   </ul></span>
 </div>
@@ -183,36 +201,16 @@ function onHashSkillChange() {
 
 
       </div>
+    </div>
+
 
     </div>
 
-<!-- **** to remove ***
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script>
-    -->
-
-
          <!-- footer -->
       <footer>
+
         <p>
-        &copy; 2015. All rights reserved.
+        &copy; 2015. All rights reserved. 
       </p>
       </footer>
   </body>

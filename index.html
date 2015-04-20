@@ -10,8 +10,9 @@ title: Home
 </script>
 
 <div class="hero">
-<h1> What I Do?</h1>
-<h3>I Create Beautiful Websites and Apps</h3>
+<h2> What I Do?</h2>
+<h3>I Create Beautiful Websites and Apps for all devices</h3>
+
 
 <ul>
     <li> <i class="fa fa-leaf fa-4x"></i>Interface Design</li>
@@ -28,7 +29,7 @@ title: Home
 
 </script><div class="flexslider">
   <ul class="slides">
-    {% for project in site.projects %} {% if project.thumbnail %}
+    {% for project in site.projects limit:3 %} {% if project.thumbnail %}
 <li>
  {%assign pro_name=project.url | replace_first: site.url%}
   {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
@@ -36,9 +37,10 @@ title: Home
     <div class="project">
         <h2>{{ project.title }}</h2>
         <div class="project-image">
-            <a href="{{ project.url}}" onmouseover="overlayIt(this)"><img class="project-item-thumb" src="{{site.url}}/public/img/projects/{{pro_name}}/{{project.thumbnail}}">
+            <a href="{{ project.url}}" onmouseover="overlayIt(this)">
+            <div><img class="project-item-thumb" src="../public/img/projects/{{pro_name}}/{{project.thumbnail}}"></div>
                 <ul class="project-fields">
-                    {% for field in project.field %}
+                    {% for field in project.fields %}
                     <li>
                         {{ field }}
                     </li>

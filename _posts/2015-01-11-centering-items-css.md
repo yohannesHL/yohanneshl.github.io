@@ -2,7 +2,7 @@
 layout: post
 title: Centering Items in CSS
 tags: css3
-category: [Front-End, Design]
+categories: [Front-End, Design]
 ---
 In this tutorial I will demonstrate two useful techniques to center any item in any orientation. After this tutorial you will be able to center any item :
 

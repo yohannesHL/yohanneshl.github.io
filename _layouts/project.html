@@ -13,23 +13,25 @@ layout: default
   <span class="project-date">{{ page.date | date_to_string }}
   <!-- TODO: filter by skill-->
 
-  <div class="post-categories inline">Category:
+  <div class="post-categories inline">
   <ul class="inline">
+  <li><i class="fa fa-folder-open "></i> &nbsp;</li>
   {% for field in page.fields %}
   <li><a href="{{site.url}}/project/fields/#{{field}}">{{field}}</a></li>
   {% endfor %}
   </ul></div>
   </span>
+  <a href="{{page.project_url}}" style="float:right"><i class="fa fa-play"></i> View Live</a>
   <br>
 
   {{ content }}
 
-  <div class="client-details">
+  <!--div class="client-details">
      <h2>Client</h2>
   <span><strong>Udacity</strong></span>
 <p>Objective:
   </p><p>Outcomes:</p>
-  </div>
+  </div-->
 <div class="project-gallery">
   <h2> Gallery</h2>
 
@@ -42,14 +44,15 @@ layout: default
    {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
 
 {% for image in page.images %}
-  <li><img src="{{site.url}}/public/img/projects/{{pro_name}}/{{image}}"></a></li>
+  <li><img src="../public/img/projects/{{pro_name}}/{{image}}"></a></li>
   {% endfor %}
   </ul>
 </div>
    <span class="project-skills post-categories inline">
 
-  <i class="fa fa-code fa-2x" style="transform:scale(0.7,0.7);"></i>
+
   <ul class="inline" style="float:right">
+  <li><i class="fa fa-code" ></i></li>
   {% for skill in page.skills %}
   <li><a href="{{site.url}}/projects/skills/#{{skill}}">{{skill}}</a></li>
   {% endfor %}

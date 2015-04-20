@@ -17,9 +17,9 @@ collections:
 
 
 # Setup
-title:               ''
-tagline:             ''
-description:         'A  personal blog about web development and other interests'
+title:               'The Blog of Yohannes'
+tagline:             'Full-Stack Engineer'
+description:         'A Technical blog about web development and few other things.'
 url: 'http://yohanneshl.github.io'
 baseurl:              '/'
 paginate:            3
@@ -27,7 +27,7 @@ paginate_path: "blog/page:num/"
 # About/contact
 author:
   name:              Yohannes Libanos
-  role:              '&middot Front-End Engineer'
+  role:              '&middot Full-Stack Engineer'
   url:               https://twitter.com/mdo
   email:             email@gmail.com
 

@@ -312,7 +312,7 @@ a.sidebar-nav-item:focus {
 .page-title,
 .post-title {
   margin-top: 0;
-  margin-bottom: 1rem;
+  //margin-bottom: 1rem;
 }
 
 /* Meta data line below post title */

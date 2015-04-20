@@ -8,7 +8,7 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>
-         Centering Items in CSS &middot;  
+         Centering Items in CSS &middot; The Blog of Yohannes 
     </title>
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
@@ -16,20 +16,18 @@
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
     <!-- CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/poole.css">
     <link rel="stylesheet" href="/public/css/syntax.css">
     <link rel="stylesheet" href="/public/css/lanyon.css">
     <link rel="stylesheet" href="/public/css/main.css">
-
-    <!--
-
-  -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="/public/js/jquery.flexslider.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="/public/js/jquery.flexslider.min.js"></script>
 
     <style>
 
@@ -73,26 +71,40 @@ for(var i=0; i<tag.length; i++){
     _onHashChange('tag');
 }
 function onHashCatChange() {
-    _onHashChange('cat');
+    _onHashChange('category');
 }
 function onHashSkillChange() {
     _onHashChange('skill');
 }
+
+$(function(){
+
+
+$('.menu-toggle').click(function(){
+  $(this).toggle('active');
+
+});
+
+});
     </script>
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-    <header class="masthead">
-    <div class="container">
-        <h3 class="masthead-title">
-            <!--a href="/" title="Home"></a>
-            <small></small-->
-          </h3>
-        <nav>
+
+    <div class="container-fluid">
+    <header class="row masthead">
+    <div class="col-xs-12">
+        <!--h3 class="masthead-title">
+            <a href="/" title="Home">The Blog of Yohannes</a>
+            <small>A Technical Blog</small>
+          </h3-->
+        <nav >
+<!--button type="button" class="menu-toggle"> <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button-->
             <ul class="menu-bar">
                 <li class="menu-item">
                 
-                    <a class="" href="/">Home</a>
+                    <a class="" href="/">
+                    <!--i class="glyphicon glyphicon-home"></i--><span>Home</span></a>
 
 
                 </li>
@@ -114,12 +126,13 @@ function onHashSkillChange() {
                     
             </ul>
         </nav>
+
     </div>
 </header>
 
 
-
-      <div class="container content">
+    <div class="row">
+      <div class="col-xs-12 content">
         <div class="post">
   <h1 class="post-title">Centering Items in CSS</h1>
   <span class="post-date">11 Jan 2015
@@ -127,16 +140,16 @@ function onHashSkillChange() {
   <ul class="inline">
   <li><i class="fa fa-tags "></i> &nbsp;</li>
   
-  <li><a href="http://localhost:4000/blog/tags/#css3">css3</a></li>
+  <li><a href="http://yohanneshl.github.io/blog/tags/#css3">css3</a></li>
   
   </ul></span>
   <div class="post-categories inline">
   <ul class="inline">
   <li><i class="fa fa-folder-open "></i> &nbsp;</li>
   
-  <li><a href="http://localhost:4000/blog/categories/#front-end">front-end</a></li>
+  <li><a href="http://yohanneshl.github.io/blog/categories/#front-end">front-end</a></li>
   
-  <li><a href="http://localhost:4000/blog/categories/#design">design</a></li>
+  <li><a href="http://yohanneshl.github.io/blog/categories/#design">design</a></li>
   
   </ul></div></span>
 
@@ -158,7 +171,7 @@ function onHashSkillChange() {
 <p>You want to position the box right at the center of the page. Is there a native css attribute that ican use to achieve this. Unfortunately there isn&#39;t an native attribute, like text alighn, that can be tweeked that works across older browsers. Flexible boxes are a good candidate but they are a recent inovation, see <a href="http://caniuse.com/felxiblebox">caniuse</a>.
 So what are your options?</p>
 
-<p><img src="http://localhost:4000/public/img/posts/11012015_centering.png" alt="CenteredImage">
+<p><img src="http://yohanneshl.github.io/public/img/posts/11012015_centering.png" alt="CenteredImage">
 The red circle is centered relative to flexbox-center(blue). The 3 red squares are centered relative to body. Note that the square in the center (center-center) may look purple because its covered by the flexbox</p>
 
 <h1>Using Margin auto</h1>
@@ -261,7 +274,7 @@ You set positioning to absolute and set left/top to 50%. The trick is to offset 
     
       <li>
         <h3>
-          <a href="http://localhost:4000/blog/2013/12/31/whats-jekyll/">
+          <a href="http://yohanneshl.github.io/blog/2013/12/31/whats-jekyll/">
             What's Jekyll?
             <small>31 Dec 2013</small>
           </a>
@@ -272,36 +285,16 @@ You set positioning to absolute and set left/top to 50%. The trick is to offset 
 </div>
 
       </div>
+    </div>
+
 
     </div>
 
-<!-- **** to remove ***
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
-    </script>
-    -->
-
-
          <!-- footer -->
       <footer>
+
         <p>
-        &copy; 2015. All rights reserved.
+        &copy; 2015. All rights reserved. 
       </p>
       </footer>
   </body>
