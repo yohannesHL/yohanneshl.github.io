@@ -13,6 +13,7 @@ layout: default
   <span class="project-date">{{ page.date | date_to_string }}
   <!-- TODO: filter by skill-->
 
+
   <div class="post-categories inline">
   <ul class="inline">
   <li><i class="fa fa-folder-open "></i> &nbsp;</li>
@@ -22,6 +23,13 @@ layout: default
   </ul></div>
   </span>
   <a href="{{page.project_url}}" style="float:right"><i class="fa fa-play"></i> View Live</a>
+  <span class="project-skills post-categories inline">
+  <ul class="inline" style="float:right">
+  <li><i class="fa fa-code" ></i></li>
+  {% for skill in page.skills %}
+  <li><a href="{{site.url}}/projects/skills/#{{skill}}">{{skill}}</a></li>
+  {% endfor %}
+  </ul></span>
   <br>
 
   {{ content }}
@@ -48,15 +56,7 @@ layout: default
   {% endfor %}
   </ul>
 </div>
-   <span class="project-skills post-categories inline">
 
-
-  <ul class="inline" style="float:right">
-  <li><i class="fa fa-code" ></i></li>
-  {% for skill in page.skills %}
-  <li><a href="{{site.url}}/projects/skills/#{{skill}}">{{skill}}</a></li>
-  {% endfor %}
-  </ul></span>
 </div>
 <!-- todo : related projects-->
 

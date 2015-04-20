@@ -37,14 +37,14 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
  <div id="skills">
   <h2> Projects  by Skill</h2>
   <br>
-    <ul class="tag-box inline">
+    <ul class="tag-box flex-row flex-center flex-wrap">
     {% for item in (0..unique_words.size) %}
       {% assign this_word =  unique_words[item] | strip_newlines %}
 
 
 
 {%if this_word == empty or this_word == null or word_count[item] == 0 %}{%else%}
-    <li>
+    <li class="flex-item-0">
       <a class="tag-label" href="#{{ this_word | cgi_escape }}">{{ this_word }} <span>{{ word_count[item] }}</span>
       </a></li>
       {%endif%}
