@@ -19,12 +19,12 @@
     <link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">    <link rel="stylesheet" href="/public/css/poole.css">
     <link rel="stylesheet" href="/public/css/syntax.css">
     <link rel="stylesheet" href="/public/css/lanyon.css">
     <link rel="stylesheet" href="/public/css/main.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
@@ -111,7 +111,7 @@ $('.menu-toggle').click(function(){
                 <!-- -->      
                 <!---->
                 <li class="menu-item">
-                    <a class="" href="/about/ ">About Me</a>
+                    <a class="" href="/about/ ">About</a>
                 </li>
                    
                 <!---->
@@ -193,11 +193,43 @@ onHashTagChange();
     </div>
 
          <!-- footer -->
-      <footer>
+     <script>$(function(){
 
+$('.email-contact').click(function(){
+var ori = ($(this).html())
+var self= this;
+$(this).html($(this).attr('data-msg'));
+setTimeout(function(){$(self).html(ori);},5000);
+//setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
+
+        //window.location.assign('mailto://' + $(this).attr('data-msg'));
+
+
+        });
+
+
+
+        }
+        );</script>
+      <footer class="row"><div class="col-xs-6 ">
+      <h3>Contact</h3>
+
+<ul id="contact" class="social-contacts flex-row flex-wrap flex-between">
+
+<li class="flex-item-1"><a  href="https://github.com/yohanneshl"> <i class="fa fa-github fa-2x"></i> </a></li>
+
+<li class="flex-item-1"><a  href="https://www.linkedin.com/in/yohanneslibanos"> <i class="fa fa-linkedin fa-2x"></i> </a></li>
+<li class="flex-item-1"><a  class="email-contact"
+data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x"title="click to show email"></i> </a></li>
+<li class="flex-item-1"><a href="/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a></li>
+
+
+</ul><br><br><br><br></div>
+<!--div class="col-xs-6">blffhgjhgh<br><br>fjgfjfj</div-->
+<div class="col-xs-12">
         <p>
-        &copy; 2015. All rights reserved. 
-      </p>
+        &copy; 2015. All rights reserved.
+      </p></div>
       </footer>
   </body>
 </html>

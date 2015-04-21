@@ -4,7 +4,7 @@ title: Interactive Resume
 skills: [HTML5, CSS3, Javascript, jQuery.js, Google Maps, Polymer]
 fields: [Front-End, User-Experience]
 date: 2013-01-11 00:00:00
-thumbnail: nd02-2.png
+thumbnail: nd02-3.png
 project_url: https://yohanneshl.github.io/frontend-nanodegree-resume
 images: [nd02-1.png, nd02-2.png, nd02-3.png]
 ---

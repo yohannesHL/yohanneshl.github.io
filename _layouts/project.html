@@ -52,7 +52,7 @@ layout: default
    {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
 
 {% for image in page.images %}
-  <li><img src="../public/img/projects/{{pro_name}}/{{image}}"></a></li>
+  <li><div><a><img src="../public/img/projects/{{pro_name}}/{{image}}"></a></div></li>
   {% endfor %}
   </ul>
 </div>

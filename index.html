@@ -9,18 +9,18 @@ title: Home
   });
 </script>
 
-<div class="hero">
-<h2> What I Do?</h2>
+<div class="hero col-xs-12">
+<h2 class="text-center"> What I Do?</h2>
 <h3>I Create Beautiful Websites and Apps for all devices</h3>
 
 
 <ul>
     <li> <i class="fa fa-leaf fa-4x"></i>Interface Design</li>
     <li> <i class="fa fa-globe fa-4x"></i>Website Design</li>
-    <li> <i class="fa fa-code fa-4x"></i>Code Delivery</li>
+    <li> <i class="fa fa-code fa-4x"></i>Full Development</li>
 </ul>
 </div>
-<div class="featured-projects">
+<div class="featured-projects col-xs-12">
 <h1> Featured Work</h1>
 <script>//alert({{ site.projects.size}})
 <!-- Place somewhere in the <body> of your page -->
@@ -29,7 +29,7 @@ title: Home
 
 </script><div class="flexslider">
   <ul class="slides">
-    {% for project in site.projects limit:3 %} {% if project.thumbnail %}
+    {% for project in site.projects limit:4 %} {% if project.thumbnail %}
 <li>
  {%assign pro_name=project.url | replace_first: site.url%}
   {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}

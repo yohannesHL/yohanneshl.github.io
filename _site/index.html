@@ -19,12 +19,12 @@
     <link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">    <link rel="stylesheet" href="/public/css/poole.css">
     <link rel="stylesheet" href="/public/css/syntax.css">
     <link rel="stylesheet" href="/public/css/lanyon.css">
     <link rel="stylesheet" href="/public/css/main.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
@@ -111,7 +111,7 @@ $('.menu-toggle').click(function(){
                 <!-- -->      
                 <!---->
                 <li class="menu-item">
-                    <a class="" href="/about/ ">About Me</a>
+                    <a class="" href="/about/ ">About</a>
                 </li>
                    
                 <!---->
@@ -140,18 +140,18 @@ $('.menu-toggle').click(function(){
   });
 </script>
 
-<div class="hero">
-<h2> What I Do?</h2>
+<div class="hero col-xs-12">
+<h2 class="text-center"> What I Do?</h2>
 <h3>I Create Beautiful Websites and Apps for all devices</h3>
 
 
 <ul>
     <li> <i class="fa fa-leaf fa-4x"></i>Interface Design</li>
     <li> <i class="fa fa-globe fa-4x"></i>Website Design</li>
-    <li> <i class="fa fa-code fa-4x"></i>Code Delivery</li>
+    <li> <i class="fa fa-code fa-4x"></i>Full Development</li>
 </ul>
 </div>
-<div class="featured-projects">
+<div class="featured-projects col-xs-12">
 <h1> Featured Work</h1>
 <script>//alert(7)
 <!-- Place somewhere in the <body> of your page -->
@@ -169,7 +169,7 @@ $('.menu-toggle').click(function(){
         <h2>Interactive Resume</h2>
         <div class="project-image">
             <a href="/projects/002_fend-p2.html" onmouseover="overlayIt(this)">
-            <div><img class="project-item-thumb" src="../public/img/projects/002_fend-p2/nd02-2.png"></div>
+            <div><img class="project-item-thumb" src="../public/img/projects/002_fend-p2/nd02-3.png"></div>
                 <ul class="project-fields">
                     
                     <li>
@@ -208,6 +208,30 @@ $('.menu-toggle').click(function(){
             </a>
         </div>
     </div></li>
+      
+<li>
+ 
+  
+   
+    <div class="project">
+        <h2>Mobile Website Performance Optimisation</h2>
+        <div class="project-image">
+            <a href="/projects/004_fend-p4.html" onmouseover="overlayIt(this)">
+            <div><img class="project-item-thumb" src="../public/img/projects/004_fend-p4/nd04-2.png"></div>
+                <ul class="project-fields">
+                    
+                    <li>
+                        Front-End
+                    </li>
+                    
+                    <li>
+                        Optimisation
+                    </li>
+                    
+                </ul>
+            </a>
+        </div>
+    </div></li>
      
       </ul>
 </div>
@@ -227,11 +251,43 @@ function overlayIt(that) {
     </div>
 
          <!-- footer -->
-      <footer>
+     <script>$(function(){
 
+$('.email-contact').click(function(){
+var ori = ($(this).html())
+var self= this;
+$(this).html($(this).attr('data-msg'));
+setTimeout(function(){$(self).html(ori);},5000);
+//setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
+
+        //window.location.assign('mailto://' + $(this).attr('data-msg'));
+
+
+        });
+
+
+
+        }
+        );</script>
+      <footer class="row"><div class="col-xs-6 ">
+      <h3>Contact</h3>
+
+<ul id="contact" class="social-contacts flex-row flex-wrap flex-between">
+
+<li class="flex-item-1"><a  href="https://github.com/yohanneshl"> <i class="fa fa-github fa-2x"></i> </a></li>
+
+<li class="flex-item-1"><a  href="https://www.linkedin.com/in/yohanneslibanos"> <i class="fa fa-linkedin fa-2x"></i> </a></li>
+<li class="flex-item-1"><a  class="email-contact"
+data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x"title="click to show email"></i> </a></li>
+<li class="flex-item-1"><a href="/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a></li>
+
+
+</ul><br><br><br><br></div>
+<!--div class="col-xs-6">blffhgjhgh<br><br>fjgfjfj</div-->
+<div class="col-xs-12">
         <p>
-        &copy; 2015. All rights reserved. 
-      </p>
+        &copy; 2015. All rights reserved.
+      </p></div>
       </footer>
   </body>
 </html>

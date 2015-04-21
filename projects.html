@@ -9,9 +9,9 @@ permalink: projects/
 add skills view via ajax lookup <a href="skills/">Skills</a>
 <div class="skills-map"><ul></ul></div>
 *** -->
-<div class="projects-list">
+<div class="projects-list flex-column flex-center">
 {% for project in site.projects %}
-<div class="project-item">
+<div class="project-item flex-item-1">
   <a href="{{project.url}}" >{{ project.title}}</a><br>
 {{ project.excerpt}}
 </div>
