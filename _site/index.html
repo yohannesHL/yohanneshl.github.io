@@ -17,7 +17,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
     <!-- CSS -->
     <link href='//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">    <link rel="stylesheet" href="/public/css/poole.css">
@@ -152,13 +152,9 @@ $('.menu-toggle').click(function(){
 </ul>
 </div>
 <div class="featured-projects col-xs-12">
-<h1> Featured Work</h1>
-<script>//alert(7)
-<!-- Place somewhere in the <body> of your page -->
-
-
-
-</script><div class="flexslider">
+<h1> Featured Work</h1> <a class="more-projects" href="projects"> more projects <i class="fa fa-chevron-right"></i></a>
+<hr>
+<div class="flexslider">
   <ul class="slides">
        
 <li>
@@ -168,19 +164,39 @@ $('.menu-toggle').click(function(){
     <div class="project">
         <h2>Interactive Resume</h2>
         <div class="project-image">
-            <a href="/projects/002_fend-p2.html" onmouseover="overlayIt(this)">
-            <div><img class="project-item-thumb" src="../public/img/projects/002_fend-p2/nd02-3.png"></div>
-                <ul class="project-fields">
+            <a href="/projects/002_fend-p2.html" >
+            <div><img class="project-item-thumb" src="../public/img/projects/002_fend-p2/nd02-3.png">
+   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
                     
-                    <li>
-                        Front-End
+                    <li class="pf-item">
+                        HTML5
                     </li>
                     
-                    <li>
-                        User-Experience
+                    <li class="pf-item">
+                        CSS3
+                    </li>
+                    
+                    <li class="pf-item">
+                        Javascript
+                    </li>
+                    
+                    <li class="pf-item">
+                        jQuery.js
+                    </li>
+                    
+                    <li class="pf-item">
+                        Google Maps
+                    </li>
+                    
+                    <li class="pf-item">
+                        Polymer
                     </li>
                     
                 </ul>
+            </span-->
+            </div>
+
+
             </a>
         </div>
     </div></li>
@@ -192,19 +208,23 @@ $('.menu-toggle').click(function(){
     <div class="project">
         <h2>HTML5 Arcade Game</h2>
         <div class="project-image">
-            <a href="/projects/003_fend-p3.html" onmouseover="overlayIt(this)">
-            <div><img class="project-item-thumb" src="../public/img/projects/003_fend-p3/nd03-03.png"></div>
-                <ul class="project-fields">
+            <a href="/projects/003_fend-p3.html" >
+            <div><img class="project-item-thumb" src="../public/img/projects/003_fend-p3/nd03-03.png">
+   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
                     
-                    <li>
-                        Front-End
+                    <li class="pf-item">
+                        HTML5
                     </li>
                     
-                    <li>
-                        Game-Dev
+                    <li class="pf-item">
+                        Javascript
                     </li>
                     
                 </ul>
+            </span-->
+            </div>
+
+
             </a>
         </div>
     </div></li>
@@ -216,32 +236,61 @@ $('.menu-toggle').click(function(){
     <div class="project">
         <h2>Mobile Website Performance Optimisation</h2>
         <div class="project-image">
-            <a href="/projects/004_fend-p4.html" onmouseover="overlayIt(this)">
-            <div><img class="project-item-thumb" src="../public/img/projects/004_fend-p4/nd04-2.png"></div>
-                <ul class="project-fields">
+            <a href="/projects/004_fend-p4.html" >
+            <div><img class="project-item-thumb" src="../public/img/projects/004_fend-p4/nd04-2.png">
+   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
                     
-                    <li>
-                        Front-End
+                    <li class="pf-item">
+                        Chrome Developer Tools
                     </li>
                     
-                    <li>
-                        Optimisation
+                    <li class="pf-item">
+                        Javascript
+                    </li>
+                    
+                    <li class="pf-item">
+                        Node.js
+                    </li>
+                    
+                    <li class="pf-item">
+                        Grunt.js
                     </li>
                     
                 </ul>
+            </span-->
+            </div>
+
+
             </a>
         </div>
     </div></li>
      
       </ul>
 </div>
-</div> <a class="more-projects" href="projects"> more projects </a>
-<hr>
+</div>
+
 <script>
-// TODO: use jquery to handle mouseout /over
-function overlayIt(that) {
-    that.childNodes[2].classList.toggle("show");
-}
+
+$(
+
+  $('.project-image').hover(function(){
+
+$(this).children().find('.overlay').css('box-shadow','inset 0 0 500px 500px #000')
+/**/
+$(this).children().find('.overlay').stop().animate({
+opacity: .7
+}, "slow");
+
+console.log('hovering',$(this).children())
+$(this).find('.project-fields').addClass('show');
+},function(){
+  $(this).find('.project-fields').removeClass('show');
+/**/$(this).children().find('.overlay').stop().animate({
+opacity: 0
+}, "slow");
+
+
+}));
 </script>
 
       </div>
@@ -250,44 +299,71 @@ function overlayIt(that) {
 
     </div>
 
-         <!-- footer -->
-     <script>$(function(){
+    <!-- footer -->
+<script>
+$(function() {
 
-$('.email-contact').click(function(){
-var ori = ($(this).html())
-var self= this;
-$(this).html($(this).attr('data-msg'));
-setTimeout(function(){$(self).html(ori);},5000);
-//setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
+    $('.email-contact').click(function() {
+        var ori = ($(this).html())
+        var self = this;
+        $(this).html($(this).attr('data-msg'));
+        setTimeout(function() {
+            $(self).html(ori);
+        }, 5000);
+        //setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
 
         //window.location.assign('mailto://' + $(this).attr('data-msg'));
 
 
-        });
+    });
 
 
 
-        }
-        );</script>
-      <footer class="row"><div class="col-xs-6 ">
-      <h3>Contact</h3>
-
-<ul id="contact" class="social-contacts flex-row flex-wrap flex-between">
-
-<li class="flex-item-1"><a  href="https://github.com/yohanneshl"> <i class="fa fa-github fa-2x"></i> </a></li>
-
-<li class="flex-item-1"><a  href="https://www.linkedin.com/in/yohanneslibanos"> <i class="fa fa-linkedin fa-2x"></i> </a></li>
-<li class="flex-item-1"><a  class="email-contact"
-data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x"title="click to show email"></i> </a></li>
-<li class="flex-item-1"><a href="/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a></li>
-
-
-</ul><br><br><br><br></div>
-<!--div class="col-xs-6">blffhgjhgh<br><br>fjgfjfj</div-->
-<div class="col-xs-12">
+});
+</script>
+<footer class="row">
+    <div class="col-xs-12 ">
+        <h3>Contact Me</h3>
+        <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
+            <li>
+                <a href="https://github.com/yohanneshl"> <i class="fa fa-github fa-2x"></i> </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/yohanneslibanos"> <i class="fa fa-linkedin fa-2x"></i> </a>
+            </li>
+            <li>
+                <a class="email-contact" data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x" title="click to show email"></i> </a>
+            </li>
+            <li>
+                <a href="/ atom.xml "> <i class="fa fa-rss fa-2x"></i> </a>
+            </li>
+        </ul>
+        <br><br>
+        <div class="about-me-banner">
+            <div class="about-me-img">
+                <img src="../public/img/aboutme2.0.png" alt="This is me"></div>
+            <hr class="about-me-hr">
+            <br>
+            <h3>
+            Yohannes Libanos
+            <small>&middot Full-Stack Engineer</small>
+            </h3>
+            <div class="col-xs-6 col-xs-push-3">
+                I love all things web and programming. This site contains my <a href="http://yohanneshl.github.io/projects/">projects</a>, experiences and musings. I'm always learning new things and you can find my write ups <a href="http://yohanneshl.github.io/blog/">here</a>.
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="col-xs-12">
+    <br><br>
         <p>
-        &copy; 2015. All rights reserved.
-      </p></div>
-      </footer>
+            &copy; 2015. All rights reserved.
+        </p>
+    </div>
+</footer>
+
   </body>
 </html>

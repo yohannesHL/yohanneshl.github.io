@@ -21,13 +21,9 @@ title: Home
 </ul>
 </div>
 <div class="featured-projects col-xs-12">
-<h1> Featured Work</h1>
-<script>//alert({{ site.projects.size}})
-<!-- Place somewhere in the <body> of your page -->
-
-
-
-</script><div class="flexslider">
+<h1> Featured Work</h1> <a class="more-projects" href="projects"> more projects <i class="fa fa-chevron-right"></i></a>
+<hr>
+<div class="flexslider">
   <ul class="slides">
     {% for project in site.projects limit:4 %} {% if project.thumbnail %}
 <li>
@@ -37,26 +33,47 @@ title: Home
     <div class="project">
         <h2>{{ project.title }}</h2>
         <div class="project-image">
-            <a href="{{ project.url}}" onmouseover="overlayIt(this)">
-            <div><img class="project-item-thumb" src="../public/img/projects/{{pro_name}}/{{project.thumbnail}}"></div>
-                <ul class="project-fields">
-                    {% for field in project.fields %}
-                    <li>
-                        {{ field }}
+            <a href="{{ project.url}}" >
+            <div><img class="project-item-thumb" src="../public/img/projects/{{pro_name}}/{{project.thumbnail}}">
+   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
+                    {% for skill in project.skills %}
+                    <li class="pf-item">
+                        {{ skill }}
                     </li>
                     {% endfor %}
                 </ul>
+            </span-->
+            </div>
+
+
             </a>
         </div>
     </div></li>
     {% endif %} {% endfor %}
       </ul>
 </div>
-</div> <a class="more-projects" href="projects"> more projects </a>
-<hr>
+</div>
+
 <script>
-// TODO: use jquery to handle mouseout /over
-function overlayIt(that) {
-    that.childNodes[2].classList.toggle("show");
-}
+
+$(
+
+  $('.project-image').hover(function(){
+
+$(this).children().find('.overlay').css('box-shadow','inset 0 0 500px 500px #000')
+/**/
+$(this).children().find('.overlay').stop().animate({
+opacity: .7
+}, "slow");
+
+console.log('hovering',$(this).children())
+$(this).find('.project-fields').addClass('show');
+},function(){
+  $(this).find('.project-fields').removeClass('show');
+/**/$(this).children().find('.overlay').stop().animate({
+opacity: 0
+}, "slow");
+
+
+}));
 </script>

@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Rental Map
-skills: [HTML5, Sass, Knockout, Karma, Jasmine, Gulp,Minify, Google Maps API, Google Places API]
+skills: [HTML5, Sass, Knockoutjs, Karma, Jasmine, Gulp,Minify, Google Maps API, Google Places API]
 fields: [Front-End, MV]
 date: 2013-01-11 00:00:00
 thumbnail: nd05-3.png
