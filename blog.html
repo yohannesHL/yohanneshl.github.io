@@ -11,9 +11,9 @@ permalink: blog/
 <a href="categories/">Categories    </a></li>
 </ul>
 
-<div class="posts" onclick="location.href='{{ post.url }}'">
+<div class="posts" >
   {% for post in site.posts %}
-  <section class="post">
+  <section class="post" onclick="location.href='{{ post.url }}'">
 
     <span class="post-date .Lato-80pc">{{ post.date | date_to_string }}</span>
         <h1 class="post-title">
@@ -26,7 +26,7 @@ permalink: blog/
   {% endfor %}
 </div>
 
-<div class="pagination">
+<div class="pagination col-xs-12">
   {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ site.url }}/page{{paginator.next_page}}">Older</a>
   {% else %}
