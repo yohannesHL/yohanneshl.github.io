@@ -3,7 +3,7 @@ layout: project
 title: Mockup to Website
 skills: [HTML5, CSS3, Bootstrap]
 fields: [Front-End]
-date: 2013-01-11 00:00:00
+date: 2014-12-23 00:00:00
 thumbnail:
 project_url: https://github.com/yohanneshl/mockup-to-website
 images: []

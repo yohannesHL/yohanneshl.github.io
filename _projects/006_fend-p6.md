@@ -1,9 +1,9 @@
 ---
 layout: project
 title: Feedreader Testing
-skills: [HTML5, jQquery, Javascript, Jasmine]
-fields: [Front-End, Optimisation]
-date: 2013-01-11 00:00:00
+skills: [HTML5, jQuery, Javascript, Node.js, Jasmine]
+fields: [Front-End, Testing, Test Driven Development]
+date: 2015-03-21 00:00:00
 thumbnail: nd06-2.png
 project_url: //github.com/yohanneshl/frontend-nanodegree-feedreader/
 images: [ nd06-2.png]

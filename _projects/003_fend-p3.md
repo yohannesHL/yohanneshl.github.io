@@ -1,9 +1,9 @@
 ---
 layout: project
 title: HTML5 Arcade Game
-skills: [HTML5, Javascript]
+skills: [HTML5, JavaScript]
 fields: [Front-End, Game-Dev]
-date: 2013-01-11 00:00:00
+date: 2015-02-21 00:00:00
 thumbnail: nd03-03.png
 project_url: https://yohanneshl.github.io/frontend-nanodegree-arcade-game
 images: [nd03-01.png, nd03-02.png, nd03-03.png]

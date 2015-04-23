@@ -1,9 +1,9 @@
 ---
 layout: project
 title: Mobile Website Performance Optimisation
-skills: [Chrome Developer Tools, Javascript, Node.js, Grunt.js]
-fields: [Front-End, Optimisation]
-date: 2013-01-11 00:00:00
+skills: [Chrome Developer Tools, JavaScript, Node.js, Grunt.js]
+fields: [Front-End, Performance, Optimisation]
+date: 2015-01-21 00:00:00
 thumbnail: nd04-2.png
 project_url: https://yohanneshl.github.io/frontend-nanodegree-mobile-portfolio/production/
 images: [ nd04-1.png, nd04-2.png, nd04-3.png]
