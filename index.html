@@ -9,9 +9,9 @@ title: Home
   });
 </script>
 
-<div class="hero col-xs-12">
+<div class="hero col-md-10 col-xs-12 col-md-push-1 ">
 
-<h3 class="hero__main_text">I Specialise in developing medium to enterprise scale software mainly for the WWW.</h3>
+<h3 class="hero__main_text_cont"><span class="hero__main_text_hello">Hello! I'm Yohannes,</span><span class="hero__main_text"> I Specialise in building software for the WWW.</span></h3>
 
 
 <ul>
@@ -23,9 +23,12 @@ title: Home
 <div class="featured-projects col-xs-12">
 <h1> Featured Work</h1>
 <hr>
+<br>
+<a class="btn skills-btn" href="/projects/skills">
+  <i class="fa fa-code"></i> Skills</a>
 <div class="flexslider">
   <ul class="slides">
-    {% for project in site.projects limit:4 %} {% if project.thumbnail %}
+    {% for project in site.projects limit:6 %} {% if project.thumbnail %}
 <li>
  {%assign pro_name=project.url | replace_first: site.url%}
   {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}

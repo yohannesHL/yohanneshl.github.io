@@ -5,7 +5,7 @@ highlighter:         pygments
 # Permalinks
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
-relative_permalinks: true
+# relative_permalinks: true
 #pretty
 permalink:           /blog/:year/:month/:day/:title/
 #categories:
@@ -34,3 +34,5 @@ author:
 github:              https://github.com/yohanneshl
 linkedin:            https://www.linkedin.com/in/yohanneslibanos
 # Custom vars
+
+plugins: [jekyll-paginate]

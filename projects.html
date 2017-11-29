@@ -13,7 +13,7 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
 <div class="projects-list flex-column flex-center">
 {% for project in site.projects %}
 <div class="project-item flex-item-1">
-  <a href="{{project.url}}" >{{ project.title}}</a><br>
+  <a href="{{project.url}}" class="project-item-link">{{ project.title}}</a><br>
 {{ project.excerpt}}
 </div>
 {% endfor %}

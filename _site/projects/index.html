@@ -108,7 +108,7 @@ $('.menu-toggle').click(function(){
 
 
                 </li>
-                <!-- -->      
+                <!-- -->         
                 <!---->
                 <li class="menu-item">
                     <a class="" href="/about/ ">About</a>
@@ -118,7 +118,7 @@ $('.menu-toggle').click(function(){
                 <li class="menu-item">
                     <a class="" href="/blog/ ">Blog</a>
                 </li>
-                            
+                         
                 <!---->
                 <li class="menu-item">
                     <a class=" active" href="/projects/ ">Projects</a>
@@ -132,7 +132,7 @@ $('.menu-toggle').click(function(){
 
 
     <div class="row">
-      <div class="col-xs-12 content">
+      <div class="content">
         <div class="page">
 <div style="text-align:center; height:50px; width:100%; margin:0 0 10px 0;">
   <h1 class="page-title" >Projects</h1>
@@ -145,42 +145,50 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
 <div class="projects-list flex-column flex-center">
 
 <div class="project-item flex-item-1">
-  <a href="/projects/001_fend-p1.html" >Mockup to Website</a><br>
+  <a href="/projects/001_fend-p1/" class="project-item-link">Mockup to Website</a><br>
+<p>Here I demonstrate usage of bootstrap framework to transform a mockup to an actual webpage.</p>
 
 </div>
 
 <div class="project-item flex-item-1">
-  <a href="/projects/002_fend-p2.html" >Interactive Resume</a><br>
+  <a href="/projects/002_fend-p2/" class="project-item-link">Interactive Resume</a><br>
+<p>In this is project i&#39;ve used Javascript, jQuery and templating techniques to create a dynamic resume page. Real and Fake data was used for the content. All essential code for displaying resume sections were incapsulated within namespaces and adhere to the udacity <a href="https://udacity.github.io/frontend-nanodegree-styleguide/">style guide</a>.</p>
 
 </div>
 
 <div class="project-item flex-item-1">
-  <a href="/projects/003_fend-p3.html" >HTML5 Arcade Game</a><br>
+  <a href="/projects/007_HDFServer/" class="project-item-link">HDF REST Server</a><br>
+<p>HDF REST server is a simple RESTful server for HDF5 data stores.</p>
 
 </div>
 
 <div class="project-item flex-item-1">
-  <a href="/projects/004_fend-p4.html" >Mobile Website Performance Optimisation</a><br>
+  <a href="/projects/004_fend-p4/" class="project-item-link">Mobile Website Performance Optimisation</a><br>
+<h2>Mobile and Desktop Website Performance Optimization - using chrome developer tools, ngrok, pagespeed index, node.js and grunt.js .</h2>
 
 </div>
 
 <div class="project-item flex-item-1">
-  <a href="/projects/005_fend-p5.html" >Rental Map</a><br>
+  <a href="/projects/003_fend-p3/" class="project-item-link">HTML5 Arcade Game</a><br>
+<p>Here I delved in to to the relm of game development and created a game inspired by the classic game: Frogger.</p>
 
 </div>
 
 <div class="project-item flex-item-1">
-  <a href="/projects/006_fend-p6.html" >Feedreader Testing</a><br>
+  <a href="/projects/006_fend-p6/" class="project-item-link">Feedreader Testing</a><br>
+<h2>Test Driven Development with Jasmine.js</h2>
 
 </div>
 
 <div class="project-item flex-item-1">
-  <a href="/projects/007_HDFServer.html" >HDF REST Server</a><br>
+  <a href="/projects/005_fend-p5/" class="project-item-link">Rental Map</a><br>
+<p>For this Project I developed a responsive Google map application using Knockout MVVM library. The App was made for people to search for properties in a location subject to localities they prefer to be close to. Eg Property near Park, Cafe,SuperMarket, etc.</p>
 
 </div>
 
 <div class="project-item flex-item-1">
-  <a href="/projects/008_apt.html" >Axs Trading Platform</a><br>
+  <a href="/projects/008_apt/" class="project-item-link">Axs Trading Platform</a><br>
+<p>Developing a responsive website and an algorithmic trading web application for my trading website. Developing modules for a news feed, portfolio manager/optimiser, strategy designer UI, price forecaster and signal generator, order management system, REST API integration with Oanda.</p>
 
 </div>
 
@@ -229,13 +237,13 @@ $(function() {
                 <a class="email-contact" data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x" title="click to show email"></i> </a>
             </li>
             <li>
-                <a href="http://yohanneshl.github.io/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a>
+                <a href="http://localhost:4000/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a>
             </li>
         </ul>
         <br><br>
         <div class="about-me-banner">
             <div class="about-me-img">
-                <img src="http://yohanneshl.github.io/public/img/aboutme2.0.png" alt="This is me"></div>
+                <img src="http://localhost:4000/public/img/aboutme2.0.png" alt="This is me"></div>
             <hr class="about-me-hr">
             <br>
             <h3>
@@ -243,7 +251,7 @@ $(function() {
             <small>&middot Full-Stack Engineer</small>
             </h3>
             <div class="col-xs-6 col-xs-push-3">
-                I love all things web and programming. This site contains my <a href="http://yohanneshl.github.io/projects/">projects</a>, experiences and musings. I'm always learning new things and you can find my write ups <a href="http://yohanneshl.github.io/blog/">here</a>.
+                I love all things web and programming. This site contains my <a href="http://localhost:4000/projects/">projects</a>, experiences and musings. I'm always learning new things and you can find my write ups <a href="http://localhost:4000/blog/">here</a>.
             </div>
         </div>
         <br>
@@ -254,7 +262,7 @@ $(function() {
     <div class="col-xs-12">
     <br><br>
         <p>
-            &copy; 2015. All rights reserved.
+            &copy; 2017. All rights reserved.
         </p>
     </div>
 </footer>
