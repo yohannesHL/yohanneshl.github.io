@@ -15,7 +15,6 @@ collections:
   projects:
     output: true
 
-
 # Setup
 title:               'The Blog of Yohannes'
 tagline:             'Full-Stack Engineer'
