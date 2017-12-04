@@ -230,10 +230,10 @@ featured-projects .project-item {
     height: 100%;
     width: 100%;
     position: absolute;
-    background-image: url(http://yohanneshl.github.io/public/img/projects/005_fend-p5//nd05-1.png);
-    background-clip: padding-box;
-    background-size: cover;
-    background-blend-mode: darken;
+/*     background-image: url(http://yohanneshl.github.io/public/img/projects/005_fend-p5//nd05-1.png); */
+/*     background-clip: padding-box; */
+/*     background-size: cover; */
+/*     background-blend-mode: darken; */
     background-color: rgba(0, 0, 0, 0.33);
 }
 .portfolio-item__pullover {
@@ -254,7 +254,7 @@ featured-projects .project-item {
     /* background-clip: padding-box; */
     /* transform: scale(1.1,1.1); */
     transition: all 0.4s, transform 0.4s;
-    background-color: rgba(0, 0, 0, 0.93) ;
+    background-color: rgba(0, 0, 0, 0.63) ;
 }
 .portfolio-item:hover .portfolio-item__pullover {
     bottom: 0;
