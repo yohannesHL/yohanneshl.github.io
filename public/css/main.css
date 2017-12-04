@@ -243,7 +243,7 @@ featured-projects .project-item {
     height: 100%;
     box-shadow: inset 6px -11px 20px 20px white;
     left: 0;
-    top: 0
+    top: 0;
 }
 .portfolio-item__inner__title h3{
     box-shadow: inset 1px 1px 20px 10px rgba(99, 84, 84, 0.78);
