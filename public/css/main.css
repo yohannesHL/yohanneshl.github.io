@@ -474,7 +474,7 @@ div {
 }
 
 .menu-item a.active {
-  padding: 0.2rem 1rem 0.5rem 1rem;
+  padding: 0.55rem 1rem 0.55rem 1rem;
   background: #232321;
   border-radius: 3px;
   border-bottom: 3px solid #fb0606;
