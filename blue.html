@@ -1,0 +1,33 @@
+---
+layout: page
+title: Projects
+index: true
+permalink: blue/
+---
+
+<!-- *** TODO :
+add skills view via ajax lookup <a href="skills/">Skills</a>
+<div class="skills-map"><ul></ul></div>
+*** -->
+<a class="btn skills-btn" href="skills"><i class="fa fa-code"></i> Skills</a>
+<div class="projects-list col-md-8 col-xs-12 col-md-push-2">
+
+{% for project in site.projects %}
+ {%assign pro_name=project.url | replace_first: site.url%}
+  {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
+   {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
+<div class="project-item portfolio-item">
+<div class="portfolio-item__inner">
+<h4>{{ project.title}}</h4>
+<img src="{{site.url}}/public/img/projects/{{pro_name}}/{{project.thumbnail}}">
+</div>
+  
+<div class="portfolio-item__pullover">
+<div class="project-excerpt">{{ project.excerpt}}</div>
+<a href="{{project.url}}" class="project-item-link">Info</a><br>
+  
+</div>
+
+</div>
+{% endfor %}
+</div>
