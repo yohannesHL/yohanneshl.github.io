@@ -235,6 +235,20 @@ featured-projects .project-item {
     box-shadow: -1px -1px 10px 0px rgba(1, 1, 1, 0.4);
     padding:5px;
 }
+.portfolio-item__inner__title
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 6px -11px 20px 20px white;
+    left: 0;
+    top: 0
+}
+.portfolio-item__inner__title h3{
+    box-shadow: inset 1px 1px 20px 10px rgba(99, 84, 84, 0.78);
+    text-shadow: 0px 1px 5px #fffbfb;
+}
 .portfolio-item__inner__thumbnail {
     width: 100%;
     height: 100%;
