@@ -267,7 +267,7 @@ featured-projects .project-item {
     height: 100%;
     width: 100%;
     padding: 20px 15px;
-    background: linear-gradient(rgba(40, 70, 40, 0.05) 10%,rgba(24, 43, 24, 0.4) 20%,rgba(40, 70, 40, 0.8) 60%,rgb(129, 199, 131) 100%);
+    background: linear-gradient(rgba(144, 144, 144, 0) 10%,rgba(0, 0, 0, 0.3) 20%,rgba(0, 0, 0, 0.7) 60%,rgb(51, 51, 51) 100%);
     opacity: 0;
     color: white;
 /*     font-size: 12px; */
