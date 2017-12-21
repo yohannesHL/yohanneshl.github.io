@@ -1,18 +1,19 @@
 ---
 layout: project
-title: FSB Enterprise SaaS
+title: FSBTech Enterprise SaaS
 skills: [HTML5, CSS3, Sass, JavaScript, ExtJS, FlexmonsterJS, Karma, Jasmine, Nightwatch, Gulp, Ant, Bash script]
 fields: [Front-End ]
 type: Commercial
 date: 2015-04-01 00:00:00
 thumbnail: 
-project_url: https://yohanneshl.github.io/rentalMap/dist
+project_url: https://fsbtech.com
 images: []
 ---
 
-Lead the development of a bespoke enterprise SaaS solution for the FSB a global leader in sports betting/casino products.
-
-Took ownership of entire SDLC to deliver a quality product that is being used by many large global organisations in the gaming/casino sector.
+Lead the development of a bespoke enterprise SaaS product for FSB Tech.
+Custodian Backoffice is being used by many large global organisations in the gaming/casino sector.
+Took ownership of entire SDLC and worked with cross functional teams to deliver a quality frontend solution.
+Utilised ExtJS and MVVM architecture to create application modules.
 
 Main Modules delivered were:
 
