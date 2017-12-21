@@ -290,6 +290,21 @@ featured-projects .project-item {
     height: 100%;
     opacity: 1;
 }
+.portfolio-item__link portfolio-item__linktext {
+    display: block;
+    width: 75px;
+    background: #fcedcf;
+    padding: 7px;
+    right: 25px;
+    position: absolute;
+    text-align: center;
+    border: 1px solid #9f9f9f;
+    border-radius: 2px;
+    transition: background 0.5s;
+}
+.portfolio-item__link:hover portfolio-item__linktext {
+   background: hsla(40, 90%, 70%, 1);
+}
 .project-title {
   text-align: center;
 }
