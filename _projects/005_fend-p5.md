@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Rental Map
-skills: [HTML5, CSS3, Sass, JavaScript Knockoutjs, Node.js, Karma, Jasmine, Gulp, Google Maps]
+skills: [HTML5, CSS3, Sass, JavaScript, Knockoutjs, Node.js, Karma, Jasmine, Gulp, Google Maps]
 fields: [Front-End, MVW]
 date: 2015-04-01 00:00:00
 thumbnail: nd05-3.png
