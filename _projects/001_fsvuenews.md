@@ -5,7 +5,7 @@ skills: [HTML5, CSS3, Loopback, MongoDB, Nuxt, VueJS, Vuex, Vuetify, Auth0, Hero
 fields: [Fullstack]
 date: 2017-12-20 00:00:00
 thumbnail: 001_fsvuenews_01.png
-project_url: https://github.com/yohanneshl/fullstack-vue-news
+project_url: https://github.com/yohanneshl/fullstack-nuxt-news
 images: [001_fsvuenews_01.png, 001_fsvuenews_02.png, 001_fsvuenews_03.png]
 ---
 
