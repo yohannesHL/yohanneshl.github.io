@@ -807,10 +807,17 @@ footer {
   text-align: center;
   z-index: 1010;
 }
-
-.work-logos li img {
-  max-height: 2.5rem;
+.work-logos  {
+  display: inline-block;
 }
+.work-logos li img {
+  min-height: 1.3rem;
+  max-height: 2.2rem;
+  width: 5.2rem;
+
+}
+
+
 
 @media only screen and (max-width: 48em) {
   .hero__item {
