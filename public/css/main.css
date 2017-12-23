@@ -807,7 +807,7 @@ footer {
   text-align: center;
   z-index: 1010;
 }
-.work-logos  {
+.work-logos  li{
   display: inline-block;
 }
 .work-logos li img {
