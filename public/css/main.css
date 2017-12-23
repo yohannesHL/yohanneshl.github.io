@@ -783,9 +783,7 @@ footer {
   color: #fff;
 }
 
-.hero__item:hover li {
-  /* transform: scale(1.05, 1.01); */
-}
+
 
 .hero__item_red,
 .hero__item_red li {
