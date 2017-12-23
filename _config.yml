@@ -16,7 +16,7 @@ collections:
     output: true
 
 # Setup
-title:               'The Blog of Yohannes'
+title:               'Yohannes Libanos'
 tagline:             'Full-Stack Engineer'
 description:         'A Technical blog about web development and few other things.'
 url: 'http://yohanneshl.github.io'
@@ -27,7 +27,7 @@ paginate_path: "blog/page:num/"
 author:
   name:              Yohannes Libanos
   role:              '&middot Full-Stack Engineer'
-  url:               https://twitter.com/mdo
+  url:               https://github.com/yohanneshl
   email:             4yohannes@gmail.com
 
 github:              https://github.com/yohanneshl
