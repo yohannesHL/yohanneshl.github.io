@@ -227,7 +227,7 @@ featured-projects .project-item {
     transition: all 0.4s, transform 0.4s;
     cursor: pointer;
     border-radius:5px;
-  
+
 }
 .portfolio-item__inner {
     height: 100%;
@@ -272,9 +272,9 @@ featured-projects .project-item {
     color: white;
 /*     font-size: 12px; */
     line-height: 1.2;
-    
+
 }
-    
+
 .portfolio-item:hover .portfolio-item__inner {
 /*     background-blend-mode: hard-light !important; */
     /* background-clip: padding-box; */
@@ -825,6 +825,7 @@ footer {
 
 .work-logos li {
   flex-bases: 1;
+  width: 10rem;
 }
 
 .work-logos li img {
