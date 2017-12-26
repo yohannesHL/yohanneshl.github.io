@@ -9,8 +9,6 @@ project_url: https://yohanneshl.github.io/rentalMap/dist
 images: [nd05-1.png, nd05-2.png, nd05-3.png]
 excerpt_separator: <!--more-->
 ---
-# Property Rental map
-
 A single-page web application, built using the Knockout framework, that displays a Google Map of an area and various points of interest. Users can search all included landmarks and, when selected, additional information about a landmark is presented from the Google Places API.  Available properties near the search location, retrieved from Zoopla API, are listed on a side panel.
 
 <!--more-->
