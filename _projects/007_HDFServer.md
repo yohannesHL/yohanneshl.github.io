@@ -4,9 +4,9 @@ title: HDF REST Server
 skills: [Python, Flask, Pandas]
 fields: [Back-End]
 date: 2015-01-20 00:00:00
-thumbnail: default_project.png
+thumbnail: 
 project_url: https://github.com/yohannesHL/HDFserver
-images: [default_project.png]
+images: []
 excerpt_separator: <!--more-->
 ---
 
