@@ -9,9 +9,6 @@ project_url: https://yohanneshl.github.io/frontend-nanodegree-mobile-portfolio/p
 images: [ nd04-1.png, nd04-2.png, nd04-3.png]
 excerpt_separator: <!--more-->
 ---
-## 
-
-
 Optimized an inefficient web application's JavaScript, CSS and assets delivery, ensuring it runs at 60fps and achieves a PageSpeed score of at least 90.
 
 Analysed critical rendering path and frame rate to minimize page loading time and maek the page jank free. 
