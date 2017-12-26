@@ -18,8 +18,12 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
    {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
 <div class="col-md-4 col-xs-6 portfolio-item">
 <div class="portfolio-item__inner">
-
-<img src="{{site.url}}/public/img/projects/{{pro_name}}/{{project.thumbnail}}" class="portfolio-item__inner__thumbnail">
+  {% if project.thumbnail %}
+  <img src="{{site.url}}/public/img/projects/{{pro_name}}{{project.thumbnail}}" class="portfolio-item__inner__thumbnail">
+  {% else %}
+  <img src="{{site.url}}/public/img/projects/default_thumbnail.svg" class="portfolio-item__inner__thumbnail">
+  {% endif %} 
+  
   <div class="portfolio-item__inner__title"><h3>{{ project.title}}</h3></div>
 </div>
   
