@@ -10,8 +10,12 @@ images: [001_fsvuenews_01.png, 001_fsvuenews_02.png, 001_fsvuenews_03.png]
 excerpt_separator: <!--more-->
 ---
 
-A Node.js/vue Fullstack application which retrieves and displays news feeds from various sources.
-> Using Nuxt framework to server render vue pages.
+A Node.js/Vue.js Full Stack application which retrieves and displays news feeds from various sources.
+Used MongoDB and loopback to store feed sources and scraped news. 
+Vue with Vuetify material components for the UI.
+Vuex for client side application state management.
+
+
 
 <!--more-->
 Components:
@@ -27,6 +31,9 @@ Features:
 * Configure/Add News sources
 * List latest headlines
 * Article opens on new tab
+
+> Using Nuxt framework to server render vue pages.
+
 
 
 
