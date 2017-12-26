@@ -218,16 +218,15 @@ featured-projects .project-item {
 }
 
 .portfolio-item {
-    width: 400px;
-    height: 300px;
-    margin: 15px 0;
-    float: left;
+    width: 25rem;
+    height: 20rem;
+    margin: 1rem;
     position: relative;
     overflow: hidden;
     transition: all 0.4s, transform 0.4s;
     cursor: pointer;
-    border-radius:5px;
-
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px 0px #757575;
 }
 .portfolio-item__inner {
     height: 100%;
@@ -236,6 +235,8 @@ featured-projects .project-item {
     background-color: rgba(255, 223, 223, 0.33);
     box-shadow: -1px -1px 10px 0px rgba(1, 1, 1, 0.4);
     padding:5px;
+    top: 0;
+    left: 0;
 }
 
 .portfolio-item__inner__title {
@@ -247,10 +248,11 @@ featured-projects .project-item {
     left: 0;
     top: 0;
 }
+
 .portfolio-item__inner__title h3{
-    box-shadow: inset 1px 1px 20px 10px rgb(35, 35, 33);
+
     color: white;
-    padding: 20px 0;
+    padding: 1.2rem 0;
     background: #252f2b;
     margin-top:0;
 }
@@ -274,7 +276,16 @@ featured-projects .project-item {
     line-height: 1.2;
 
 }
-
+.portfolio-item:hover .portfolio-item__inner__thumbnail{ 
+    transform: scale(1.05,1.02);
+    transition: all 0.4s ease-in-out;
+}
+.portfolio-item:hover .portfolio-item__inner__title {
+    background: rgba(0, 255, 255, 0.15);
+}
+.portfolio-item:hover .portfolio-item__inner__title h3 {
+    background: rgba(53, 53, 51, 0.78);
+}
 .portfolio-item:hover .portfolio-item__inner {
 /*     background-blend-mode: hard-light !important; */
     /* background-clip: padding-box; */
