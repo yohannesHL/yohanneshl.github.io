@@ -10,12 +10,13 @@ images: [default_project.png]
 excerpt_separator: <!--more-->
 ---
 
-
-
-A RESTful interface to view contents of HDF5 data stores. Providing you the ability to query your data store in a similar way you would in MySQL. Like so: `http://localhost/q/HDFfile/table/LIMIT/chunkNum`.
-This is specially useful if you want to setup a distributed system where by the HDF Server can act as the data provider and connected applications can query or update the data.
+A RESTful interface to view/traverse contents of HDF5 data stores. Providing you the ability to query your data store using a REST API. 
 
 <!--more-->
+> Example: `GET http://localhost/q/HDFfile/table/LIMIT/chunkNum`.
+> returns json data with results of the query lookup
+
+This was intended to be used as part of a distributed system where by the HDF Server can act as the data provider and connected applications can query or update the data remotely.
 
 ## What is a HDF5 data store?
 
