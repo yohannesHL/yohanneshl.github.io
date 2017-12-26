@@ -11,8 +11,8 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
 *** -->
 <a class="btn skills-btn" href="skills"><i class="fa fa-code"></i> Skills</a>
 <div class="projects-list col-md-8 col-xs-12 col-md-push-2">
-
-{% for project in site.projects %}
+{% assign sorted = (site.projects | sort: 'date') | reverse %}
+{% for project in sorted %}
  {%assign pro_name=project.url | replace_first: site.url%}
   {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
    {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
