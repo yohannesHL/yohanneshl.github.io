@@ -10,8 +10,7 @@ images: [nd03-01.png, nd03-02.png, nd03-03.png]
 ---
 
 
+An HTML5 Canvas powered video game, developed using the best practices in Object Oriented JavaScript.
 
-Here I delved in to to the relm of game development and created a game inspired by the classic game: Frogger.
-
-I Applied DRY & SRP principles to design and implement classes and methods for handling game states,controller input and collisions. Delivered clearly formatted Object Orientated JavaScript code without external library dependencies.
+Designed and implemented classes and methods for handling game states,controller input and collisions. Delivered clean and clear JavaScript code without using external library dependencies.
 
