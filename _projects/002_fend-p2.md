@@ -8,6 +8,9 @@ thumbnail: nd02-3.png
 project_url: https://yohanneshl.github.io/frontend-nanodegree-resume
 images: [nd02-1.png, nd02-2.png, nd02-3.png]
 ---
+# Interactive resume
 
-In this is project i've used Javascript, jQuery and templating techniques to create a dynamic resume page using Mock data for the content. All essential code for displaying resume sections were incapsulated within namespaces and adhere to the udacity [style guide](https://udacity.github.io/frontend-nanodegree-styleguide/).
+Using jQuery, developed an interactive resume application that reads all data from a JSON file and then dynamically modifies the DOM to display the information. Further customized the project by personalizing the design using CSS.
+
+> Note: Check here for my actual [Online CV ](/resume).
 
