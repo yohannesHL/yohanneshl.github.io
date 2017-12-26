@@ -220,7 +220,7 @@ featured-projects .project-item {
 .portfolio-item {
     width: 23rem;
     height: 21rem;
-    margin: 1rem;
+    margin: 1rem 0.5rem;
     position: relative;
     overflow: hidden;
     transition: all 0.4s, transform 0.4s;
