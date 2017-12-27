@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Mobile and Desktop Website Performance Optimization 
+title: Web Application Performance Optimization 
 skills: [Chrome Developer Tools, JavaScript, Node.js, Grunt.js]
 fields: [Front-End, Performance, Optimisation]
 date: 2015-01-21 00:00:00
