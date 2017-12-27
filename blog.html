@@ -4,12 +4,15 @@ title: Blog
 permalink: blog/
 ---
 
-<ul class="blog-nav ">
-<li class="blog-nav-tag" >
-<a href="tags/">Tags </a></li>
-<li class="blog-nav-cat" >
-<a href="categories/">Categories    </a></li>
-</ul>
+<div class="posts col-md-8 col-xs-12 col-md-push-2">
+    
+    <ul class="blog-nav ">
+      <li class="blog-nav-tag">
+      <a href="tags/">Tags </a></li>
+      <li class="blog-nav-cat">
+      <a href="categories/">Categories</a></li>
+    </ul>
+</div>
 
 <div class="posts col-md-8 col-xs-12 col-md-push-2" >
   {% for post in site.posts %}
