@@ -7,12 +7,9 @@ $(function() {
         var self = this;
         $(this).html($(this).attr('data-msg'));
         setTimeout(function() {
+            $(self).attr('href', 'mailto:' + ori);
             $(self).html(ori);
         }, 5000);
-        //setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
-
-        //window.location.assign('mailto://' + $(this).attr('data-msg'));
-
 
     });
 
@@ -22,7 +19,7 @@ $(function() {
 </script>
 <footer class="row">
     <div class="col-xs-12 ">
-        <h3>Contact Me</h3>
+        <hr>
         <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
             <li>
                 <a href="{{ site.github }}"> <i class="fa fa-github fa-2x"></i> </a>
@@ -37,29 +34,12 @@ $(function() {
                 <a href="{{ "/atom.xml" | prepend: site.url }}"> <i class="fa fa-rss fa-2x"></i> </a>
             </li>
         </ul>
+        <hr>
         <br><br>
-        <div class="about-me-banner">
-            <div class="about-me-img">
-                <img src="{{site.url}}/public/img/aboutme2.0.png" alt="This is me"></div>
-            <hr class="about-me-hr">
-            <br>
-            <h3>
-            {{ site.author.name }}
-            <small>{{ site.author.role }}</small>
-            </h3>
-            <div class="col-xs-6 col-xs-push-3">
-                I love all things web and programming. This site contains my <a href="{{site.url}}/projects/">projects</a>, experiences and musings. I'm always learning new things and you can find my write ups <a href="{{site.url}}/blog/">here</a>.
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
     </div>
     <div class="col-xs-12">
-    <br><br>
         <p>
-            &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+            &copy; Copyright {{ site.time | date: '%Y' }}. Yohannes Libanos.
         </p>
     </div>
 </footer>

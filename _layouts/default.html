@@ -11,27 +11,27 @@ function _onHashChange(tagOrCat) {
   var tag, activeFlag="active-" + tagOrCat;
 
   if (location.hash){
-        tag = document.querySelector(location.hash);
-try{
-       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
-}catch(excep){
-  console.log('Error:',excep);
-  return
-}
-          for(i=0; i<posts.length; i++){
-            posts[i].classList.remove(activeFlag);
-          }
-
-        tag.classList.add(activeFlag);
-
-      } else{
-        tag = document.querySelectorAll('.section-' + tagOrCat);
-for(var i=0; i<tag.length; i++){
-           tag.item(i).classList.add(activeFlag);
-
-}
-
+      tag = document.querySelector(location.hash);
+      try {
+        var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+      } catch (e){
+        console.log('Error:', e);
+        return
       }
+      for(i=0; i<posts.length; i++){
+        posts[i].classList.remove(activeFlag);
+      }
+
+      tag.classList.add(activeFlag);
+
+  } else{
+    tag = document.querySelectorAll('.section-' + tagOrCat);
+    for(var i=0; i<tag.length; i++){
+        tag.item(i).classList.add(activeFlag);
+
+    }
+
+  }
 
  }
 
