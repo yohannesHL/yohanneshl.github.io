@@ -27,7 +27,7 @@ So what are your options?
 The red circle is centered relative to flexbox-center(blue). The 3 red squares are centered relative to body. Note that the square in the center (center-center) may look purple because its covered by the flexbox
 
 # Using Margin auto
-###Center horizontally:
+### Center horizontally:
 
 First off  centring horizontally is pretty straight forward  we set
 ```css
@@ -43,17 +43,17 @@ margin: 0 auto;
 }
 ```
 
-##Center vertically
+## Center vertically
 Unfortunatly you can't set **margin-top = margin-bottom = auto** to center vertically. This doesnt work.
 
 It turns out that this is imposible due to the fact that the auto property will always use the width not the height of the element.
 
-#Using Margin Offsets and absolute positioning
+# Using Margin Offsets and absolute positioning
 
 Using margin offsets is tried and tested technique and it works well.
 You set positioning to absolute and set left/top to 50%. The trick is to offset the margin by half of the boxes dimensions. eg. you wanted to center the box vertically you would set *margin-top: -50px*.
 
-###Center horizontally:
+### Center horizontally:
 
 ```css
 .center-h {
@@ -64,7 +64,7 @@ You set positioning to absolute and set left/top to 50%. The trick is to offset 
 }
 ```
 
-###Center vertically:
+### Center vertically:
 
 ```css
 .center-v {
@@ -74,7 +74,7 @@ You set positioning to absolute and set left/top to 50%. The trick is to offset 
 }
 ```
 
-###Center both axis:
+### Center both axis:
 
 ```css
 .center-center {
@@ -89,7 +89,7 @@ top: 50%;
 
 Flexible boxes are a more recent addition to CSS3. It is intended for creating responsive layouts that behave in a predictable way across varying screen sizes. Flexible box is a layout mode, to use it on any element you just set *display: flex;*
 
-###Horizontal center using flexbox
+### Horizontal center using flexbox
 
 To center horizontally only  Any child of this flex container will be horizontally centered
 
@@ -101,7 +101,7 @@ To center horizontally only  Any child of this flex container will be horizontal
 }
 ```
 
-###Vertical center using flexbox
+### Vertical center using flexbox
 
 For vertical centering  Similarly any child of this flex container will be vertically centered
 
@@ -114,7 +114,7 @@ For vertical centering  Similarly any child of this flex container will be verti
 }
 ```
 
-###Center both axis using flexbox:
+### Center both axis using flexbox:
 
 ```css
 /*
