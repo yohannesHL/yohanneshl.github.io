@@ -9,7 +9,7 @@ title: Home
   });
 </script>
 
-<div class="hero col-md-10 col-xs-12 col-md-push-1 ">
+<div class="hero col-md-8 col-xs-12 col-md-push-2 ">
 
 <h3 class="hero__main_text_cont"><span class="hero__main_text_hello">Hello! I'm Yohannes,</span><span class="hero__main_text"> I Specialise in building software for the WWW.</span></h3>
 
@@ -20,12 +20,13 @@ title: Home
   <a class="hero__item hero__item_red" ><li> <i class="fa fa-code fa-4x"></i>Systems Development</li></a>
 </ul>
 </div>
-<div class="featured-projects col-xs-12">
+<div class="featured-projects col-md-8 col-xs-12 col-md-push-2">
 <h1> Featured Work</h1>
+  <a class="more-projects" title="View projects grouped by skill" style="padding: 5px 20px 5px 10px;" href="/projects/skills">
+  <i class="fa fa-code"></i> Skills</a>
 <hr>
 <br>
-<a class="btn skills-btn" href="/projects/skills">
-  <i class="fa fa-code"></i> Skills</a>
+ 
 <div class="flexslider">
   <ul class="slides">
     {% assign sorted = (site.projects | sort: 'date') | reverse %}
