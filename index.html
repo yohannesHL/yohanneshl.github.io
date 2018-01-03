@@ -20,7 +20,12 @@ title: Home
   <a class="hero__item hero__item_red" ><li> <i class="fa fa-code fa-4x"></i>Systems Development</li></a>
 </ul>
 </div>
+<<<<<<< HEAD
 <div class="featured-projects col-md-8 col-xs-12 col-md-push-2">
+=======
+<div id="app"></div>
+<div class="featured-projects col-xs-12">
+>>>>>>> move contacts links
 <h1> Featured Work</h1>
   <a class="more-projects" title="View projects grouped by skill" style="margin-top:0;" href="/projects/skills">
   <i class="fa fa-code"></i> Skills</a>
@@ -29,7 +34,7 @@ title: Home
  
 <div class="flexslider">
   <ul class="slides">
-    {% assign sorted = (site.projects | sort: 'date') | reverse %}
+    {% assign sorted = site.projects | sort: 'date' | reverse %}
     {% for project in sorted limit:6 %} {% if project.thumbnail %}
 <li>
  {%assign pro_name=project.url | replace_first: site.url%}

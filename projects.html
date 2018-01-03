@@ -20,7 +20,7 @@ add skills view via search lookup <a href="skills/">Skills</a>
 </div>
 
 <div class="projects-list col-md-8 col-xs-12 col-md-push-2">
-{% assign sorted = (site.projects | sort: 'date') | reverse %}
+{% assign sorted = site.projects | sort: 'date' | reverse %}
 {% for project in sorted %}
  {%assign pro_name=project.url | replace_first: site.url%}
   {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
@@ -31,11 +31,11 @@ add skills view via search lookup <a href="skills/">Skills</a>
   <img src="{{site.url}}/public/img/projects/{{pro_name}}{{project.thumbnail}}" class="portfolio-item__inner__thumbnail">
   {% else %}
   <img src="{{site.url}}/public/img/projects/default_thumbnail.svg" class="portfolio-item__inner__thumbnail">
-  {% endif %} 
-  
+  {% endif %}
+
   <div class="portfolio-item__inner__title"><h3>{{ project.title}}</h3></div>
 </div>
-  
+
 <div class="portfolio-item__pullover">
 <br><br><br>
 <div class="project-excerpt">{{ project.excerpt}}</div>
@@ -45,4 +45,4 @@ add skills view via search lookup <a href="skills/">Skills</a>
 </div>
 {% endfor %}
 </div>
- 
+

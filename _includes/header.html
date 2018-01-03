@@ -29,6 +29,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </li>
                 {% endif %} {% endif %}{% endfor %}
             </ul>
+            <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
+                <li>
+                    <a href="{{ site.github }}">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ site.linkedin }}">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="email-contact" href="mailto:{{ site.author.email }}">
+                        <i class="fa fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ " /atom.xml " | prepend: site.url }}">
+                        <i class="fa fa-rss fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
         </nav>
 
     </div>

@@ -1,43 +1,8 @@
 <!-- footer -->
-<script>
-$(function() {
 
-    $('.email-contact').click(function() {
-        var ori = ($(this).html())
-        var self = this;
-        $(this).html($(this).attr('data-msg'));
-        setTimeout(function() {
-            $(self).attr('href', 'mailto:' + ori);
-            $(self).html(ori);
-        }, 5000);
-
-    });
-
-
-
-});
-</script>
 <footer class="row">
-    <div class="col-xs-12 col-md-8 col-md-push-2">
-        <hr>
-        <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
-            <li>
-                <a href="{{ site.github }}"> <i class="fa fa-github fa-2x"></i> </a>
-            </li>
-            <li>
-                <a href="{{ site.linkedin }}"> <i class="fa fa-linkedin fa-2x"></i> </a>
-            </li>
-            <li>
-                <a class="email-contact" data-msg="{{ site.author.email }}"> <i class="fa fa-envelope fa-2x" title="click to show email"></i> </a>
-            </li>
-            <li>
-                <a href="{{ "/atom.xml" | prepend: site.url }}"> <i class="fa fa-rss fa-2x"></i> </a>
-            </li>
-        </ul>
-        <hr>
-        <br><br>
-    </div>
-    <div class="col-xs-12 col-md-8 col-md-push-2">
+    <br><br><br><br>
+    <div class="col-xs-12">
         <p>
           &copy; Copyright {{ site.time | date: '%Y' }}. <a href="{{site.url}}">Yohannes Libanos</a>.
         </p>

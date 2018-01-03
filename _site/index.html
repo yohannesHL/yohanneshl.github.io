@@ -8,7 +8,7 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>
-         The Blog of Yohannes &middot; Full-Stack Engineer 
+         Yohannes Libanos &middot; Full-Stack Engineer 
     </title>
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
@@ -20,15 +20,23 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
     <link rel="stylesheet" href="/public/css/syntax.css">
-    <link rel="stylesheet" href="/public/css/lanyon.css">
+
     <link rel="stylesheet" href="/public/css/main.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/static/js/vue2.5.13.js"></script>
+    <script src="/static/main.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
-
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PV7KSX7');</script>
+    <!-- End Google Tag Manager -->
     <style>
 
     </style>
@@ -43,27 +51,27 @@ function _onHashChange(tagOrCat) {
   var tag, activeFlag="active-" + tagOrCat;
 
   if (location.hash){
-        tag = document.querySelector(location.hash);
-try{
-       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
-}catch(excep){
-  console.log('Error:',excep);
-  return
-}
-          for(i=0; i<posts.length; i++){
-            posts[i].classList.remove(activeFlag);
-          }
-
-        tag.classList.add(activeFlag);
-
-      } else{
-        tag = document.querySelectorAll('.section-' + tagOrCat);
-for(var i=0; i<tag.length; i++){
-           tag.item(i).classList.add(activeFlag);
-
-}
-
+      tag = document.querySelector(location.hash);
+      try {
+        var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+      } catch (e){
+        console.log('Error:', e);
+        return
       }
+      for(i=0; i<posts.length; i++){
+        posts[i].classList.remove(activeFlag);
+      }
+
+      tag.classList.add(activeFlag);
+
+  } else{
+    tag = document.querySelectorAll('.section-' + tagOrCat);
+    for(var i=0; i<tag.length; i++){
+        tag.item(i).classList.add(activeFlag);
+
+    }
+
+  }
 
  }
 
@@ -89,10 +97,15 @@ $('.menu-toggle').click(function(){
     </script>
 
     <div class="container-fluid">
-    <header class="row masthead">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="row masthead">
     <div class="col-xs-12">
         <!--h3 class="masthead-title">
-            <a href="/" title="Home">The Blog of Yohannes</a>
+            <a href="/" title="Home">Yohannes Libanos</a>
             <small>Full-Stack Engineer</small>
           </h3-->
         <nav >
@@ -125,6 +138,28 @@ $('.menu-toggle').click(function(){
                 </li>
                     
             </ul>
+            <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
+                <li>
+                    <a href="https://github.com/yohanneshl">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/yohanneslibanos">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="email-contact" href="mailto:4yohannes@gmail.com">
+                        <i class="fa fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:4000 /atom.xml ">
+                        <i class="fa fa-rss fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
         </nav>
 
     </div>
@@ -151,6 +186,7 @@ $('.menu-toggle').click(function(){
   <a class="hero__item hero__item_red" ><li> <i class="fa fa-code fa-4x"></i>Systems Development</li></a>
 </ul>
 </div>
+<div id="app"></div>
 <div class="featured-projects col-xs-12">
 <h1> Featured Work</h1>
 <hr>
@@ -159,16 +195,17 @@ $('.menu-toggle').click(function(){
   <i class="fa fa-code"></i> Skills</a>
 <div class="flexslider">
   <ul class="slides">
-       
+    
+     
 <li>
  
   
    
     <div class="project">
-        <h2>Interactive Resume</h2>
+        <h2>Fullstack vue news</h2>
         <div class="project-image">
-            <a href="/projects/002_fend-p2/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/002_fend-p2//nd02-3.png">
+            <a href="/projects/001_fsvuenews/" >
+            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/001_fsvuenews//001_fsvuenews_01.png">
    <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
                     
                     <li class="pf-item">
@@ -180,55 +217,39 @@ $('.menu-toggle').click(function(){
                     </li>
                     
                     <li class="pf-item">
-                        JavaScript
+                        Loopback
                     </li>
                     
                     <li class="pf-item">
-                        jQuery
+                        MongoDB
                     </li>
                     
                     <li class="pf-item">
-                        Google Maps
+                        Nuxt
                     </li>
                     
                     <li class="pf-item">
-                        Polymer
-                    </li>
-                    
-                </ul>
-            </span-->
-            </div>
-
-
-            </a>
-        </div>
-    </div></li>
-        
-<li>
- 
-  
-   
-    <div class="project">
-        <h2>Mobile Website Performance Optimisation</h2>
-        <div class="project-image">
-            <a href="/projects/004_fend-p4/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/004_fend-p4//nd04-2.png">
-   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
-                    
-                    <li class="pf-item">
-                        Chrome Developer Tools
+                        VueJS
                     </li>
                     
                     <li class="pf-item">
-                        JavaScript
+                        Vuex
                     </li>
                     
                     <li class="pf-item">
-                        Node.js
+                        Vuetify
                     </li>
                     
                     <li class="pf-item">
-                        Grunt.js
+                        Auth0
+                    </li>
+                    
+                    <li class="pf-item">
+                        Heroku
+                    </li>
+                    
+                    <li class="pf-item">
+                        Docker
                     </li>
                     
                 </ul>
@@ -245,10 +266,10 @@ $('.menu-toggle').click(function(){
   
    
     <div class="project">
-        <h2>HTML5 Arcade Game</h2>
+        <h2>Fullstack react games</h2>
         <div class="project-image">
-            <a href="/projects/003_fend-p3/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/003_fend-p3//nd03-03.png">
+            <a href="/projects/001_fsrg1/" >
+            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/001_fsrg1//fsrg1_01.png">
    <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
                     
                     <li class="pf-item">
@@ -256,7 +277,95 @@ $('.menu-toggle').click(function(){
                     </li>
                     
                     <li class="pf-item">
+                        CSS3
+                    </li>
+                    
+                    <li class="pf-item">
+                        ReactJS
+                    </li>
+                    
+                    <li class="pf-item">
+                        Canvas
+                    </li>
+                    
+                    <li class="pf-item">
+                        GraphQL
+                    </li>
+                    
+                    <li class="pf-item">
+                        Auth0
+                    </li>
+                    
+                    <li class="pf-item">
+                        Heroku
+                    </li>
+                    
+                    <li class="pf-item">
+                        Serverless
+                    </li>
+                    
+                </ul>
+            </span-->
+            </div>
+
+
+            </a>
+        </div>
+    </div></li>
+          
+<li>
+ 
+  
+   
+    <div class="project">
+        <h2>Rental Map</h2>
+        <div class="project-image">
+            <a href="/projects/005_fend-p5/" >
+            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/005_fend-p5//nd05-3.png">
+   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
+                    
+                    <li class="pf-item">
+                        HTML5
+                    </li>
+                    
+                    <li class="pf-item">
+                        CSS3
+                    </li>
+                    
+                    <li class="pf-item">
+                        Sass
+                    </li>
+                    
+                    <li class="pf-item">
                         JavaScript
+                    </li>
+                    
+                    <li class="pf-item">
+                        Knockoutjs
+                    </li>
+                    
+                    <li class="pf-item">
+                        MVVM
+                    </li>
+                    
+                    <li class="pf-item">
+                        Node.js
+                    </li>
+                    
+                    <li class="pf-item">
+                        Karma
+                    </li>
+                    
+                    <li class="pf-item">
+                        Jasmine
+                    </li>
+                    
+                    <li class="pf-item">
+                        Gulp
+                    </li>
+                    
+                    <li class="pf-item">
+                        Google Maps
                     </li>
                     
                 </ul>
@@ -273,7 +382,7 @@ $('.menu-toggle').click(function(){
   
    
     <div class="project">
-        <h2>Feedreader Testing</h2>
+        <h2>Feed Reader Testing</h2>
         <div class="project-image">
             <a href="/projects/006_fend-p6/" >
             <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/006_fend-p6//nd06-2.png">
@@ -345,67 +454,12 @@ opacity: 0
     </div>
 
     <!-- footer -->
-<script>
-$(function() {
 
-    $('.email-contact').click(function() {
-        var ori = ($(this).html())
-        var self = this;
-        $(this).html($(this).attr('data-msg'));
-        setTimeout(function() {
-            $(self).html(ori);
-        }, 5000);
-        //setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
-
-        //window.location.assign('mailto://' + $(this).attr('data-msg'));
-
-
-    });
-
-
-
-});
-</script>
 <footer class="row">
-    <div class="col-xs-12 ">
-        <h3>Contact Me</h3>
-        <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
-            <li>
-                <a href="https://github.com/yohanneshl"> <i class="fa fa-github fa-2x"></i> </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/yohanneslibanos"> <i class="fa fa-linkedin fa-2x"></i> </a>
-            </li>
-            <li>
-                <a class="email-contact" data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x" title="click to show email"></i> </a>
-            </li>
-            <li>
-                <a href="http://localhost:4000/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a>
-            </li>
-        </ul>
-        <br><br>
-        <div class="about-me-banner">
-            <div class="about-me-img">
-                <img src="http://localhost:4000/public/img/aboutme2.0.png" alt="This is me"></div>
-            <hr class="about-me-hr">
-            <br>
-            <h3>
-            Yohannes Libanos
-            <small>&middot Full-Stack Engineer</small>
-            </h3>
-            <div class="col-xs-6 col-xs-push-3">
-                I love all things web and programming. This site contains my <a href="http://localhost:4000/projects/">projects</a>, experiences and musings. I'm always learning new things and you can find my write ups <a href="http://localhost:4000/blog/">here</a>.
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
+    <br><br><br><br>
     <div class="col-xs-12">
-    <br><br>
         <p>
-            &copy; 2017. All rights reserved.
+            &copy; Copyright 2018. Yohannes Libanos.
         </p>
     </div>
 </footer>

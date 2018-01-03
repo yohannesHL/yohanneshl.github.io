@@ -8,7 +8,7 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>
-         Projects &middot; The Blog of Yohannes 
+         Projects &middot; Yohannes Libanos 
     </title>
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
@@ -20,15 +20,23 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
     <link rel="stylesheet" href="/public/css/syntax.css">
-    <link rel="stylesheet" href="/public/css/lanyon.css">
+
     <link rel="stylesheet" href="/public/css/main.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/static/js/vue2.5.13.js"></script>
+    <script src="/static/main.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
-
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PV7KSX7');</script>
+    <!-- End Google Tag Manager -->
     <style>
 
     </style>
@@ -43,27 +51,27 @@ function _onHashChange(tagOrCat) {
   var tag, activeFlag="active-" + tagOrCat;
 
   if (location.hash){
-        tag = document.querySelector(location.hash);
-try{
-       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
-}catch(excep){
-  console.log('Error:',excep);
-  return
-}
-          for(i=0; i<posts.length; i++){
-            posts[i].classList.remove(activeFlag);
-          }
-
-        tag.classList.add(activeFlag);
-
-      } else{
-        tag = document.querySelectorAll('.section-' + tagOrCat);
-for(var i=0; i<tag.length; i++){
-           tag.item(i).classList.add(activeFlag);
-
-}
-
+      tag = document.querySelector(location.hash);
+      try {
+        var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+      } catch (e){
+        console.log('Error:', e);
+        return
       }
+      for(i=0; i<posts.length; i++){
+        posts[i].classList.remove(activeFlag);
+      }
+
+      tag.classList.add(activeFlag);
+
+  } else{
+    tag = document.querySelectorAll('.section-' + tagOrCat);
+    for(var i=0; i<tag.length; i++){
+        tag.item(i).classList.add(activeFlag);
+
+    }
+
+  }
 
  }
 
@@ -89,10 +97,15 @@ $('.menu-toggle').click(function(){
     </script>
 
     <div class="container-fluid">
-    <header class="row masthead">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="row masthead">
     <div class="col-xs-12">
         <!--h3 class="masthead-title">
-            <a href="/" title="Home">The Blog of Yohannes</a>
+            <a href="/" title="Home">Yohannes Libanos</a>
             <small>Full-Stack Engineer</small>
           </h3-->
         <nav >
@@ -125,6 +138,28 @@ $('.menu-toggle').click(function(){
                 </li>
                     
             </ul>
+            <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
+                <li>
+                    <a href="https://github.com/yohanneshl">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/yohanneslibanos">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="email-contact" href="mailto:4yohannes@gmail.com">
+                        <i class="fa fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:4000 /atom.xml ">
+                        <i class="fa fa-rss fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
         </nav>
 
     </div>
@@ -144,55 +179,239 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
 <a class="btn skills-btn" href="skills"><i class="fa fa-code"></i> Skills</a>
 <div class="projects-list col-md-8 col-xs-12 col-md-push-2">
 
-<div class="project-item flex-item-1">
-  <a href="/projects/001_fend-p1/" class="project-item-link">Mockup to Website</a><br>
-<div class="project-excerpt"><p>Here I demonstrate usage of bootstrap framework to transform a mockup to an actual webpage.</p>
-</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/001_fsvuenews/001_fsvuenews_01.png" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>Fullstack vue news</h3></div>
 </div>
 
-<div class="project-item flex-item-1">
-  <a href="/projects/002_fend-p2/" class="project-item-link">Interactive Resume</a><br>
-<div class="project-excerpt"><p>In this is project i&#39;ve used Javascript, jQuery and templating techniques to create a dynamic resume page. Real and Fake data was used for the content. All essential code for displaying resume sections were incapsulated within namespaces and adhere to the udacity <a href="https://udacity.github.io/frontend-nanodegree-styleguide/">style guide</a>.</p>
-</div>
-</div>
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>A Node.js/Vue.js Full Stack application which retrieves and displays news feeds from various sources.
+Used MongoDB and loopback to store feed sources and scraped news. 
+Vue with Vuetify material components for the UI.
+Vuex for client side application state management.</p>
 
-<div class="project-item flex-item-1">
-  <a href="/projects/007_HDFServer/" class="project-item-link">HDF REST Server</a><br>
-<div class="project-excerpt"><p>HDF REST server is a simple RESTful server for HDF5 data stores.</p>
 </div>
-</div>
-
-<div class="project-item flex-item-1">
-  <a href="/projects/004_fend-p4/" class="project-item-link">Mobile Website Performance Optimisation</a><br>
-<div class="project-excerpt"><h2>Mobile and Desktop Website Performance Optimization - using chrome developer tools, ngrok, pagespeed index, node.js and grunt.js .</h2>
-</div>
-</div>
-
-<div class="project-item flex-item-1">
-  <a href="/projects/003_fend-p3/" class="project-item-link">HTML5 Arcade Game</a><br>
-<div class="project-excerpt"><p>Here I delved in to to the relm of game development and created a game inspired by the classic game: Frogger.</p>
-</div>
-</div>
-
-<div class="project-item flex-item-1">
-  <a href="/projects/006_fend-p6/" class="project-item-link">Feedreader Testing</a><br>
-<div class="project-excerpt"><h2>Test Driven Development with Jasmine.js</h2>
-</div>
-</div>
-
-<div class="project-item flex-item-1">
-  <a href="/projects/005_fend-p5/" class="project-item-link">Rental Map</a><br>
-<div class="project-excerpt"><p>For this Project I developed a responsive Google map application using Knockout MVVM library. The App was made for people to search for properties in a location subject to localities they prefer to be close to. Eg Property near Park, Cafe,SuperMarket, etc.</p>
-</div>
-</div>
-
-<div class="project-item flex-item-1">
-  <a href="/projects/008_apt/" class="project-item-link">Axs Trading Platform</a><br>
-<div class="project-excerpt"><p>Developing a responsive website and an algorithmic trading web application for my trading website. Developing modules for a news feed, portfolio manager/optimiser, strategy designer UI, price forecaster and signal generator, order management system, REST API integration with Oanda.</p>
-</div>
+  <a href="/projects/001_fsvuenews/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
 </div>
 
 </div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/001_fsrg1/fsrg1_01.png" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>Fullstack react games</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>Full Stack React application demo where you can play classic games powered by HTML5 Canvas.
+Integrated with Auth0 for secure authentication and graphql database to store data.</p>
+
+</div>
+  <a href="/projects/001_fsrg1/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/default_thumbnail.svg" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>Axs Trading Platform</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>Algorithmic trading application integrated with Oanda API for stocks/comodities/forex trading. Developing modules for a news feed, portfolio manager/optimiser, strategy designer UI, price forecaster and signal generator, order management system.</p>
+
+</div>
+  <a href="/projects/008_apt/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/default_thumbnail.svg" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>FSBTech Enterprise SaaS</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>Lead the development of a bespoke enterprise SaaS product for FSB Tech.
+Custodian Backoffice is being used by many large global organisations in the gaming/casino sector.
+Took ownership of entire SDLC and worked with cross functional teams to deliver a quality frontend solution.
+Utilised ExtJS and MVVM architecture to create application modules.</p>
+
+</div>
+  <a href="/projects/010_fsbbo/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/005_fend-p5/nd05-3.png" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>Rental Map</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>A single-page web application, built using the Knockout framework, that displays a Google Map of an area and various points of interest. Users can search all included landmarks and, when selected, additional information about a landmark is presented from the Google Places and Zoopla API. Available properties are listed on a side panel.</p>
+
+</div>
+  <a href="/projects/005_fend-p5/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/006_fend-p6/nd06-2.png" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>Feed Reader Testing</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>Wrote comprehensive unit tests, using the Jasmine testing framework, for an RSS Feed Reader application that uses Google’s RSS API.</p>
+
+</div>
+  <a href="/projects/006_fend-p6/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/003_fend-p3/nd03-03.png" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>HTML5 Arcade Game</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>An HTML5 Canvas powered video game, developed using the best practices in Object Oriented JavaScript.</p>
+
+</div>
+  <a href="/projects/003_fend-p3/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/004_fend-p4/nd04-2.png" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>Mobile and Desktop Website Performance Optimization</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>Optimized an inefficient web application’s JavaScript, CSS and assets delivery, ensuring it runs at 60fps and achieves a PageSpeed score of at least 90.</p>
+
+<p>Analysed critical rendering path and frame rate to minimize page loading time and maek the page jank free.</p>
+
+</div>
+  <a href="/projects/004_fend-p4/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/default_thumbnail.svg" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>HDF REST Server</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>A RESTful interface to view/traverse contents of HDF5 data stores. Providing you the ability to query your data store using a REST API.</p>
+
+</div>
+  <a href="/projects/007_HDFServer/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+ 
+  
+   
+<div class="col-md-3 col-xs-6 portfolio-item">
+<div class="portfolio-item__inner">
+  
+  <img src="http://localhost:4000/public/img/projects/002_fend-p2/nd02-3.png" class="portfolio-item__inner__thumbnail">
+  
+
+  <div class="portfolio-item__inner__title"><h3>Interactive Resume</h3></div>
+</div>
+
+<div class="portfolio-item__pullover">
+<br><br><br>
+<div class="project-excerpt"><p>Using jQuery, developed an interactive resume application that reads all data from a JSON file and then dynamically modifies the DOM to display the information. Further customized the project by personalizing the design using CSS.</p>
+
+</div>
+  <a href="/projects/002_fend-p2/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
+</div>
+
+</div>
+
+</div>
+
+
 </div>
 
       </div>
@@ -202,67 +421,12 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
     </div>
 
     <!-- footer -->
-<script>
-$(function() {
 
-    $('.email-contact').click(function() {
-        var ori = ($(this).html())
-        var self = this;
-        $(this).html($(this).attr('data-msg'));
-        setTimeout(function() {
-            $(self).html(ori);
-        }, 5000);
-        //setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
-
-        //window.location.assign('mailto://' + $(this).attr('data-msg'));
-
-
-    });
-
-
-
-});
-</script>
 <footer class="row">
-    <div class="col-xs-12 ">
-        <h3>Contact Me</h3>
-        <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
-            <li>
-                <a href="https://github.com/yohanneshl"> <i class="fa fa-github fa-2x"></i> </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/yohanneslibanos"> <i class="fa fa-linkedin fa-2x"></i> </a>
-            </li>
-            <li>
-                <a class="email-contact" data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x" title="click to show email"></i> </a>
-            </li>
-            <li>
-                <a href="http://localhost:4000/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a>
-            </li>
-        </ul>
-        <br><br>
-        <div class="about-me-banner">
-            <div class="about-me-img">
-                <img src="http://localhost:4000/public/img/aboutme2.0.png" alt="This is me"></div>
-            <hr class="about-me-hr">
-            <br>
-            <h3>
-            Yohannes Libanos
-            <small>&middot Full-Stack Engineer</small>
-            </h3>
-            <div class="col-xs-6 col-xs-push-3">
-                I love all things web and programming. This site contains my <a href="http://localhost:4000/projects/">projects</a>, experiences and musings. I'm always learning new things and you can find my write ups <a href="http://localhost:4000/blog/">here</a>.
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
+    <br><br><br><br>
     <div class="col-xs-12">
-    <br><br>
         <p>
-            &copy; 2017. All rights reserved.
+            &copy; Copyright 2018. Yohannes Libanos.
         </p>
     </div>
 </footer>

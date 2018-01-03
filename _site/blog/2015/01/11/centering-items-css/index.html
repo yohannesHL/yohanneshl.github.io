@@ -8,7 +8,7 @@
     <!-- Enable responsiveness on mobile devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>
-         Centering Items in CSS &middot; The Blog of Yohannes 
+         Centering Items in CSS &middot; Yohannes Libanos 
     </title>
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
@@ -20,15 +20,23 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">    <link rel="stylesheet" href="/public/css/poole.css">
+    <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
     <link rel="stylesheet" href="/public/css/syntax.css">
-    <link rel="stylesheet" href="/public/css/lanyon.css">
+
     <link rel="stylesheet" href="/public/css/main.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/static/js/vue2.5.13.js"></script>
+    <script src="/static/main.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
-
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PV7KSX7');</script>
+    <!-- End Google Tag Manager -->
     <style>
 
     </style>
@@ -43,27 +51,27 @@ function _onHashChange(tagOrCat) {
   var tag, activeFlag="active-" + tagOrCat;
 
   if (location.hash){
-        tag = document.querySelector(location.hash);
-try{
-       var posts = document.querySelector('.posts-by-' + tagOrCat).children;
-}catch(excep){
-  console.log('Error:',excep);
-  return
-}
-          for(i=0; i<posts.length; i++){
-            posts[i].classList.remove(activeFlag);
-          }
-
-        tag.classList.add(activeFlag);
-
-      } else{
-        tag = document.querySelectorAll('.section-' + tagOrCat);
-for(var i=0; i<tag.length; i++){
-           tag.item(i).classList.add(activeFlag);
-
-}
-
+      tag = document.querySelector(location.hash);
+      try {
+        var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+      } catch (e){
+        console.log('Error:', e);
+        return
       }
+      for(i=0; i<posts.length; i++){
+        posts[i].classList.remove(activeFlag);
+      }
+
+      tag.classList.add(activeFlag);
+
+  } else{
+    tag = document.querySelectorAll('.section-' + tagOrCat);
+    for(var i=0; i<tag.length; i++){
+        tag.item(i).classList.add(activeFlag);
+
+    }
+
+  }
 
  }
 
@@ -89,10 +97,15 @@ $('.menu-toggle').click(function(){
     </script>
 
     <div class="container-fluid">
-    <header class="row masthead">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header class="row masthead">
     <div class="col-xs-12">
         <!--h3 class="masthead-title">
-            <a href="/" title="Home">The Blog of Yohannes</a>
+            <a href="/" title="Home">Yohannes Libanos</a>
             <small>Full-Stack Engineer</small>
           </h3-->
         <nav >
@@ -125,6 +138,28 @@ $('.menu-toggle').click(function(){
                 </li>
                     
             </ul>
+            <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
+                <li>
+                    <a href="https://github.com/yohanneshl">
+                        <i class="fa fa-github fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/yohanneslibanos">
+                        <i class="fa fa-linkedin fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="email-contact" href="mailto:4yohannes@gmail.com">
+                        <i class="fa fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://localhost:4000 /atom.xml ">
+                        <i class="fa fa-rss fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
         </nav>
 
     </div>
@@ -156,116 +191,129 @@ $('.menu-toggle').click(function(){
   <p>In this tutorial I will demonstrate two useful techniques to center any item in any orientation. After this tutorial you will be able to center any item :</p>
 
 <ul>
-<li>horizontally (center_h)</li>
-<li>vertically ( center_v)</li>
-<li>dead center ( center-center)</li>
+  <li>horizontally (center_h)</li>
+  <li>vertically ( center_v)</li>
+  <li>dead center ( center-center)</li>
 </ul>
 
 <p><strong>Problem</strong>: Say you have a div element called box. The box has fixed height and width like so:</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">box</span> <span class="p">{</span>
-<span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-<span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-<span class="k">background</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+<span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<p>You want to position the box right at the center of the page. Is there a native css attribute that ican use to achieve this. Unfortunately there isn&#39;t an native attribute, like text alighn, that can be tweeked that works across older browsers. Flexible boxes are a good candidate but they are a recent inovation, see <a href="http://caniuse.com/felxiblebox">caniuse</a>.
+</code></pre></div></div>
+
+<p>You want to position the box right at the center of the page. Is there a native css attribute that ican use to achieve this. Unfortunately there isn’t an native attribute, like text alighn, that can be tweeked that works across older browsers. Flexible boxes are a good candidate but they are a recent inovation, see <a href="http://caniuse.com/felxiblebox">caniuse</a>.
 So what are your options?</p>
 
-<p><img src="http://localhost:4000/public/img/posts/11012015_centering.png" alt="CenteredImage">
+<p><img src="http://localhost:4000/public/img/posts/11012015_centering.png" alt="CenteredImage" />
 The red circle is centered relative to flexbox-center(blue). The 3 red squares are centered relative to body. Note that the square in the center (center-center) may look purple because its covered by the flexbox</p>
 
-<h1>Using Margin auto</h1>
+<h1 id="using-margin-auto">Using Margin auto</h1>
+<p>###Center horizontally:</p>
 
-<h3>Center horizontally:</h3>
-
-<p>First off  centring horizontally is pretty straight forward  we set
-<code>css
-margin : 0 auto;
-</code></p>
+<p>First off  centring horizontally is pretty straight forward  we set</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">margin</span> <span class="o">:</span> <span class="nt">0</span> <span class="nt">auto</span><span class="o">;</span>
+</code></pre></div></div>
 
 <p>Which lets the browser auto update left and right margin values like so:</p>
-
 <blockquote>
-<p><em>margin-left = margin-right = (containterWidth - boxWidth)/2</em></p>
+  <p><em>margin-left = margin-right = (containterWidth - boxWidth)/2</em></p>
 </blockquote>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">center-h</span> <span class="p">{</span>
-<span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2>Center vertically</h2>
 
-<p>Unfortunatly you can&#39;t set <strong>margin-top = margin-bottom = auto</strong> to center vertically. This doesnt work.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.center-h</span> <span class="p">{</span>
+<span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>##Center vertically
+Unfortunatly you can’t set <strong>margin-top = margin-bottom = auto</strong> to center vertically. This doesnt work.</p>
 
 <p>It turns out that this is imposible due to the fact that the auto property will always use the width not the height of the element.</p>
 
-<h1>Using Margin Offsets and absolute positioning</h1>
+<p>#Using Margin Offsets and absolute positioning</p>
 
 <p>Using margin offsets is tried and tested technique and it works well.
 You set positioning to absolute and set left/top to 50%. The trick is to offset the margin by half of the boxes dimensions. eg. you wanted to center the box vertically you would set <em>margin-top: -50px</em>.</p>
 
-<h3>Center horizontally:</h3>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">center-h</span> <span class="p">{</span>
+<p>###Center horizontally:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.center-h</span> <span class="p">{</span>
 <span class="c">/* we want the use % reletive to width of screen, not container */</span>
- <span class="k">position</span><span class="p">:</span><span class="kc">absolute</span><span class="p">;</span>
- <span class="k">margin</span><span class="p">:</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">-50</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* offset by half the width of box  */</span>
- <span class="k">left</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+ <span class="nl">position</span><span class="p">:</span><span class="nb">absolute</span><span class="p">;</span>
+ <span class="nl">margin</span><span class="p">:</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">-50px</span><span class="p">;</span> <span class="c">/* offset by half the width of box  */</span>
+ <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<h3>Center vertically:</h3>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">center-v</span> <span class="p">{</span>
- <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
- <span class="k">margin</span><span class="p">:</span> <span class="mi">-50</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
- <span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>###Center vertically:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.center-v</span> <span class="p">{</span>
+ <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+ <span class="nl">margin</span><span class="p">:</span> <span class="m">-50px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+ <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<h3>Center both axis:</h3>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">center-center</span> <span class="p">{</span>
-<span class="k">position</span><span class="p">:</span><span class="kc">absolute</span><span class="p">;</span>
-<span class="k">margin</span><span class="p">:</span><span class="mi">-50</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">-50</span><span class="kt">px</span><span class="p">;</span>
-<span class="k">left</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
-<span class="k">top</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>###Center both axis:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.center-center</span> <span class="p">{</span>
+<span class="nl">position</span><span class="p">:</span><span class="nb">absolute</span><span class="p">;</span>
+<span class="nl">margin</span><span class="p">:</span><span class="m">-50px</span> <span class="m">0</span> <span class="m">0</span> <span class="m">-50px</span><span class="p">;</span>
+<span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<h1>Flexible boxes</h1>
+</code></pre></div></div>
+
+<h1 id="flexible-boxes">Flexible boxes</h1>
 
 <p>Flexible boxes are a more recent addition to CSS3. It is intended for creating responsive layouts that behave in a predictable way across varying screen sizes. Flexible box is a layout mode, to use it on any element you just set <em>display: flex;</em></p>
 
-<h3>Horizontal center using flexbox</h3>
+<p>###Horizontal center using flexbox</p>
 
 <p>To center horizontally only  Any child of this flex container will be horizontally centered</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">flexbox-center-h</span> <span class="p">{</span>
- <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
- <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
- <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flexbox-center-h</span> <span class="p">{</span>
+ <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+ <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+ <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<h3>Vertical center using flexbox</h3>
+</code></pre></div></div>
+
+<p>###Vertical center using flexbox</p>
 
 <p>For vertical centering  Similarly any child of this flex container will be vertically centered</p>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">flexbox-center-v</span> <span class="p">{</span>
 
- <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
- <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">row</span><span class="p">;</span>
- <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flexbox-center-v</span> <span class="p">{</span>
+
+ <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+ <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">row</span><span class="p">;</span>
+ <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
-<h3>Center both axis using flexbox:</h3>
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="c">/*</span>
-<span class="c"> * items will be centered vertically/horizontally</span>
-<span class="c"> * depending on flex-direction</span>
-<span class="c"> */</span>
- <span class="p">.</span><span class="nc">flexbox-center</span> <span class="p">{</span>
-   <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
-   <span class="k">flex-direction</span><span class="p">:</span> <span class="kc">column</span><span class="p">;</span>
-   <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>###Center both axis using flexbox:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/*
+ * items will be centered vertically/horizontally
+ * depending on flex-direction
+ */</span>
+ <span class="nc">.flexbox-center</span> <span class="p">{</span>
+   <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+   <span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+   <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div>
+</code></pre></div></div>
 <p>To put the item dead center we’ll need to include the following code in the child element:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>/* this centers flex items in the middle*/
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* this centers flex items in the middle*/
 .flex-item-center {
   margin: auto;
 }
-</code></pre></div>
+</code></pre></div></div>
+
 </div>
 
 <div class="related">
@@ -291,67 +339,12 @@ You set positioning to absolute and set left/top to 50%. The trick is to offset 
     </div>
 
     <!-- footer -->
-<script>
-$(function() {
 
-    $('.email-contact').click(function() {
-        var ori = ($(this).html())
-        var self = this;
-        $(this).html($(this).attr('data-msg'));
-        setTimeout(function() {
-            $(self).html(ori);
-        }, 5000);
-        //setTimeout(function(){$(self).attr('href','mailto:'+$(self).attr('data-msg'));},200);
-
-        //window.location.assign('mailto://' + $(this).attr('data-msg'));
-
-
-    });
-
-
-
-});
-</script>
 <footer class="row">
-    <div class="col-xs-12 ">
-        <h3>Contact Me</h3>
-        <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
-            <li>
-                <a href="https://github.com/yohanneshl"> <i class="fa fa-github fa-2x"></i> </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/yohanneslibanos"> <i class="fa fa-linkedin fa-2x"></i> </a>
-            </li>
-            <li>
-                <a class="email-contact" data-msg="4yohannes@gmail.com"> <i class="fa fa-envelope fa-2x" title="click to show email"></i> </a>
-            </li>
-            <li>
-                <a href="http://localhost:4000/atom.xml"> <i class="fa fa-rss fa-2x"></i> </a>
-            </li>
-        </ul>
-        <br><br>
-        <div class="about-me-banner">
-            <div class="about-me-img">
-                <img src="http://localhost:4000/public/img/aboutme2.0.png" alt="This is me"></div>
-            <hr class="about-me-hr">
-            <br>
-            <h3>
-            Yohannes Libanos
-            <small>&middot Full-Stack Engineer</small>
-            </h3>
-            <div class="col-xs-6 col-xs-push-3">
-                I love all things web and programming. This site contains my <a href="http://localhost:4000/projects/">projects</a>, experiences and musings. I'm always learning new things and you can find my write ups <a href="http://localhost:4000/blog/">here</a>.
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
+    <br><br><br><br>
     <div class="col-xs-12">
-    <br><br>
         <p>
-            &copy; 2017. All rights reserved.
+            &copy; Copyright 2018. Yohannes Libanos.
         </p>
     </div>
 </footer>

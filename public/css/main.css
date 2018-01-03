@@ -85,7 +85,19 @@ body {
 }
 
 .social-contacts {
-  padding-right: 3em;
+  display: inline-flex;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
+}
+.social-contacts a {
+  color: #f1f1f1;
+  font-size: 0.75rem;
+}
+.social-contacts a:hover {
+  color: #a1a1a1;
 }
 
 .featured-projects {
@@ -277,7 +289,7 @@ featured-projects .project-item {
     line-height: 1.2;
 
 }
-.portfolio-item:hover .portfolio-item__inner__thumbnail{ 
+.portfolio-item:hover .portfolio-item__inner__thumbnail{
     transform: scale(1.05,1.02);
     transition: all 0.4s ease-in-out;
 }
@@ -520,7 +532,9 @@ div {
 }
 
 .menu-item a:focus,
-.menu-item a:hover {
+.menu-item a:hover,
+.menu-item a.active {
+
   text-decoration: none;
   text-shadow: 1px 0 1px rgba(40, 40, 40, 0.65), 0 0 15px rgba(220, 200, 200, 1), 1px -1px 1px rgba(40, 40, 40, 0.55);
 }
@@ -529,7 +543,7 @@ div {
   padding: 0.55rem 1rem 0.55rem 1rem;
   background: #232321;
   border-radius: 3px;
-  border-bottom: 3px solid #fb0606;
+  /* border-bottom: 3px solid #fb0606; */
 }
 
 .menu-toggle {
@@ -708,7 +722,6 @@ footer {
   overflow: hidden;
   height: 400px;
   font-family: 'Lato';
-  border-radius: 4px;
   padding: 0;
   padding-bottom: 1rem;
   color: #fff;
