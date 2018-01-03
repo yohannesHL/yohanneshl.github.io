@@ -11,7 +11,7 @@ add skills view via search lookup <a href="skills/">Skills</a>
 *** -->
 
 <div class="projects-list col-md-8 col-xs-12 col-md-push-2">
-    
+
     <ul class="blog-nav ">
       <li class="blog-nav-cat blog-nav-tag">
         <a title="View projects grouped by skill" href="skills"><i class="fa fa-code"></i>By Skill</a>
@@ -19,7 +19,7 @@ add skills view via search lookup <a href="skills/">Skills</a>
     </ul>
 </div>
 
-<div class="projects-list col-md-8 col-xs-12 col-md-push-2">
+<div class="projects-list col-md-10 col-xs-12 col-md-push-1">
 {% assign sorted = site.projects | sort: 'date' | reverse %}
 {% for project in sorted %}
  {%assign pro_name=project.url | replace_first: site.url%}
