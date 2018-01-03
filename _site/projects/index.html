@@ -22,12 +22,10 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
     <link rel="stylesheet" href="/public/css/syntax.css">
-
+    <link rel="stylesheet" href="/public/css/lanyon.css">
     <link rel="stylesheet" href="/public/css/main.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/static/js/vue2.5.13.js"></script>
-    <script src="/static/main.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
     <!-- Google Tag Manager -->
@@ -150,12 +148,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </a>
                 </li>
                 <li>
-                    <a class="email-contact" href="mailto:4yohannes@gmail.com">
+                    <a class="email-contact" href="mailto:yohannes5@outlook.com">
                         <i class="fa fa-envelope fa-2x"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost:4000 /atom.xml ">
+                    <a href="/atom.xml">
                         <i class="fa fa-rss fa-2x"></i>
                     </a>
                 </li>
@@ -173,10 +171,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h1 class="page-title" >Projects</h1>
   </div>
   <!-- *** TODO :
-add skills view via ajax lookup <a href="skills/">Skills</a>
+add skills view via search lookup <a href="skills/">Skills</a>
 <div class="skills-map"><ul></ul></div>
 *** -->
-<a class="btn skills-btn" href="skills"><i class="fa fa-code"></i> Skills</a>
+
+<div class="projects-list col-md-8 col-xs-12 col-md-push-2">
+    
+    <ul class="blog-nav ">
+      <li class="blog-nav-cat blog-nav-tag">
+        <a title="View projects grouped by skill" href="skills"><i class="fa fa-code"></i>By Skill</a>
+      </li>
+    </ul>
+</div>
+
 <div class="projects-list col-md-8 col-xs-12 col-md-push-2">
 
 
@@ -186,7 +193,7 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
 <div class="col-md-3 col-xs-6 portfolio-item">
 <div class="portfolio-item__inner">
   
-  <img src="http://localhost:4000/public/img/projects/001_fsvuenews/001_fsvuenews_01.png" class="portfolio-item__inner__thumbnail">
+  <img src="http://localhost:4000/public/img/projects/001_fsvuenews/1.png" class="portfolio-item__inner__thumbnail">
   
 
   <div class="portfolio-item__inner__title"><h3>Fullstack vue news</h3></div>
@@ -195,7 +202,7 @@ add skills view via ajax lookup <a href="skills/">Skills</a>
 <div class="portfolio-item__pullover">
 <br><br><br>
 <div class="project-excerpt"><p>A Node.js/Vue.js Full Stack application which retrieves and displays news feeds from various sources.
-Used MongoDB and loopback to store feed sources and scraped news. 
+Used MongoDB and loopback to store feed sources and scraped news.
 Vue with Vuetify material components for the UI.
 Vuex for client side application state management.</p>
 
@@ -211,7 +218,7 @@ Vuex for client side application state management.</p>
 <div class="col-md-3 col-xs-6 portfolio-item">
 <div class="portfolio-item__inner">
   
-  <img src="http://localhost:4000/public/img/projects/001_fsrg1/fsrg1_01.png" class="portfolio-item__inner__thumbnail">
+  <img src="http://localhost:4000/public/img/projects/001_fsrg1/1.png" class="portfolio-item__inner__thumbnail">
   
 
   <div class="portfolio-item__inner__title"><h3>Fullstack react games</h3></div>
@@ -256,7 +263,7 @@ Integrated with Auth0 for secure authentication and graphql database to store da
 <div class="col-md-3 col-xs-6 portfolio-item">
 <div class="portfolio-item__inner">
   
-  <img src="http://localhost:4000/public/img/projects/default_thumbnail.svg" class="portfolio-item__inner__thumbnail">
+  <img src="http://localhost:4000/public/img/projects/010_fsbbo/fsb.png" class="portfolio-item__inner__thumbnail">
   
 
   <div class="portfolio-item__inner__title"><h3>FSBTech Enterprise SaaS</h3></div>
@@ -347,10 +354,10 @@ Utilised ExtJS and MVVM architecture to create application modules.</p>
 <div class="col-md-3 col-xs-6 portfolio-item">
 <div class="portfolio-item__inner">
   
-  <img src="http://localhost:4000/public/img/projects/004_fend-p4/nd04-2.png" class="portfolio-item__inner__thumbnail">
+  <img src="http://localhost:4000/public/img/projects/default_thumbnail.svg" class="portfolio-item__inner__thumbnail">
   
 
-  <div class="portfolio-item__inner__title"><h3>Mobile and Desktop Website Performance Optimization</h3></div>
+  <div class="portfolio-item__inner__title"><h3>Web Application Performance Optimization</h3></div>
 </div>
 
 <div class="portfolio-item__pullover">
@@ -387,28 +394,6 @@ Utilised ExtJS and MVVM architecture to create application modules.</p>
 
 </div>
 
- 
-  
-   
-<div class="col-md-3 col-xs-6 portfolio-item">
-<div class="portfolio-item__inner">
-  
-  <img src="http://localhost:4000/public/img/projects/002_fend-p2/nd02-3.png" class="portfolio-item__inner__thumbnail">
-  
-
-  <div class="portfolio-item__inner__title"><h3>Interactive Resume</h3></div>
-</div>
-
-<div class="portfolio-item__pullover">
-<br><br><br>
-<div class="project-excerpt"><p>Using jQuery, developed an interactive resume application that reads all data from a JSON file and then dynamically modifies the DOM to display the information. Further customized the project by personalizing the design using CSS.</p>
-
-</div>
-  <a href="/projects/002_fend-p2/" class="portfolio-item__link"><div class="portfolio-item__linktext">Info</div></a><br>
-</div>
-
-</div>
-
 </div>
 
 
@@ -426,7 +411,7 @@ Utilised ExtJS and MVVM architecture to create application modules.</p>
     <br><br><br><br>
     <div class="col-xs-12">
         <p>
-            &copy; Copyright 2018. Yohannes Libanos.
+          &copy; Copyright 2018. <a href="http://localhost:4000">Yohannes Libanos</a>.
         </p>
     </div>
 </footer>

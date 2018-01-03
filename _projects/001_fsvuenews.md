@@ -4,14 +4,16 @@ title: Fullstack vue news
 skills: [HTML5, CSS3, Loopback, MongoDB, Nuxt, VueJS, Vuex, Vuetify, Auth0, Heroku, Docker]
 fields: [Fullstack]
 date: 2017-12-20 00:00:00
-thumbnail: 001_fsvuenews_01.png
+thumbnail: 1.png
 project_url: https://github.com/yohanneshl/fullstack-nuxt-news
-images: [001_fsvuenews_01.png, 001_fsvuenews_02.png, 001_fsvuenews_03.png]
+live_url: http://ec2-54-174-41-163.compute-1.amazonaws.com
+
+images: [001_fsvuenews_01.png, 1.png, 2.png, 3.png]
 excerpt_separator: <!--more-->
 ---
 
 A Node.js/Vue.js Full Stack application which retrieves and displays news feeds from various sources.
-Used MongoDB and loopback to store feed sources and scraped news. 
+Used MongoDB and loopback to store feed sources and scraped news.
 Vue with Vuetify material components for the UI.
 Vuex for client side application state management.
 

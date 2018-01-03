@@ -11,7 +11,7 @@ title: Home
 
 <div class="hero col-md-8 col-xs-12 col-md-push-2 ">
 
-<h3 class="hero__main_text_cont"><span class="hero__main_text_hello">Hello! I'm Yohannes,</span><span class="hero__main_text"> I Specialise in building software for the WWW.</span></h3>
+<h3 class="hero__main_text_cont"><span class="hero__main_text_hello">Hello! I'm Yohannes,</span><span class="hero__main_text"> I specialise in building software for the WWW.</span></h3>
 
 
 <ul>
@@ -20,18 +20,13 @@ title: Home
   <a class="hero__item hero__item_red" ><li> <i class="fa fa-code fa-4x"></i>Systems Development</li></a>
 </ul>
 </div>
-<<<<<<< HEAD
 <div class="featured-projects col-md-8 col-xs-12 col-md-push-2">
-=======
-<div id="app"></div>
-<div class="featured-projects col-xs-12">
->>>>>>> move contacts links
 <h1> Featured Work</h1>
-  <a class="more-projects" title="View projects grouped by skill" style="margin-top:0;" href="/projects/skills">
+  <a class="more-projects" title="View projects grouped by skill" style="margin-top: -0.5rem;" href="/projects/skills">
   <i class="fa fa-code"></i> Skills</a>
 <hr>
 <br>
- 
+
 <div class="flexslider">
   <ul class="slides">
     {% assign sorted = site.projects | sort: 'date' | reverse %}
@@ -41,7 +36,7 @@ title: Home
   {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
    {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
     <div class="project">
-        <h2>{{ project.title }}</h2>
+        <center><h4>{{ project.title }}</h4></center>
         <div class="project-image">
             <a href="{{ project.url}}" >
             <div><img class="project-item-thumb" src="{{site.url}}/public/img/projects/{{pro_name}}/{{project.thumbnail}}">

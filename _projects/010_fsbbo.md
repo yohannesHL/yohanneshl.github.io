@@ -5,10 +5,11 @@ skills: [HTML5, CSS3, Sass, JavaScript, ExtJS, FlexmonsterJS, Karma, Jasmine, Ni
 fields: [Front-End ]
 type: Commercial
 date: 2015-04-01 00:00:00
-thumbnail: 
-project_url: http://fsbtech.com
-images: []
+thumbnail: fsb.png
+live_url: http://fsbtech.com
+images: [fsb.png]
 ---
+
 
 Lead the development of a bespoke enterprise SaaS product for FSB Tech.
 Custodian Backoffice is being used by many large global organisations in the gaming/casino sector.

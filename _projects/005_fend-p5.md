@@ -5,7 +5,8 @@ skills: [HTML5, CSS3, Sass, JavaScript, Knockoutjs, MVVM, Node.js, Karma, Jasmin
 fields: [Front-End]
 date: 2015-04-01 00:00:00
 thumbnail: nd05-3.png
-project_url: https://yohanneshl.github.io/rentalMap/dist
+live_url: https://yohanneshl.github.io/rentalMap/dist
+project_url: https://github.com/yohannesHL/rentalMap
 images: [nd05-1.png, nd05-2.png, nd05-3.png]
 excerpt_separator: <!--more-->
 ---
@@ -14,4 +15,4 @@ A single-page web application, built using the Knockout framework, that displays
 <!--more-->
 
 > Used Karma+Jasmine for testing and Gulp to automate the build process.
- 
+

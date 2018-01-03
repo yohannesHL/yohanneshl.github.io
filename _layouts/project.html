@@ -22,7 +22,7 @@ layout: default
   {% endfor %}
   </ul></div>
   </span>
-  <a href="{{page.project_url}}" style="float:right"><i class="fa fa-play"></i> View Live</a>
+
   <span class="project-skills post-categories inline">
   <ul class="inline" style="float:right">
   <li><i class="fa fa-code" ></i></li>
@@ -31,9 +31,17 @@ layout: default
   {% endfor %}
   </ul></span>
   <br>
-
+    <div class="view-btns">
+      {% if page.project_url %}
+      <a href="{{page.project_url}}" style="float:right">
+        <i class="fa fa-code"></i> View Code</a>
+      {% endif %} {% if page.live_url %}
+      <a href="{{page.live_url}}" style="margin:10px;">
+        <i class="fa fa-play"></i> View Live</a>
+      {% endif %}</div>
+<br>
   {{ content }}
-
+ <br>
   <!--div class="client-details">
      <h2>Client</h2>
   <span><strong>Udacity</strong></span>
@@ -41,8 +49,9 @@ layout: default
   </p><p>Outcomes:</p>
   </div-->
 <div class="project-gallery">
+  {% if page.images[0] %}
   <h2> Gallery</h2>
-
+  {% endif %}
 
   <div class="flexslider">
   <ul class="slides">
@@ -52,7 +61,7 @@ layout: default
    {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
 
 {% for image in page.images %}
-  <li><div><a><img src="{{site.url}}/public/img/projects/{{pro_name}}/{{image}}"></a></div></li>
+  <li><div><a><img class="project-item-thumb-lrg" src="{{site.url}}/public/img/projects/{{pro_name}}/{{image}}"></a></div></li>
   {% endfor %}
   </ul>
 </div>

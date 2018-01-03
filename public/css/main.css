@@ -17,6 +17,25 @@ body {
   /*  mb: #212121;hro box:inset 1px 1px 20px 5px rgba(0, 0, 0, 0.07)*/
   /*background:  #2b2f2e; */
 }
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #bf360c;
+
+}
+
+ul {
+  margin: 5px;
+}
+
+li {
+  margin: 5px;
+  list-style: none;
+}
+
 
 .flex-row {
   display: -webkit-flex;
@@ -108,7 +127,7 @@ body {
   display: block;
 }
 
-featured-projects .project-item {
+.featured-projects .project-item {
   /* 2 column display
 */
   margin: 10px;
@@ -173,18 +192,8 @@ featured-projects .project-item {
   z-index: -1;
 }
 
-.project-gallery .flexslider .slides div {
-  margin: 0 auto;
-  width: auto !important;
-  max-width: 24em !important;
-  height: auto !important;
-  max-height: 100% !important;
-}
 
-.project-gallery .flexslider .slides img {
-  width: auto !important;
-  height: auto !important;
-}
+
 
 .project-image a div {
   margin: 0 auto;
@@ -193,8 +202,6 @@ featured-projects .project-item {
   height: auto;
   max-height: 100%;
 }
-
-.project-item-thumb {}
 
 .show {
   display: block;
@@ -364,14 +371,11 @@ featured-projects .project-item {
   padding: 5px;
   margin: 3px;
 }
-
-ul {
-  margin: 5px;
-}
-
-li {
-  margin: 5px;
-  list-style: none;
+.view-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .tag-label {
@@ -385,12 +389,11 @@ li {
 
 .tag-label span {
   position: absolute;
-  background: #7a7a7a;
-  border: 1px solid #9d9db0;
+  background: #4c4c4c;
   padding: 0 5px;
-  margin: 3px 3px 0 3px;
+  margin: 2px 3px 0 4px;
   border-radius: 50%;
-  font-size: 0.6em;
+  font-size: 0.8em;
   color: #fff;
 }
 
