@@ -882,6 +882,8 @@ footer {
   display: block;
   text-align: center;
   z-index: 1010;
+  font-size: 8em;
+  transition: all .3s;
 }
 .work-logos  li{
   display: inline-block;
@@ -931,6 +933,10 @@ footer {
 
     /* transform: rotate3d(1, 1, -1, 0deg) scale(0.65); */
   }
+  .hero__item:hover i {
+    font-size: 4em;
+  }
+
 }
 
 @keyframes slideIn_FromRight {
