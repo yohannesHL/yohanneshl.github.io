@@ -762,13 +762,9 @@ footer {
 }
 
 .hero__main_text_cont {
-  color: #9cc9a3;
   margin-left: 3rem;
-  border-left: 4px solid #c30;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
   padding: 20px;
-  animation: 0.5s ease 0s 1 slideIn_FromRight;
+
   font-weight: 18px;
 }
 
@@ -851,10 +847,10 @@ footer {
 
 @keyframes over {
   0%{
-    transform: scale(1,1);
+    transform: scale(0.1,0.1);
   }
   25% {
-    transform: scale(1.5,1.5);
+    transform: scale(1.1,1.1);
 
   }
   to {
@@ -952,21 +948,7 @@ footer {
 
 }
 
-@keyframes slideIn_FromRight {
-  0% {
-    transform: translateX(100%);
-    color: transparent;
-  }
-  30%,
-  66%,
-  99% {
-    color: transparent;
-  }
-  100% {
-    transform: translateX(0);
-    /* color: inherit; */
-  }
-}
+
 
 @keyframes fade-down {
   0%,
