@@ -36,7 +36,7 @@ title: Home
 <div class="flexslider">
   <ul class="slides">
     {% assign sorted = site.projects | sort: 'date' | reverse %}
-    {% for project in sorted limit:6 %} {% if project.thumbnail %}
+    {% for project in sorted limit:4 %} {% if project.thumbnail %}
 <li>
  {%assign pro_name=project.url | replace_first: site.url%}
   {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
