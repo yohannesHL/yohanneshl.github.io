@@ -8,7 +8,7 @@ thumbnail: 1.png
 project_url: https://github.com/yohanneshl/fullstack-nuxt-news
 live_url: http://ec2-54-174-41-163.compute-1.amazonaws.com
 
-images: [001_fsvuenews_01.png, 1.png, 2.png, 3.png]
+images: [1.png, 2.png, 3.png]
 excerpt_separator: <!--more-->
 ---
 
