@@ -32,21 +32,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PV7KSX7');</script>
     <!-- End Google Tag Manager -->
-      <script>
-    
-    var outbound = function(url) {
-       ga('send', 'event', 'outbound', 'click', url, {
-         'transport': 'beacon',
-         'hitCallback': function(){document.location = url;}
-       });
-    }
-    
-    document.body.addEventListener('click', function(e) {
-      if(e.target.href){
-        outbound(e.target.href)
-      }
-    })
-    </script>
     <style>
 
     </style>
