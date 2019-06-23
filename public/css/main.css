@@ -134,7 +134,7 @@ li {
 }
 
 .featured-projects h1 {
-  color: #cbcbcb;
+  color: #7b7b7b;
 }
 
 
@@ -723,7 +723,6 @@ footer {
 
 .hero {
   overflow: hidden;
-  height: 400px;
   font-family: 'Lato';
   padding: 0;
   padding-bottom: 1rem;
@@ -736,6 +735,11 @@ footer {
   margin-top: 3rem;
   margin-left: 3rem;
   padding: 0.5rem;
+  color: #7b7b7b;
+}
+
+.hero__header {
+  clear: both;
 }
 
 .hero h3 {
