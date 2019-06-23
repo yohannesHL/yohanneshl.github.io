@@ -21,6 +21,9 @@ Developed 6 mini projects for Frontend nanodegree program i took at Udacity.
 <div class="">
     <img src="/public/img/projects/003_fend/nd03-03.png">
 </div>
+<a href="https://github.com/yohannesHL/frontend-nanodegree-arcade-game" target="_blank"> View Code</a>
+<a href="https://yohanneshl.github.io/frontend-nanodegree-arcade-game" target="_blank"> Play :)</a>
+
 An HTML5 Canvas powered video game, developed using the best practices in Object Oriented JavaScript.
 
 Designed and implemented classes and methods for handling game states,controller input and collisions. Delivered clean and clear JavaScript code without using external library dependencies.
@@ -41,7 +44,6 @@ Chrome developer tools was used to analyse performance measures and ngrok+pagesp
 <div class="">
     <img src="/public/img/projects/003_fend/nd05-1.png" >
 </div>
-
 
 <a href="https://github.com/yohannesHL/rentalMap" target="_blank"> View Code</a>
 
