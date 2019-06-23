@@ -6,7 +6,7 @@ fields: [Front-End, Game-Dev, Performance, Optimisation]
 date: 2015-02-21 00:00:00
 thumbnail: nd03-03.png
 project_url: https://yohanneshl.github.io/frontend-nanodegree-arcade-game
-images: [nd03-03.png]
+images: [nd03-03.png, nd05-1.png, nd05-3.png]
 excerpt_separator: <!--more-->
 
 ---
@@ -18,7 +18,7 @@ Developed 6 mini projects for Frontend nanodegree program i took at Udacity.
 <h2> Highlights</h2>
 
 <h3>HTML5 Arcade Game</h3> 
-<div class="col-md-8 col-xs-12 col-md-push-2">
+<div class="">
     <img src="/public/img/projects/003_fend/nd03-03.png">
 </div>
 An HTML5 Canvas powered video game, developed using the best practices in Object Oriented JavaScript.
@@ -38,13 +38,11 @@ Chrome developer tools was used to analyse performance measures and ngrok+pagesp
 
 
 <h3>Rental Map</h3>
-<div class="col-md-8 col-xs-12 col-md-push-2">
+<div class="">
     <img src="/public/img/projects/003_fend/nd05-1.png" >
 </div>
 
-<div class="col-md-8 col-xs-12 col-md-push-2">
-    <img src="/public/img/projects/003_fend/nd05-3.png" >
-</div>
+
 <a href="https://github.com/yohannesHL/rentalMap" target="_blank"> View Code</a>
 
 A single-page web application, built using the Knockout framework, that displays a Google Map of an area and various points of interest. Users can search all included landmarks and, when selected, additional information about a landmark is presented from the Google Places and Zoopla API. Available properties are listed on a side panel.
