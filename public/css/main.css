@@ -782,7 +782,7 @@ footer {
 
 .hero__main_text {
   color: #555;
-  animation: .6s ease-in 0s 1 fade-down;
+  animation: .3s ease-in 0s 1 fade-down;
 }
 
 .hero ul li {
@@ -818,7 +818,7 @@ footer {
   box-shadow: 0px 7px 10px 1px rgba(25, 25, 25, 0.35);
   display: inline-block;
   opacity: 0.9;
-  animation: over 0.5s linear 1; 
+  animation: over 0.5s; 
   transition: all 0.25s ease-in-out;
 
 
