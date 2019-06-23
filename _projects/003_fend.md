@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Udacity ND mini projects
+title: Udacity frontend projects
 skills: [HTML5, CSS3, Sass, JavaScript, Grunt.js, Gulp, Karma, Jasmine, Knockoutjs, Chrome Developer Tools, Google Maps]
 fields: [Front-End, Game-Dev, Performance, Optimisation]
 date: 2015-02-21 00:00:00
