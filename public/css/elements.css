@@ -86,12 +86,9 @@ hr {
 }
 
 a {
-  color: #4fa2d3;
+  color: #3338;
 }
 
-a:hover {
-  color: #4fa2f3;
-}
 
 div {
   box-sizing: border-box;
