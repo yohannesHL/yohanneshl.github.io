@@ -1,0 +1,122 @@
+/*
+ * Container
+ *
+ * Center the page content.
+ */
+
+.container {
+  max-width: 38rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-fluid {
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*
+ * Flex box
+ */
+.flex-row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.flex--justify-between {
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.flex--justify-center {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex--justify-around {
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.flex--justify-around {
+  justify-content: space-evenly;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex-column {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column ;
+}
+
+.flex--wrap {
+  -webkit-flex-wrap: wrap !important;
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
+}
+
+.flex-item-0 {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
+.flex-item-1 {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.flex-item-2 {
+  -webkit-flex: 1 2 auto;
+  -ms-flex: 1 2 auto;
+  flex: 1 2 auto;
+}
+
+.flex-item-3 {
+  -webkit-flex: 1 3 auto;
+  -ms-flex: 1 3 auto;
+  flex: 1 3 auto;
+}
+.flex-item-4 {
+  -webkit-flex: 1 4 auto;
+  -ms-flex: 1 4 auto;
+  flex: 1 4 auto;
+}
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.flexslider .slides {
+  z-index: -1;
+}
+
+.pad1 {
+  padding: 8px;
+}
+
+.pad2 {
+  padding: 16px;
+}
+
+.pad3 {
+  padding: 24px;
+}

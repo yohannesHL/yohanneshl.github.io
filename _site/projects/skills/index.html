@@ -21,10 +21,9 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
-    <link rel="stylesheet" href="/public/css/syntax.css">
-    <link rel="stylesheet" href="/public/css/lanyon.css">
-    <link rel="stylesheet" href="/public/css/main.css">
 
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script src="/public/js/main.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
@@ -45,128 +44,121 @@
 
     <script>
 
-function _onHashChange(tagOrCat) {
-  var tag, activeFlag="active-" + tagOrCat;
+      function _onHashChange(tagOrCat) {
+        var tag, activeFlag="active-" + tagOrCat;
 
-  if (location.hash){
-      tag = document.querySelector(location.hash);
-      try {
-        var posts = document.querySelector('.posts-by-' + tagOrCat).children;
-      } catch (e){
-        console.log('Error:', e);
-        return
+        if (location.hash){
+            tag = document.querySelector(location.hash);
+            try {
+              var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+            } catch (e){
+              console.log('Error:', e);
+              return
+            }
+            for(i=0; i<posts.length; i++){
+              posts[i].classList.remove(activeFlag);
+            }
+
+            tag.classList.add(activeFlag);
+
+        } else{
+          tag = document.querySelectorAll('.section-' + tagOrCat);
+          for(var i=0; i<tag.length; i++){
+              tag.item(i).classList.add(activeFlag);
+
+          }
+
+        }
+
       }
-      for(i=0; i<posts.length; i++){
-        posts[i].classList.remove(activeFlag);
+
+      function onHashTagChange() {
+          _onHashChange('tag');
+      }
+      function onHashCatChange() {
+          _onHashChange('category');
+      }
+      function onHashSkillChange() {
+          _onHashChange('skill');
       }
 
-      tag.classList.add(activeFlag);
-
-  } else{
-    tag = document.querySelectorAll('.section-' + tagOrCat);
-    for(var i=0; i<tag.length; i++){
-        tag.item(i).classList.add(activeFlag);
-
-    }
-
-  }
-
- }
-
- function onHashTagChange() {
-    _onHashChange('tag');
-}
-function onHashCatChange() {
-    _onHashChange('category');
-}
-function onHashSkillChange() {
-    _onHashChange('skill');
-}
-
-$(function(){
+      $(function(){
 
 
-$('.menu-toggle').click(function(){
-  $(this).toggle('active');
+      $('.menu-toggle').click(function(){
+        $(this).toggle('active');
 
-});
+      });
 
-});
+      });
     </script>
 
-    <div class="container-fluid">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden"
+  ></iframe
+></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<header class="row masthead">
-    <div class="col-xs-12">
-        <!--h3 class="masthead-title">
-            <a href="/" title="Home">Yohannes Libanos</a>
-            <small>Full-Stack Engineer</small>
-          </h3-->
-        <nav >
-<!--button type="button" class="menu-toggle"> <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button-->
-            <ul class="menu-bar">
-                <li class="menu-item">
-                
-                    <a class="" href="/">
-                    <!--i class="glyphicon glyphicon-home"></i--><span>Home</span></a>
-
-
-                </li>
-                <!-- -->         
-                <!---->
-                <li class="menu-item">
-                    <a class="" href="/about/ ">About</a>
-                </li>
-                    
-                <!---->
-                <li class="menu-item">
-                    <a class="" href="/blog/ ">Blog</a>
-                </li>
-                         
-                <!---->
-                <li class="menu-item">
-                    <a class="" href="/projects/ ">Projects</a>
-                </li>
-                    
-            </ul>
-            <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
-                <li>
-                    <a href="https://github.com/yohanneshl">
-                        <i class="fa fa-github fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/yohanneslibanos">
-                        <i class="fa fa-linkedin fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="email-contact" href="mailto:yohannes5@outlook.com">
-                        <i class="fa fa-envelope fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/atom.xml">
-                        <i class="fa fa-rss fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
+<header class="row">
+  <div class="col-md-8 col-xs-12 col-md-push-2">
+    <div class="flex-row">
+      <div class="masthead-title">
+        <a href="/" title="Yohannes Libanos" class="masthead-title__link">Y&middot;L</a>
+        &nbsp;&nbsp;&nbsp;
+         <!-- <small>Full-Stack Engineer</small> -->
+        <!-- <small>FDeveloper</small> -->
+      </div>
+      <div class="flex-item-1"></div>
+      <div class="social">
+        <ul
+          id="contact"
+          class="social__list animation__pulse animation--delay-8"
+        >
+          <li>
+            <a
+              class="social__link social__link--github animation__pulse--hover"
+              href="https://github.com/yohanneshl"
+            >
+              <i class="fa fa-github fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--linkedin animation__pulse--hover"
+              href="https://www.linkedin.com/in/yohanneslibanos"
+            >
+              <i class="fa fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--email animation__pulse--hover"
+              href="mailto:yohannes5@outlook.com"
+            >
+              <i class="fa fa-envelope fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--rss animation__pulse--hover"
+              href="/atom.xml"
+            >
+              <i class="fa fa-rss fa-2x"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </header>
 
-
-    <div class="row">
-      <div class="content">
-        
+      <div class="container-fluid">
+            
 
 
 
@@ -251,34 +243,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
  
      
-      ,0
-
- 
-     
-      ,0
-
- 
-     
-      ,0
-
- 
-     
-      ,0
-
- 
-     
-      ,0
-
- 
-     
-      ,0
-
- 
-     
-      ,0
-
- 
-     
       ,
              1
            
@@ -376,7 +340,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
      
       ,
-             6
+             4
+           
+
+ 
+     
+      ,
+             2
            
 
  
@@ -394,18 +364,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
      
       ,
-             5
-           
-
- 
-     
-      ,
-             1
-           
-
- 
-     
-      ,
              2
            
 
@@ -437,18 +395,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      
       ,
              1
-           
-
- 
-     
-      ,
-             1
-           
-
- 
-     
-      ,
-             3
            
 
  
@@ -509,12 +455,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      
       ,
              2
-           
-
- 
-     
-      ,
-             1
            
 
  
@@ -536,34 +476,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            
 
 |
-
- 
-     
-      0
-
- 
-     
-      0
-
- 
-     
-      0
-
- 
-     
-      0
-
- 
-     
-      0
-
- 
-     
-      0
-
- 
-     
-      0
 
  
      
@@ -736,7 +648,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
      
       
-             6
+             4
+           
+
+ 
+     
+      
+             2
            
 
  
@@ -754,18 +672,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
      
       
-             5
-           
-
- 
-     
-      
-             1
-           
-
- 
-     
-      
              2
            
 
@@ -797,18 +703,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      
       
              1
-           
-
- 
-     
-      
-             1
-           
-
- 
-     
-      
-             3
            
 
  
@@ -869,12 +763,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      
       
              2
-           
-
- 
-     
-      
-             1
            
 
  
@@ -896,7 +784,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            
 
 |
-68
+57
 |0
 
  
@@ -908,51 +796,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-pure-liquid.html
 -->
  <div id="skills" class="col-md-8 col-xs-12 col-md-push-2">
-  <h2> Projects  by Skill</h2>
+  <h2> Projects by Skill</h2>
   <br>
     <ul class="tag-box flex-row flex-center flex-wrap">
-    
-      
-
-
-
-
-    
-      
-
-
-
-
-    
-      
-
-
-
-
-    
-      
-
-
-
-
-    
-      
-
-
-
-
-    
-      
-
-
-
-
-    
-      
-
-
-
-
     
       
 
@@ -1325,7 +1171,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 
     <li class="flex-item-0">
       <a class="tag-label" href="#HTML5">HTML5 <span>
-             6
+             4
            
 
  
@@ -1357,7 +1203,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 
     <li class="flex-item-0">
       <a class="tag-label" href="#Jasmine">Jasmine <span>
-             3
+             2
            
 
  
@@ -1373,23 +1219,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 
     <li class="flex-item-0">
       <a class="tag-label" href="#JavaScript">JavaScript <span>
-             5
-           
-
- 
-     
-      </span>
-      </a></li>
-      
-    
-      
-
-
-
-
-    <li class="flex-item-0">
-      <a class="tag-label" href="#Javascript">Javascript <span>
-             1
+             3
            
 
  
@@ -1452,22 +1282,6 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 
 
     <li class="flex-item-0">
-      <a class="tag-label" href="#MVVM">MVVM <span>
-             1
-           
-
- 
-     
-      </span>
-      </a></li>
-      
-    
-      
-
-
-
-
-    <li class="flex-item-0">
       <a class="tag-label" href="#MongoDB">MongoDB <span>
              1
            
@@ -1502,22 +1316,6 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
     <li class="flex-item-0">
       <a class="tag-label" href="#Nightwatch">Nightwatch <span>
              1
-           
-
- 
-     
-      </span>
-      </a></li>
-      
-    
-      
-
-
-
-
-    <li class="flex-item-0">
-      <a class="tag-label" href="#Node.js">Node.js <span>
-             3
            
 
  
@@ -1728,22 +1526,6 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
              1
            
 
- 
-     
-      </span>
-      </a></li>
-      
-    
-      
-
-
-
-
-    <li class="flex-item-0">
-      <a class="tag-label" href="#jQuery">jQuery <span>
-             1
-           
-
 </span>
       </a></li>
       
@@ -1759,69 +1541,6 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 <br>
     <!-- posts by skill -->
   <div class="posts-by-skill">
-   
-     
-   <section class="section-skill" id="">
-   <h2></h2>
-   <ul class="posts-in-skill">
-
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="">
-   <h2></h2>
-   <ul class="posts-in-skill">
-
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="">
-   <h2></h2>
-   <ul class="posts-in-skill">
-
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="">
-   <h2></h2>
-   <ul class="posts-in-skill">
-
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="">
-   <h2></h2>
-   <ul class="posts-in-skill">
-
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="">
-   <h2></h2>
-   <ul class="posts-in-skill">
-
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="">
-   <h2></h2>
-   <ul class="posts-in-skill">
-
-     
-   </ul>
-   </section>
    
      
    <section class="section-skill" id="">
@@ -2026,7 +1745,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
      
@@ -2054,7 +1773,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-01-21T00:00:00+00:00" itemprop="datePublished">January 21, 2015</time></span> &raquo; <a href="/projects/004_fend-p4/">Web App Performance Optimization</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
    </ul>
    </section>
@@ -2133,7 +1852,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
    </ul>
    </section>
@@ -2155,7 +1874,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-01-21T00:00:00+00:00" itemprop="datePublished">January 21, 2015</time></span> &raquo; <a href="/projects/004_fend-p4/">Web App Performance Optimization</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
    </ul>
    </section>
@@ -2166,7 +1885,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
      
@@ -2179,11 +1898,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend-p3/">HTML5 Arcade Game</a></li>
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-03-21T00:00:00+00:00" itemprop="datePublished">March 21, 2015</time></span> &raquo; <a href="/projects/006_fend-p6/">Feed Reader Testing</a></li>
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
      
@@ -2213,9 +1928,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-03-21T00:00:00+00:00" itemprop="datePublished">March 21, 2015</time></span> &raquo; <a href="/projects/006_fend-p6/">Feed Reader Testing</a></li>
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
      
@@ -2228,26 +1941,11 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-01-21T00:00:00+00:00" itemprop="datePublished">January 21, 2015</time></span> &raquo; <a href="/projects/004_fend-p4/">Web App Performance Optimization</a></li>
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend-p3/">HTML5 Arcade Game</a></li>
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2017-01-05T00:00:00+00:00" itemprop="datePublished">January 05, 2017</time></span> &raquo; <a href="/projects/008_apt/">Axs Trading Platform</a></li>
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="Javascript">
-   <h2>Javascript</h2>
-   <ul class="posts-in-skill">
-
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-03-21T00:00:00+00:00" itemprop="datePublished">March 21, 2015</time></span> &raquo; <a href="/projects/006_fend-p6/">Feed Reader Testing</a></li>
      
    </ul>
    </section>
@@ -2258,7 +1956,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
      
@@ -2271,7 +1969,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
    </ul>
    </section>
@@ -2283,17 +1981,6 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 
      
      <li itemscope><span class="entry-date"><time datetime="2017-12-20T00:00:00+00:00" itemprop="datePublished">December 20, 2017</time></span> &raquo; <a href="/projects/001_fsvuenews/">Fullstack vue news</a></li>
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="MVVM">
-   <h2>Mvvm</h2>
-   <ul class="posts-in-skill">
-
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
      
    </ul>
    </section>
@@ -2327,21 +2014,6 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
-     
-   </ul>
-   </section>
-   
-     
-   <section class="section-skill" id="Node.js">
-   <h2>Node.js</h2>
-   <ul class="posts-in-skill">
-
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-01-21T00:00:00+00:00" itemprop="datePublished">January 21, 2015</time></span> &raquo; <a href="/projects/004_fend-p4/">Web App Performance Optimization</a></li>
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-03-21T00:00:00+00:00" itemprop="datePublished">March 21, 2015</time></span> &raquo; <a href="/projects/006_fend-p6/">Feed Reader Testing</a></li>
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
      
    </ul>
    </section>
@@ -2411,7 +2083,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    <ul class="posts-in-skill">
 
      
-     <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/005_fend-p5/">Rental Map</a></li>
+     <li itemscope><span class="entry-date"><time datetime="2015-02-21T00:00:00+00:00" itemprop="datePublished">February 21, 2015</time></span> &raquo; <a href="/projects/003_fend/">Udacity frontend projects</a></li>
      
      <li itemscope><span class="entry-date"><time datetime="2015-04-01T01:00:00+01:00" itemprop="datePublished">April 01, 2015</time></span> &raquo; <a href="/projects/010_fsbbo/">FSBTech Enterprise SaaS</a></li>
      
@@ -2497,17 +2169,6 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
    </ul>
    </section>
    
-     
-   <section class="section-skill" id="jQuery">
-   <h2>Jquery</h2>
-   <ul class="posts-in-skill">
-
-     
-     <li itemscope><span class="entry-date"><time datetime="2015-03-21T00:00:00+00:00" itemprop="datePublished">March 21, 2015</time></span> &raquo; <a href="/projects/006_fend-p6/">Feed Reader Testing</a></li>
-     
-   </ul>
-   </section>
-   
    </div>
  </div>
 
@@ -2518,18 +2179,13 @@ onHashSkillChange();
   window.addEventListener("hashchange", onHashSkillChange, false);
 </script>
       </div>
-    </div>
-
-
-    </div>
-
     <!-- footer -->
 
 <footer class="row">
     <br><br><br><br>
     <div class="col-xs-12">
         <p>
-          &copy; Copyright 2018. <a href="http://localhost:4000">Yohannes Libanos</a>.
+          &copy; Copyright 2019. <a href="http://localhost:4000">Yohannes Libanos</a>.
         </p>
     </div>
 </footer>

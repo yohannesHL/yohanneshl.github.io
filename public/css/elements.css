@@ -1,0 +1,103 @@
+/* Version 0.1
+ * Auther: Yohannes
+ *
+ */
+
+
+html,
+body {
+  
+  font: 16px Lato, 'Roboto Slab', 'PT Serif', Helvatica, Arial;
+  font-family: "Lato";
+  transition: all 0.5s ease-in-out;
+}
+
+/*
+* HEADINGS
+*/
+h1, h3 {
+  color: #343434;
+}
+
+h2, h4 {
+  color: #434343;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+p {
+  margin-top: 1rem;
+  color: #222;
+}
+
+/* Body text */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: #303030;
+}
+/* Lists */
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin: 8px;
+}
+
+li {
+  padding: 8px;
+  list-style: none;
+  list-style-type: none;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+}
+
+/* Misc */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
+a {
+  color: #4fa2d3;
+}
+
+a:hover {
+  color: #4fa2f3;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 48em) {
+
+}
+

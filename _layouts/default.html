@@ -7,67 +7,59 @@
 
     <script>
 
-function _onHashChange(tagOrCat) {
-  var tag, activeFlag="active-" + tagOrCat;
+      function _onHashChange(tagOrCat) {
+        var tag, activeFlag="active-" + tagOrCat;
 
-  if (location.hash){
-      tag = document.querySelector(location.hash);
-      try {
-        var posts = document.querySelector('.posts-by-' + tagOrCat).children;
-      } catch (e){
-        console.log('Error:', e);
-        return
+        if (location.hash){
+            tag = document.querySelector(location.hash);
+            try {
+              var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+            } catch (e){
+              console.log('Error:', e);
+              return
+            }
+            for(i=0; i<posts.length; i++){
+              posts[i].classList.remove(activeFlag);
+            }
+
+            tag.classList.add(activeFlag);
+
+        } else{
+          tag = document.querySelectorAll('.section-' + tagOrCat);
+          for(var i=0; i<tag.length; i++){
+              tag.item(i).classList.add(activeFlag);
+
+          }
+
+        }
+
       }
-      for(i=0; i<posts.length; i++){
-        posts[i].classList.remove(activeFlag);
+
+      function onHashTagChange() {
+          _onHashChange('tag');
+      }
+      function onHashCatChange() {
+          _onHashChange('category');
+      }
+      function onHashSkillChange() {
+          _onHashChange('skill');
       }
 
-      tag.classList.add(activeFlag);
-
-  } else{
-    tag = document.querySelectorAll('.section-' + tagOrCat);
-    for(var i=0; i<tag.length; i++){
-        tag.item(i).classList.add(activeFlag);
-
-    }
-
-  }
-
- }
-
- function onHashTagChange() {
-    _onHashChange('tag');
-}
-function onHashCatChange() {
-    _onHashChange('category');
-}
-function onHashSkillChange() {
-    _onHashChange('skill');
-}
-
-$(function(){
+      $(function(){
 
 
-$('.menu-toggle').click(function(){
-  $(this).toggle('active');
+      $('.menu-toggle').click(function(){
+        $(this).toggle('active');
 
-});
+      });
 
-});
+      });
     </script>
 
-    <div class="container-fluid">
     {% include header.html %}
-
-    <div class="row">
-      <div class="content">
-        {{ content }}
+      <div class="container-fluid">
+            {{ content }}
       </div>
-    </div>
-
-
-    </div>
-
     {% include footer.html %}
   </body>
 </html>

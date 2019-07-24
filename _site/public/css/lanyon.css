@@ -96,8 +96,8 @@ a{color: #ac4142;}
 
 .masthead {
   /* padding-top:    1rem; */
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
+  /* padding-bottom: 1rem; */
+  /* margin-bottom: 1rem; */
   /* border-bottom: 1px solid #eee; */
 }
 .masthead-title {
@@ -301,6 +301,10 @@ a.sidebar-nav-item:focus {
 .page,
 .post {
   margin-bottom: 4em;
+}
+
+.page {
+ margin: 4em 0;  
 }
 
 /* Blog post or page title */

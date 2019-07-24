@@ -1,59 +1,63 @@
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden"
+  ></iframe
+></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<header class="row masthead">
-    <div class="col-xs-12">
-        <!--h3 class="masthead-title">
-            <a href="/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
-          </h3-->
-        <nav >
-<!--button type="button" class="menu-toggle"> <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button-->
-            <ul class="menu-bar">
-                <li class="menu-item">
-                {% assign furl = page.url | replace_first: 'index.html'%}
-                    <a class="{% if  furl == site.baseurl %} active{% endif %}" href="/">
-                    <!--i class="glyphicon glyphicon-home"></i--><span>Home</span></a>
-
-
-                </li>
-                <!--{% assign count = '1' %} {% assign sum = '1' %}-->{% assign pages_list = site.pages | sort:"url" %} {% for node in pages_list %} {% if node.title != null %} {% if node.layout == "page" %}
-                <!--{% capture count %}{{ count | plus: '1' }}{% endcapture %}-->
-                <li class="menu-item">
-                    <a class="{% if page.url == node.url %} active{% endif %}" href="{{ node.url }} ">{{ node.title }}</a>
-                </li>
-                {% endif %} {% endif %}{% endfor %}
-            </ul>
-            <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
-                <li>
-                    <a href="{{ site.github }}">
-                        <i class="fa fa-github fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ site.linkedin }}">
-                        <i class="fa fa-linkedin fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="email-contact" href="mailto:{{ site.author.email }}">
-                        <i class="fa fa-envelope fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/atom.xml">
-                        <i class="fa fa-rss fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
+<header class="row">
+  <div class="col-md-8 col-xs-12 col-md-push-2">
+    <div class="flex-row">
+      <div class="masthead-title">
+        <a href="/" title="Yohannes Libanos" class="masthead-title__link">Y&middot;L</a>
+        &nbsp;&nbsp;&nbsp;
+         <!-- <small>{{ site.tagline }}</small> -->
+        <!-- <small>FDeveloper</small> -->
+      </div>
+      <div class="flex-item-1"></div>
+      <div class="social">
+        <ul
+          id="contact"
+          class="social__list animation__pulse animation--delay-8"
+        >
+          <li>
+            <a
+              class="social__link social__link--github animation__pulse--hover"
+              href="{{ site.github }}"
+            >
+              <i class="fa fa-github fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--linkedin animation__pulse--hover"
+              href="{{ site.linkedin }}"
+            >
+              <i class="fa fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--email animation__pulse--hover"
+              href="mailto:{{ site.author.email }}"
+            >
+              <i class="fa fa-envelope fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--rss animation__pulse--hover"
+              href="/atom.xml"
+            >
+              <i class="fa fa-rss fa-2x"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </header>
-
- 

@@ -2,100 +2,247 @@
 layout: default
 title: Home
 ---
-<!-- Place in the <head>, after the three links -->
-<script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-  });
-</script>
+
 
 <div class="hero col-xs-12">
+  <div class="col-md-8 col-xs-12 col-md-push-2">
+    <div class="flex-row flex--wrap flex--justify-center">
+      <div class="hero__who">
+        I'm Yohannes, a full stack software developer based in london. Currently
+        <a
+          href="mailto://yohannes5@outlook.com?subject=Hello"
+          class="hero__link animation__pulse- animation--delay-5"
+          >available for hire</a
+        >.
+      </div>
+    </div>
+    <h2>What I do</h2>
 
-
-<h3 class="col-md-6 col-md-push-3 hero__main_text_cont">
-  <span class="hero__main_text"> 
-    I'm Yohannes, a full stack software developer based in london. 
-    Currently seeking new challenges.</span></h3>
-<div class="hero__header"><h1> What I do </h1></div>
-
-<ul>
-  <div class="hero__item hero__item_green" >
-    <li> <div class="hero__item_title"><i class="fa fa-globe fa-4x"></i>Frontend Development</div>
-      <div class="hero_item_overlay">Excellent experience in developing responsive websites and web apps. 
-        Extensive experience in Javascript and various frameworks such as React, VueJS, Angular and ExtJS.</div></li></div>
-  <div class="hero__item hero__item_yellow">
-    <li><div class="hero__item_title">
-      <i class="fa fa-cubes fa-4x"></i>Backend Development</div>
-      <div class="hero_item_overlay">Love working with Node.Js, Python Django and Docker to build scalable backend systems/APIs. Keen to tackle challenging problems and build robust solutions that scale well. </div>
-    </li>
-  </div>
-  <div class="hero__item hero__item_red" ><li> <div class="hero__item_title"><i class="fa fa-mobile fa-4x"></i>Native Apps Development</div>
-    <div class="hero_item_overlay">Solid experience with building cross platform mobile apps using React Native and Expo. Able to deliver beautifully crafted experiences that will delight end users.
-  </div></li></div>
-
-</ul>
-</div>
-<div class="featured-projects col-md-8 col-xs-12 col-md-push-2">
-<h1> Featured Work</h1>
-  <a class="more-projects" title="View projects grouped by skill" style="margin-top: -0.5rem;" href="/projects/skills">
-  <i class="fa fa-code"></i> Skills</a>
-<hr>
-<br>
-
-<div class="flexslider">
-  <ul class="slides">
-    {% assign sorted = site.projects | sort: 'date' | reverse %}
-    {% for project in sorted limit:4 %} {% if project.thumbnail %}
-<li>
- {%assign pro_name=project.url | replace_first: site.url%}
-  {%capture pro_name%}{{pro_name | remove: '.html'}}{%endcapture%}
-   {%capture pro_name%}{{pro_name | remove: '/projects/'}}{%endcapture%}
-    <div class="project">
-        <center><h4>{{ project.title }}</h4></center>
-        <div class="project-image">
-            <a href="{{ project.url}}" >
-            <div><img class="project-item-thumb" src="{{site.url}}/public/img/projects/{{pro_name}}/{{project.thumbnail}}">
-   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
-                    {% for skill in project.skills %}
-                    <li class="pf-item">
-                        {{ skill }}
-                    </li>
-                    {% endfor %}
-                </ul>
-            </span-->
-            </div>
-
-
-            </a>
+    <ul class="hero__list">
+      <li class="hero__list-item hero__list-item--green">
+        <div class="hero__item-title">
+          Frontend
         </div>
-    </div></li>
-    {% endif %} {% endfor %}
-      </ul>
+        <div class="hero__item-body">
+          I build impactful and intuitive user experiences adhering to industry best practices.
+          <div class="hero__toolset">
+            <img
+              src="https://cdn.svgporn.com/logos/css-3.svg"
+              title="CSS"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/html-5.svg"
+              title="HTML"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/typescript-icon.svg"
+              title="Javascript"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/react.svg"
+              title="React"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/vue.svg"
+              title="Vue"
+              height="36px"
+              width="36px"
+            />
+          </div>
+        </div>
+      </li>
+      <li class="hero__list-item hero__list-item--yellow">
+        <div class="hero__item-title">
+          Backend
+        </div>
+        <div class="hero__item-body">
+          I architect and build clean, robust & scalable services
+          and APIs for either on-premises or cloud native systems.
+          <div class="hero__toolset">
+            <img
+              src="https://cdn.svgporn.com/logos/typescript-icon.svg"
+              title="Javascript"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/nodejs.svg"
+              title="NodeJS"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/python.svg"
+              title="Python"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/docker.svg"
+              title="AWS"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/nginx.svg"
+              title="NginX"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/aws.svg"
+              title="AWS"
+              height="36px"
+              width="36px"
+            />
+          </div>
+        </div>
+      </li>
+      <li class="hero__list-item hero__list-item--red">
+        <div class="hero__item-title">
+          Native Apps
+        </div>
+        <div class="hero__item-body">
+          I deliver beautifully crafted experiences on iOS and android devices
+          using frameworks such as React Native and Expo.
+        </div>
+        <div class="hero__toolset">
+          <img
+            src="https://cdn.svgporn.com/logos/react.svg"
+            title="React Native"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/expo.svg"
+            title="Expo"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/nativescript.svg"
+            title="NativeScript"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/ios.svg"
+            title="iOS"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/android.svg"
+            title="Android OS"
+            height="36px"
+            width="36px"
+          />
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
- <a class="more-projects" href="projects"> more projects <i class="fa fa-chevron-right"></i></a>
-<hr>
+<div class="col-md-8 col-xs-12 col-md-push-2">
+  <div class="flex-column ">
+    <h2>Companies</h2>
+    <hr />
+    <div class="companies flex-row pad3 flex--justify-around flex-align-center">
+      <a href="https://fsbtech.com/"
+        ><img
+          src="/public/img/logos/fsb.png"
+          title="FSB Technology"
+          height="40px"
+      /></a>
+      <a href="https://digital-detox.co.uk"
+        ><img src="/public/img/logos/dd.png" title="Digital detox" height="40px"
+      /></a>
+      <a href="https://digital-detox.co.uk/work/lbx/"
+        ><img
+          src="/public/img/logos/lbx.png"
+          title="London Block Exchange"
+          height="40px"
+      /></a>
+      <a href="https://digital-detox.co.uk/work"
+        ><img
+          src="/public/img/logos/oup-logo-blue.svg"
+          title="Oxford University Press"
+          height="40px"
+      /></a>
+    </div>
+  </div>
+  <div class="featured-projects">
+    <h2>Featured Work</h2>
+    <!-- <a
+      class="more-projects"
+      title="View projects grouped by skill"
+      style="margin-top: -0.5rem;"
+      href="/projects/skills"
+    >
+      <i class="fa fa-code"></i> Skills</a> -->
+    <hr />
+    <div class="featured-projects__card">
+      <ul class="featured-projects__list">
+        <li class="featured-projects__item featured-projects__item--active">Project1</li>
+        <li class="featured-projects__item">Project2</li>
+        <li class="featured-projects__item">Project3</li>
+      </ul>
+      <div class="featured-projects__preview">
+        <img class="featured-projects__img featured-projects__img--active" src="/public/img/projects/001_fsvuenews/001_fsvuenews_01.png"/>
+        <img class="featured-projects__img" src="/public/img/projects/001_fsvuenews/2.png"/>
+        <img class="featured-projects__img" src="/public/img/projects/001_fsvuenews/3.png"/>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
+  $(
+    $(".project-image").hover(
+      function() {
+        $(this)
+          .children()
+          .find(".overlay")
+          .css("box-shadow", "inset 0 0 500px 500px #000");
+        /**/
+        $(this)
+          .children()
+          .find(".overlay")
+          .stop()
+          .animate(
+            {
+              opacity: 0.7
+            },
+            "slow"
+          );
 
-$(
-
-  $('.project-image').hover(function(){
-
-$(this).children().find('.overlay').css('box-shadow','inset 0 0 500px 500px #000')
-/**/
-$(this).children().find('.overlay').stop().animate({
-opacity: .7
-}, "slow");
-
-console.log('hovering',$(this).children())
-$(this).find('.project-fields').addClass('show');
-},function(){
-  $(this).find('.project-fields').removeClass('show');
-/**/$(this).children().find('.overlay').stop().animate({
-opacity: 0
-}, "slow");
-
-
-}));
+        console.log("hovering", $(this).children());
+        $(this)
+          .find(".project-fields")
+          .addClass("show");
+      },
+      function() {
+        $(this)
+          .find(".project-fields")
+          .removeClass("show");
+        /**/ $(this)
+          .children()
+          .find(".overlay")
+          .stop()
+          .animate(
+            {
+              opacity: 0
+            },
+            "slow"
+          );
+      }
+    )
+  );
 </script>

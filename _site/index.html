@@ -21,10 +21,9 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/public/css/flexslider.css" type="text/css">
-    <link rel="stylesheet" href="/public/css/syntax.css">
-    <link rel="stylesheet" href="/public/css/lanyon.css">
-    <link rel="stylesheet" href="/public/css/main.css">
 
+    <link rel="stylesheet" href="/public/css/main.css">
+    <script src="/public/js/main.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="/public/js/jquery.flexslider.min.js"></script>
@@ -45,493 +44,371 @@
 
     <script>
 
-function _onHashChange(tagOrCat) {
-  var tag, activeFlag="active-" + tagOrCat;
+      function _onHashChange(tagOrCat) {
+        var tag, activeFlag="active-" + tagOrCat;
 
-  if (location.hash){
-      tag = document.querySelector(location.hash);
-      try {
-        var posts = document.querySelector('.posts-by-' + tagOrCat).children;
-      } catch (e){
-        console.log('Error:', e);
-        return
+        if (location.hash){
+            tag = document.querySelector(location.hash);
+            try {
+              var posts = document.querySelector('.posts-by-' + tagOrCat).children;
+            } catch (e){
+              console.log('Error:', e);
+              return
+            }
+            for(i=0; i<posts.length; i++){
+              posts[i].classList.remove(activeFlag);
+            }
+
+            tag.classList.add(activeFlag);
+
+        } else{
+          tag = document.querySelectorAll('.section-' + tagOrCat);
+          for(var i=0; i<tag.length; i++){
+              tag.item(i).classList.add(activeFlag);
+
+          }
+
+        }
+
       }
-      for(i=0; i<posts.length; i++){
-        posts[i].classList.remove(activeFlag);
+
+      function onHashTagChange() {
+          _onHashChange('tag');
+      }
+      function onHashCatChange() {
+          _onHashChange('category');
+      }
+      function onHashSkillChange() {
+          _onHashChange('skill');
       }
 
-      tag.classList.add(activeFlag);
-
-  } else{
-    tag = document.querySelectorAll('.section-' + tagOrCat);
-    for(var i=0; i<tag.length; i++){
-        tag.item(i).classList.add(activeFlag);
-
-    }
-
-  }
-
- }
-
- function onHashTagChange() {
-    _onHashChange('tag');
-}
-function onHashCatChange() {
-    _onHashChange('category');
-}
-function onHashSkillChange() {
-    _onHashChange('skill');
-}
-
-$(function(){
+      $(function(){
 
 
-$('.menu-toggle').click(function(){
-  $(this).toggle('active');
+      $('.menu-toggle').click(function(){
+        $(this).toggle('active');
 
-});
+      });
 
-});
+      });
     </script>
 
-    <div class="container-fluid">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript
+  ><iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden"
+  ></iframe
+></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<header class="row masthead">
-    <div class="col-xs-12">
-        <!--h3 class="masthead-title">
-            <a href="/" title="Home">Yohannes Libanos</a>
-            <small>Full-Stack Engineer</small>
-          </h3-->
-        <nav >
-<!--button type="button" class="menu-toggle"> <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button-->
-            <ul class="menu-bar">
-                <li class="menu-item">
-                
-                    <a class=" active" href="/">
-                    <!--i class="glyphicon glyphicon-home"></i--><span>Home</span></a>
-
-
-                </li>
-                <!-- -->         
-                <!---->
-                <li class="menu-item">
-                    <a class="" href="/about/ ">About</a>
-                </li>
-                    
-                <!---->
-                <li class="menu-item">
-                    <a class="" href="/blog/ ">Blog</a>
-                </li>
-                         
-                <!---->
-                <li class="menu-item">
-                    <a class="" href="/projects/ ">Projects</a>
-                </li>
-                    
-            </ul>
-            <ul id="contact" class="social-contacts flex-row flex-wrap flex-center">
-                <li>
-                    <a href="https://github.com/yohanneshl">
-                        <i class="fa fa-github fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/yohanneslibanos">
-                        <i class="fa fa-linkedin fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a class="email-contact" href="mailto:yohannes5@outlook.com">
-                        <i class="fa fa-envelope fa-2x"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="/atom.xml">
-                        <i class="fa fa-rss fa-2x"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
+<header class="row">
+  <div class="col-md-8 col-xs-12 col-md-push-2">
+    <div class="flex-row">
+      <div class="masthead-title">
+        <a href="/" title="Yohannes Libanos" class="masthead-title__link">Y&middot;L</a>
+        &nbsp;&nbsp;&nbsp;
+         <!-- <small>Full-Stack Engineer</small> -->
+        <!-- <small>FDeveloper</small> -->
+      </div>
+      <div class="flex-item-1"></div>
+      <div class="social">
+        <ul
+          id="contact"
+          class="social__list animation__pulse animation--delay-8"
+        >
+          <li>
+            <a
+              class="social__link social__link--github animation__pulse--hover"
+              href="https://github.com/yohanneshl"
+            >
+              <i class="fa fa-github fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--linkedin animation__pulse--hover"
+              href="https://www.linkedin.com/in/yohanneslibanos"
+            >
+              <i class="fa fa-linkedin fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--email animation__pulse--hover"
+              href="mailto:yohannes5@outlook.com"
+            >
+              <i class="fa fa-envelope fa-2x"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              class="social__link social__link--rss animation__pulse--hover"
+              href="/atom.xml"
+            >
+              <i class="fa fa-rss fa-2x"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </header>
 
+      <div class="container-fluid">
+            <div class="hero col-xs-12">
+  <div class="col-md-8 col-xs-12 col-md-push-2">
+    <div class="flex-row flex--wrap flex--justify-center">
+      <div class="hero__who">
+        I'm Yohannes, a full stack software developer based in london. Currently
+        <a
+          href="mailto://yohannes5@outlook.com?subject=Hello"
+          class="hero__link animation__pulse- animation--delay-5"
+          >available for hire</a
+        >.
+      </div>
+    </div>
+    <h2>What I do</h2>
 
-    <div class="row">
-      <div class="content">
-        <!-- Place in the <head>, after the three links -->
-<script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-  });
-</script>
-
-<div class="hero col-xs-12">
-
-<h3 class="hero__main_text_cont"><span class="hero__main_text_hello">Hello! I'm Yohannes,</span><span class="hero__main_text"> I specialise in building software for the WWW.</span></h3>
-
-
-<ul class="col-md-10 col-md-push-1">
-  <a class="hero__item hero__item_green" ><li> <div class="hero__item_title"><i class="fa fa-globe fa-4x"></i>Frontend Development</div><div class="hero_item_overlay">Experienced in developing mobile first websites and web apps. Extensive experience in Javascript and MV* frameworks such as VueJS, Angular, ReactJS, Marionette and ExtJS.</div></li></a>
-  <a class="hero__item hero__item_yellow">
-    <li><div class="hero__item_title">
-      <i class="fa fa-cubes fa-4x"></i>Backend Development</div>
-      <div class="hero_item_overlay">Love working with Node.Js, Python Django and Docker to build scalable backend systems and REST services using microservices architechture. Keen on tackling challenging problems using the best tools and practices. </div>
-    </li>
-  </a>
-  <a class="hero__item hero__item_red" ><li> <div class="hero__item_title"><i class="fa fa-mobile fa-4x"></i>Native Apps Development</div><div class="hero_item_overlay">Some experience with with Java and Android development as well as JS to Native frameworks such as Nativescript. Experimenting with Native Mobile Apps for fun. </div></li></a>
-
-</ul>
+    <ul class="hero__list">
+      <li class="hero__list-item hero__list-item--green">
+        <div class="hero__item-title">
+          Frontend
+        </div>
+        <div class="hero__item-body">
+          I build impactful and intuitive user experiences adhering to industry best practices.
+          <div class="hero__toolset">
+            <img
+              src="https://cdn.svgporn.com/logos/css-3.svg"
+              title="CSS"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/html-5.svg"
+              title="HTML"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/typescript-icon.svg"
+              title="Javascript"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/react.svg"
+              title="React"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/vue.svg"
+              title="Vue"
+              height="36px"
+              width="36px"
+            />
+          </div>
+        </div>
+      </li>
+      <li class="hero__list-item hero__list-item--yellow">
+        <div class="hero__item-title">
+          Backend
+        </div>
+        <div class="hero__item-body">
+          I architect and build clean, robust & scalable services
+          and APIs for either on-premises or cloud native systems.
+          <div class="hero__toolset">
+            <img
+              src="https://cdn.svgporn.com/logos/typescript-icon.svg"
+              title="Javascript"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/nodejs.svg"
+              title="NodeJS"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/python.svg"
+              title="Python"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/docker.svg"
+              title="AWS"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/nginx.svg"
+              title="NginX"
+              height="36px"
+              width="36px"
+            />
+            <img
+              src="https://cdn.svgporn.com/logos/aws.svg"
+              title="AWS"
+              height="36px"
+              width="36px"
+            />
+          </div>
+        </div>
+      </li>
+      <li class="hero__list-item hero__list-item--red">
+        <div class="hero__item-title">
+          Native Apps
+        </div>
+        <div class="hero__item-body">
+          I deliver beautifully crafted experiences on iOS and android devices
+          using frameworks such as React Native and Expo.
+        </div>
+        <div class="hero__toolset">
+          <img
+            src="https://cdn.svgporn.com/logos/react.svg"
+            title="React Native"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/expo.svg"
+            title="Expo"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/nativescript.svg"
+            title="NativeScript"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/ios.svg"
+            title="iOS"
+            height="36px"
+            width="36px"
+          />
+          <img
+            src="https://cdn.svgporn.com/logos/android.svg"
+            title="Android OS"
+            height="36px"
+            width="36px"
+          />
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
-<div class="featured-projects col-md-8 col-xs-12 col-md-push-2">
-<h1> Featured Work</h1>
-  <a class="more-projects" title="View projects grouped by skill" style="margin-top: -0.5rem;" href="/projects/skills">
-  <i class="fa fa-code"></i> Skills</a>
-<hr>
-<br>
-
-<div class="flexslider">
-  <ul class="slides">
-    
-     
-<li>
- 
-  
-   
-    <div class="project">
-        <center><h4>Fullstack vue news</h4></center>
-        <div class="project-image">
-            <a href="/projects/001_fsvuenews/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/001_fsvuenews//1.png">
-   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
-                    
-                    <li class="pf-item">
-                        HTML5
-                    </li>
-                    
-                    <li class="pf-item">
-                        CSS3
-                    </li>
-                    
-                    <li class="pf-item">
-                        Loopback
-                    </li>
-                    
-                    <li class="pf-item">
-                        MongoDB
-                    </li>
-                    
-                    <li class="pf-item">
-                        Nuxt
-                    </li>
-                    
-                    <li class="pf-item">
-                        VueJS
-                    </li>
-                    
-                    <li class="pf-item">
-                        Vuex
-                    </li>
-                    
-                    <li class="pf-item">
-                        Vuetify
-                    </li>
-                    
-                    <li class="pf-item">
-                        Auth0
-                    </li>
-                    
-                    <li class="pf-item">
-                        Heroku
-                    </li>
-                    
-                    <li class="pf-item">
-                        Docker
-                    </li>
-                    
-                </ul>
-            </span-->
-            </div>
-
-
-            </a>
-        </div>
-    </div></li>
-      
-<li>
- 
-  
-   
-    <div class="project">
-        <center><h4>Fullstack react games</h4></center>
-        <div class="project-image">
-            <a href="/projects/001_fsrg1/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/001_fsrg1//1.png">
-   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
-                    
-                    <li class="pf-item">
-                        HTML5
-                    </li>
-                    
-                    <li class="pf-item">
-                        CSS3
-                    </li>
-                    
-                    <li class="pf-item">
-                        ReactJS
-                    </li>
-                    
-                    <li class="pf-item">
-                        Canvas
-                    </li>
-                    
-                    <li class="pf-item">
-                        GraphQL
-                    </li>
-                    
-                    <li class="pf-item">
-                        Auth0
-                    </li>
-                    
-                    <li class="pf-item">
-                        Heroku
-                    </li>
-                    
-                    <li class="pf-item">
-                        Serverless
-                    </li>
-                    
-                </ul>
-            </span-->
-            </div>
-
-
-            </a>
-        </div>
-    </div></li>
-        
-<li>
- 
-  
-   
-    <div class="project">
-        <center><h4>FSBTech Enterprise SaaS</h4></center>
-        <div class="project-image">
-            <a href="/projects/010_fsbbo/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/010_fsbbo//fsb.png">
-   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
-                    
-                    <li class="pf-item">
-                        HTML5
-                    </li>
-                    
-                    <li class="pf-item">
-                        CSS3
-                    </li>
-                    
-                    <li class="pf-item">
-                        Sass
-                    </li>
-                    
-                    <li class="pf-item">
-                        JavaScript
-                    </li>
-                    
-                    <li class="pf-item">
-                        ExtJS
-                    </li>
-                    
-                    <li class="pf-item">
-                        FlexmonsterJS
-                    </li>
-                    
-                    <li class="pf-item">
-                        Karma
-                    </li>
-                    
-                    <li class="pf-item">
-                        Jasmine
-                    </li>
-                    
-                    <li class="pf-item">
-                        Nightwatch
-                    </li>
-                    
-                    <li class="pf-item">
-                        Gulp
-                    </li>
-                    
-                    <li class="pf-item">
-                        Ant
-                    </li>
-                    
-                    <li class="pf-item">
-                        Bash script
-                    </li>
-                    
-                </ul>
-            </span-->
-            </div>
-
-
-            </a>
-        </div>
-    </div></li>
-      
-<li>
- 
-  
-   
-    <div class="project">
-        <center><h4>Rental Map</h4></center>
-        <div class="project-image">
-            <a href="/projects/005_fend-p5/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/005_fend-p5//nd05-3.png">
-   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
-                    
-                    <li class="pf-item">
-                        HTML5
-                    </li>
-                    
-                    <li class="pf-item">
-                        CSS3
-                    </li>
-                    
-                    <li class="pf-item">
-                        Sass
-                    </li>
-                    
-                    <li class="pf-item">
-                        JavaScript
-                    </li>
-                    
-                    <li class="pf-item">
-                        Knockoutjs
-                    </li>
-                    
-                    <li class="pf-item">
-                        MVVM
-                    </li>
-                    
-                    <li class="pf-item">
-                        Node.js
-                    </li>
-                    
-                    <li class="pf-item">
-                        Karma
-                    </li>
-                    
-                    <li class="pf-item">
-                        Jasmine
-                    </li>
-                    
-                    <li class="pf-item">
-                        Gulp
-                    </li>
-                    
-                    <li class="pf-item">
-                        Google Maps
-                    </li>
-                    
-                </ul>
-            </span-->
-            </div>
-
-
-            </a>
-        </div>
-    </div></li>
-      
-<li>
- 
-  
-   
-    <div class="project">
-        <center><h4>Feed Reader Testing</h4></center>
-        <div class="project-image">
-            <a href="/projects/006_fend-p6/" >
-            <div><img class="project-item-thumb" src="http://localhost:4000/public/img/projects/006_fend-p6//nd06-2.png">
-   <!--span class="overlay"><ul class="project-fields flex-row flex-wrap">
-                    
-                    <li class="pf-item">
-                        HTML5
-                    </li>
-                    
-                    <li class="pf-item">
-                        jQuery
-                    </li>
-                    
-                    <li class="pf-item">
-                        Javascript
-                    </li>
-                    
-                    <li class="pf-item">
-                        Node.js
-                    </li>
-                    
-                    <li class="pf-item">
-                        Jasmine
-                    </li>
-                    
-                </ul>
-            </span-->
-            </div>
-
-
-            </a>
-        </div>
-    </div></li>
-     
+<div class="col-md-8 col-xs-12 col-md-push-2">
+  <div class="flex-column ">
+    <h2>Companies</h2>
+    <hr />
+    <div class="companies flex-row pad3 flex--justify-around flex-align-center">
+      <a href="https://fsbtech.com/"
+        ><img
+          src="/public/img/logos/fsb.png"
+          title="FSB Technology"
+          height="40px"
+      /></a>
+      <a href="https://digital-detox.co.uk"
+        ><img src="/public/img/logos/dd.png" title="Digital detox" height="40px"
+      /></a>
+      <a href="https://digital-detox.co.uk/work/lbx/"
+        ><img
+          src="/public/img/logos/lbx.png"
+          title="London Block Exchange"
+          height="40px"
+      /></a>
+      <a href="https://digital-detox.co.uk/work"
+        ><img
+          src="/public/img/logos/oup-logo-blue.svg"
+          title="Oxford University Press"
+          height="40px"
+      /></a>
+    </div>
+  </div>
+  <div class="featured-projects">
+    <h2>Featured Work</h2>
+    <!-- <a
+      class="more-projects"
+      title="View projects grouped by skill"
+      style="margin-top: -0.5rem;"
+      href="/projects/skills"
+    >
+      <i class="fa fa-code"></i> Skills</a> -->
+    <hr />
+    <div class="featured-projects__card">
+      <ul class="featured-projects__list">
+        <li class="featured-projects__item featured-projects__item--active">Project1</li>
+        <li class="featured-projects__item">Project2</li>
+        <li class="featured-projects__item">Project3</li>
       </ul>
-</div>
- <a class="more-projects" href="projects"> more projects <i class="fa fa-chevron-right"></i></a>
-<hr>
+      <div class="featured-projects__preview">
+        <img class="featured-projects__img featured-projects__img--active" src="/public/img/projects/001_fsvuenews/001_fsvuenews_01.png"/>
+        <img class="featured-projects__img" src="/public/img/projects/001_fsvuenews/2.png"/>
+        <img class="featured-projects__img" src="/public/img/projects/001_fsvuenews/3.png"/>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
+  $(
+    $(".project-image").hover(
+      function() {
+        $(this)
+          .children()
+          .find(".overlay")
+          .css("box-shadow", "inset 0 0 500px 500px #000");
+        /**/
+        $(this)
+          .children()
+          .find(".overlay")
+          .stop()
+          .animate(
+            {
+              opacity: 0.7
+            },
+            "slow"
+          );
 
-$(
-
-  $('.project-image').hover(function(){
-
-$(this).children().find('.overlay').css('box-shadow','inset 0 0 500px 500px #000')
-/**/
-$(this).children().find('.overlay').stop().animate({
-opacity: .7
-}, "slow");
-
-console.log('hovering',$(this).children())
-$(this).find('.project-fields').addClass('show');
-},function(){
-  $(this).find('.project-fields').removeClass('show');
-/**/$(this).children().find('.overlay').stop().animate({
-opacity: 0
-}, "slow");
-
-
-}));
+        console.log("hovering", $(this).children());
+        $(this)
+          .find(".project-fields")
+          .addClass("show");
+      },
+      function() {
+        $(this)
+          .find(".project-fields")
+          .removeClass("show");
+        /**/ $(this)
+          .children()
+          .find(".overlay")
+          .stop()
+          .animate(
+            {
+              opacity: 0
+            },
+            "slow"
+          );
+      }
+    )
+  );
 </script>
 
       </div>
-    </div>
-
-
-    </div>
-
     <!-- footer -->
 
 <footer class="row">
     <br><br><br><br>
     <div class="col-xs-12">
         <p>
-          &copy; Copyright 2018. <a href="http://localhost:4000">Yohannes Libanos</a>.
+          &copy; Copyright 2019. <a href="http://localhost:4000">Yohannes Libanos</a>.
         </p>
     </div>
 </footer>

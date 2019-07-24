@@ -1,0 +1,108 @@
+@keyframes over {
+  0% {
+    transform: scale(0.1, 0.1);
+  }
+  35% {
+    transform: scale(0.75, 0.75);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1, 1);
+  }
+  40% {
+    transform: scale(1.15, 1.15);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes apear-pulse {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.15, 1.15);
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-list {
+  from {
+    opacity: 0;
+    transform: rotate3d(0, 0.535, -0.5, 180deg) translate3d(0, 0px, 100px)
+      scale3d(0.5, 0.5, 0.5);
+    /* box-shadow: 0 15px 20px 3px rgba(25, 25, 25, 0.75); */
+  }
+  20% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.9;
+    transform: rotate3d(0, 0, 0, 40deg) translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes fade-down {
+  0%,
+  30% {
+    animation-timing-function: ease-out;
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    animation-timing-function: ease-in;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animation__pulse {
+  animation: apear-pulse 0.5s forwards ease-in;
+}
+
+.animation__pulse--hover:hover {
+  animation: pulse 0.5s ease-in;
+}
+
+.animation--delay-1 {
+  animation-delay: 0.25s;
+}
+
+.animation--delay-2 {
+  animation-delay: 0.5s;
+}
+
+.animation--delay-3 {
+  animation-delay: 0.75s;
+}
+
+.animation--delay-4 {
+  animation-delay: 1s;
+}
+
+.animation--delay-5 {
+  animation-delay: 1.25s;
+}
+
+.animation--delay-6 {
+  animation-delay: 1.5s;
+}
+
+
+.animation--delay-7 {
+  animation-delay: 1.75s;
+}
+
+.animation--delay-8 {
+  animation-delay: 1.5s;
+}
