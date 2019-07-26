@@ -4,7 +4,11 @@
   padding-bottom: 1rem;
 }
 
-.hero__who {
+.intro {
+  margin-top: 20px;
+}
+
+.intro__text {
   margin: 30px;
   padding: 16px;
   max-width: 50vw;

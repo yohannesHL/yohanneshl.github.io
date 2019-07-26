@@ -1,4 +1,28 @@
-.masthead-title {
+.header {
+  background: white;
+}
+
+.header::after {
+  content: '';
+  box-shadow: 0 10px 5px 1px #3339;
+  height: 0 ;
+  bottom: 12px;
+  position: absolute;
+  z-index: -1;
+  width: auto;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.header--alt {
+  box-shadow: 0 1px 15px 1px #3335;
+  box-shadow: 0 -10px 15px -20px #3335;
+    clear: both;
+    margin-top: 5px;
+}
+.header__title {
   padding: 16px;
   margin: 0;
   font-size: 20px;
@@ -7,8 +31,8 @@
   align-items: center;
 }
 
-.masthead-title__link,
-.masthead-title__link:hover {
+.header__link,
+.header__link:hover {
   color: #333333;
 }
 

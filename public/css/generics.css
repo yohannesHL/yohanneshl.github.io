@@ -123,9 +123,38 @@
   background: #f2f2f2;
 }
 
+.color--bg {
+  background: #fafaf8fa;
+}
 
 .shadow--bg-alt {
   box-shadow: inset 1px 1px 20px 5px rgba(0, 0, 0, 0.07);
 }
 
+.opacity-0 {
+  opacity: 0;
+}
 
+.opacity-1 {
+  opacity: 0.1;
+}
+
+.opacity-2 {
+  opacity: 0.2;
+}
+
+.opacity-3 {
+  opacity: 0.3;
+}
+
+.opacity-4 {
+  opacity: 0.4;
+}
+
+.opacity-5 {
+  opacity: 0.5;
+}
+
+.opacity-9 {
+  opacity: 0.9;
+}

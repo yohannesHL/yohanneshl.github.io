@@ -111,6 +111,11 @@ a {
   color: #3338;
 }
 
+a:hover,
+a:focus {
+  color: #333;
+}
+
 div {
   box-sizing: border-box;
 }
