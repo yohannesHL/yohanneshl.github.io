@@ -55,9 +55,9 @@ function Carousel(itemSelector, viewSelector, activeItemCls, activeViewCls) {
 window.addEventListener("load", function() {
   const carousel = Carousel(
     ".featured-projects__item",
-    ".featured-projects__img",
+    ".featured-projects__view",
     "featured-projects__item--active",
-    "featured-projects__img--active"
+    "featured-projects__view--active"
   );
   window.workCarousel = carousel;
   carousel.start();

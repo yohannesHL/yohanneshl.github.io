@@ -75,13 +75,36 @@
   overflow: hidden;
 }
 
-.featured-projects__img {
-  width: auto;
-  height: auto;
+.featured-projects__view {
   max-width: 100%;
   margin: 0 auto;
   padding: 5px;
   display: none;
+  overflow-y: auto;
+}
+
+.featured-projects__view--active {
+  display: initial;
+}
+
+.featured-projects__description {
+  position: absolute;
+  height: fit-content;
+  width: auto;
+  min-height: 100px;
+  bottom: 0;
+  right: 15px;
+  padding: 3px;
+  background: #333;
+  color: white;
+}
+
+.featured-projects__img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 280px;
+  margin-bottom: 10px;
   /* opacity: 0;
   transition: transform 0.4s ease-in;
   -webkit-transition: transform 0.4s ease-in;
