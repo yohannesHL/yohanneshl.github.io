@@ -47,7 +47,7 @@
   justify-content: space-around;
 }
 
-.flex--justify-around {
+.flex--justify-evenly {
   justify-content: space-evenly;
 }
 

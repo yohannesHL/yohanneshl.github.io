@@ -150,9 +150,13 @@
 
 @media only screen and (max-width: 480px) {
   .intro {
-    margin: 12px;
+    margin: 0;
   }
-  
+
+  .intro__text {
+    padding: 0;
+  }
+
   .hero__toolset img {
     width: 24px;
     max-height: 24px;

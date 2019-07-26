@@ -61,16 +61,15 @@
 .featured-projects__item:focus,
 .featured-projects__item--active {
   font-weight: bold;
-  background-color: #454545;
-  color: white;
-  box-shadow: 5px 3px 5px 1px inset #3338;
+  color: #444;
+  box-shadow: 5px 3px 5px 1px inset #3332;
 }
 
 .featured-projects__preview {
   display: flex;
   flex: 1;
   width: auto;
-  height: 400px;
+  height: 450px;
   margin: 5px;
   overflow: hidden;
 }
@@ -89,14 +88,20 @@
 
 .featured-projects__description {
   position: absolute;
-  height: fit-content;
-  width: auto;
-  min-height: 100px;
+  height: 150px;
   bottom: 0;
-  right: 15px;
-  padding: 3px;
-  background: #333;
-  color: white;
+  right: -1px;
+  left: 230px;
+  padding: 16px;
+  transform: translateX(-16px);
+  -webkit-transform: translateX(-16px);
+  -moz-transform: translateX(-16px);
+  -ms-transform: translateX(-16px);
+  -o-transform: translateX(-16px);
+  overflow: auto;
+  font-size: 12px;
+  background-color: #45454511;
+  box-shadow: 0 3px 5px 1px inset #3332;
 }
 
 .featured-projects__img {
@@ -104,28 +109,28 @@
   height: auto;
   max-width: 100%;
   max-height: 280px;
-  margin-bottom: 10px;
-  /* opacity: 0;
-  transition: transform 0.4s ease-in;
-  -webkit-transition: transform 0.4s ease-in;
-  -moz-transition: transform 0.4s ease-in;
-  -ms-transition: transform 0.4s ease-in;
-  -o-transition: transform 0.4s ease-in;
-  transform: translateX(-105%);
-  -webkit-transform: translateX(-105%);
-  -moz-transform: translateX(-105%);
-  -ms-transform: translateX(-105%);
-  -o-transform: translateX(-105%); */
+  padding: 0 8px;
 }
 
-.featured-projects__img.featured-projects__img--active {
-  display: block;
-  /* opacity: 1;
-  transform: translateX(10%);
-  -webkit-transform: translateX(10%);
-  -moz-transform: translateX(10%);
-  -ms-transform: translateX(10%);
-  -o-transform: translateX(10%); */
+.view__link {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  padding: 4px;
+  border: 1px solid #3339;
+  color: #3339;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.view__linkfocus,
+.view__link:hover {
+  background: #f4f4f4;
+  color: #444;
+  text-decoration: none;
+  border-color: #4442;
+
 }
 
 @media only screen and (max-width: 48em) {
@@ -137,6 +142,10 @@
   .featured-projects__img {
     max-height: 200px;
     height: auto;
+  }
+
+  .featured-projects__description {
+    left: 180px;
   }
 }
 
@@ -150,5 +159,9 @@
     height: auto;
   }
 
-
+  .featured-projects__description {
+    left: 31px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 }
