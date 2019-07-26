@@ -1,0 +1,20 @@
+.work {
+}
+
+.work__logos {
+  /* background: #f7f7f7; */
+  padding: 16px;
+}
+
+@media only screen and (max-width: 48em) {
+  .work img {
+    height: 28px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .work img {
+    /* width: 30px; */
+    max-height: 20px;
+  }
+}

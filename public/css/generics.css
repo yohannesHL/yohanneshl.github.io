@@ -60,7 +60,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column ;
+  flex-direction: column;
 }
 
 .flex--wrap {
@@ -92,21 +92,19 @@
   -ms-flex: 1 3 auto;
   flex: 1 3 auto;
 }
+
 .flex-item-4 {
   -webkit-flex: 1 4 auto;
   -ms-flex: 1 4 auto;
   flex: 1 4 auto;
 }
+
 .hide {
   display: none;
 }
 
 .show {
   display: block;
-}
-
-.flexslider .slides {
-  z-index: -1;
 }
 
 .pad1 {
@@ -120,3 +118,14 @@
 .pad3 {
   padding: 24px;
 }
+
+.color--bg-alt {
+  background: #f2f2f2;
+}
+
+
+.shadow--bg-alt {
+  box-shadow: inset 1px 1px 20px 5px rgba(0, 0, 0, 0.07);
+}
+
+

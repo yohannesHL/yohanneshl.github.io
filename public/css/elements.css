@@ -3,36 +3,48 @@
  *
  */
 
-
 html,
 body {
-  
-  font: 16px Lato, 'Roboto Slab', 'PT Serif', Helvatica, Arial;
+  font: 16px Lato, "Roboto Slab", "PT Serif", Helvatica, Arial;
   font-family: "Lato";
+  line-height: 1.1;
   transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 
 /*
 * HEADINGS
 */
-h1, h3 {
+h1,
+h2,
+h3,
+h4 {
+  margin: 20px 0 10px 0;
+}
+
+h1,
+h3 {
   color: #343434;
 }
 
-h2, h4 {
+h2,
+h4 {
   color: #434343;
 }
 
 h1 {
-  font-size: 32px;
-}
-
-h2 {
   font-size: 28px;
 }
 
-h3 {
+h2 {
   font-size: 24px;
+}
+
+h3 {
+  font-size: 22px;
 }
 
 h4 {
@@ -54,7 +66,9 @@ strong {
   color: #303030;
 }
 /* Lists */
-ul, ol, dl {
+ul,
+ol,
+dl {
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -72,29 +86,38 @@ li {
 dt {
   font-weight: bold;
 }
+
 dd {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
+}
+
+section {
+  padding-bottom: 50px;
 }
 
 /* Misc */
 hr {
+  display: block;
   position: relative;
-  margin: 1.5rem 0;
+  margin: 0 auto;
+  margin-bottom: 20px;
   border: 0;
+  height: 1px;
+  background: transparent;
   border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
 }
 
 a {
   color: #3338;
 }
 
-
 div {
   box-sizing: border-box;
 }
 
-@media only screen and (max-width: 48em) {
-
+footer {
+  padding: 50px 0 0 0;
 }
 
+@media only screen and (max-width: 48em) {
+}

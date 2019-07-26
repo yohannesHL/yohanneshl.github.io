@@ -2,7 +2,7 @@ function Carousel(itemSelector, viewSelector, activeItemCls, activeViewCls) {
   const $items = document.querySelectorAll(itemSelector);
 
   const context = {
-    delay: 3000,
+    delay: 8000,
     position: 0,
     activeItemCls: activeItemCls,
     activeViewCls: activeViewCls,

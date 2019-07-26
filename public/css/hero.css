@@ -1,10 +1,7 @@
-@import "animations.css";
-
 .hero {
   overflow: hidden;
   padding: 0;
   padding-bottom: 1rem;
-  box-shadow: inset 1px 1px 20px 5px rgba(0, 0, 0, 0.07);
 }
 
 .hero__who {
@@ -14,7 +11,6 @@
   font-weight: 18px;
   font-size: 22px;
   color: #555;
-  animation: 0.3s ease-in 0s 1 fade-down;
 }
 
 .hero__link,
@@ -24,9 +20,8 @@
 }
 
 .hero__list {
-  padding: 1rem;
-  margin-left: 1.5rem;
-  margin-top: 1rem;
+  margin: 0;
+  padding: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -72,7 +67,7 @@
   display: block;
   padding-bottom: 12px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
   color: #3f3f3f;
 }
@@ -86,7 +81,6 @@
 }
 
 .hero__list-item--yellow {
-  /* background: linear-gradient( rgba(234, 197, 15, 0.5), rgba(234, 197, 15, 0.8)); */
   background: linear-gradient(
     rgba(15, 234, 92, 0.4) 10%,
     rgba(234, 197, 15, 0.8) 90%
@@ -95,7 +89,6 @@
 }
 
 .hero__list-item--green {
-  /* background: linear-gradient( rgba(62, 140, 75, 0.5), rgba(62, 140, 75, 0.8)) */
   background: linear-gradient(
     rgba(87, 177, 255, 0.32) 10%,
     rgba(62, 140, 75, 0.8) 90%
@@ -117,6 +110,11 @@
   position: absolute;
 }
 
+.hero__toolset img {
+  width: 24px;
+  max-height: 24px;
+}
+
 @media only screen and (max-width: 48em) {
   .hero {
     height: auto;
@@ -124,7 +122,7 @@
 
   .hero__who {
     max-width: 80vw;
-    text-align: justify;
+    padding: 20px;
   }
 
   .hero__list {
@@ -134,15 +132,21 @@
 
   .hero__list-item {
     width: 100%;
-    max-width: 100%;
-
+    max-width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
     padding: 1rem 1rem 3rem 1rem;
-
-    /* margin: 0 -50px 0 -50px; */
-    /* transform: rotate3d(1, 1, -1, 70deg) scale(0.65); */
   }
 
-  .companies img {
-    height: 28px;
+  .hero__toolset img {
+    width: 28px;
+    max-height: 28px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hero__toolset img {
+    width: 20px;
+    max-height: 20px;
   }
 }
