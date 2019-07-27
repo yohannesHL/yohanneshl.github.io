@@ -2,11 +2,11 @@
  Featured Projects
 */
 
-.featured-projects {
+.projects {
   /* background: #f2f2f2; */
 }
 
-.featured-projects__card {
+.projects__card {
   display: flex;
   padding: 0;
   background: #f5f5f5;
@@ -15,7 +15,7 @@
   border: 1px solid transparent;
 }
 
-.featured-projects__list {
+.projects__list {
   margin: 0;
   padding: 0;
   width: 200px;
@@ -26,20 +26,24 @@
   border-bottom-left-radius: 5px;
 }
 
-.featured-projects__item {
+.projects__item {
   cursor: pointer;
   width: 100%;
   margin: -1px;
   padding: 12px;
   background: #dadada22;
+  color: #515151;
+  /* #f9f9f9 */
   border-bottom: 1px solid #eaeae3;
+  font-size: 12px;
+  font-weight: 600;
 }
 
-.featured-projects__item:first-child {
+.projects__item:first-child {
   border-top-left-radius: 5px;
 }
 
-.featured-projects__item--alt {
+.projects__item--alt {
   cursor: pointer;
   width: 100%;
   padding: 8px;
@@ -47,51 +51,57 @@
   border-bottom-left-radius: 5px;
 }
 
-.featured-projects__item--alt:hover,
-.featured-projects__item--alt:active,
-.featured-projects__item--alt:focus {
+.projects__item--alt:hover,
+.projects__item--alt:active,
+.projects__item--alt:focus {
   font-weight: bold;
   background-color: #454545;
   color: white;
   box-shadow: 5px 3px 5px 1px inset #333c;
 }
 
-.featured-projects__item:hover,
-.featured-projects__item:active,
-.featured-projects__item:focus,
-.featured-projects__item--active {
-  font-weight: bold;
-  color: #444;
-  box-shadow: 5px 3px 5px 1px inset #3332;
+.projects__item:hover,
+.projects__item:active,
+.projects__item:focus,
+.projects__item--active {
+  color: #393939;
 }
 
-.featured-projects__preview {
+.projects__item:active,
+.projects__item:focus,
+.projects__item--active {
+  font-weight: bold;
+
+  box-shadow: 5px 3px 5px 1px inset #e4e4e4;
+}
+
+.projects__preview {
   display: flex;
   flex: 1;
   width: auto;
   height: 450px;
-  margin: 5px;
+  padding: 5px;
   overflow: hidden;
 }
 
-.featured-projects__view {
-  max-width: 100%;
+.projects__view {
+  width: 100%;
   margin: 0 auto;
   padding: 5px;
   display: none;
   overflow-y: auto;
 }
 
-.featured-projects__view--active {
+.projects__view--active {
   display: initial;
 }
 
-.featured-projects__description {
+.projects__description {
   position: absolute;
   height: 150px;
   bottom: 0;
   right: -1px;
-  left: 230px;
+  left: 229px;
   padding: 16px;
   transform: translateX(-16px);
   -webkit-transform: translateX(-16px);
@@ -100,17 +110,28 @@
   -o-transform: translateX(-16px);
   overflow: auto;
   font-size: 12px;
-  background-color: #45454511;
-  box-shadow: 0 3px 5px 1px inset #3332;
+  background-color: #e9e9e9;
+  box-shadow: 0 3px 5px 1px inset #dadada;
+  padding: 16px;
 }
 
-.featured-projects__img {
+.projects__img {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 280px;
   padding: 0 8px;
 }
+
+/* .projects__view.projects__view--active:focus,
+.projects__view.projects__view--active:hover,
+.projects__img a:focus,
+.projects__img a:hover {
+  text-decoration: none;
+  background: #2229;
+  filter: blur(1px) grayscale(1) opacity(0.5);
+  -webkit-filter: blur(1px) grayscale(1) opacity(0.5);
+} */
 
 .view__link {
   position: absolute;
@@ -126,40 +147,43 @@
 
 .view__linkfocus,
 .view__link:hover {
-  background: #f4f4f4;
+  background: #f0f4f7;
   color: #444;
   text-decoration: none;
   border-color: #4442;
-
 }
 
 @media only screen and (max-width: 48em) {
-  .featured-projects__list {
+  .projects__list {
     width: 150px;
     max-width: 200px;
   }
 
-  .featured-projects__img {
+  .projects__img {
     max-height: 200px;
     height: auto;
   }
 
-  .featured-projects__description {
-    left: 180px;
+  .projects__description {
+    left: 179px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .featured-projects__list {
+  .projects__list {
     display: none;
   }
 
-  .featured-projects__img {
+  .projects__img {
     max-height: 200px;
     height: auto;
   }
 
-  .featured-projects__description {
+  .view__link {
+    top: 32px;
+  }
+
+  .projects__description {
     left: 31px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;

@@ -44,7 +44,7 @@ http://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-categories-p
 
 
 {%if this_word == empty or this_word == null or word_count[item] == 0 %}{%else%}
-    <li class="flex-item-0">
+    <li class="flex--grow">
       <a class="tag-label" href="#{{ this_word | cgi_escape }}">{{ this_word }} <span>{{ word_count[item] }}</span>
       </a></li>
       {%endif%}

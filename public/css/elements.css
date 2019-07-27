@@ -71,12 +71,12 @@ dl {
 
 ul {
   margin: 8px;
+  list-style: none;
+  list-style-type: none;
 }
 
 li {
   padding: 8px;
-  list-style: none;
-  list-style-type: none;
 }
 
 dt {
