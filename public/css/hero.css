@@ -9,6 +9,7 @@
 }
 
 .intro__text {
+  font-family: monospace;
   margin: 30px;
   padding: 16px;
   max-width: 50vw;
