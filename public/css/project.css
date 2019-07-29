@@ -130,6 +130,12 @@
   background-image: url(/public/img/projects/010_fsbbo/5.png);
   background-blend-mode: multiply;
   background-color: #368;
+  color: white;
+}
+
+.projects__img--fsb:focus,
+.projects__img--fsb:hover {
+  color:white
 }
 
 .projects__thumb {
