@@ -29,6 +29,10 @@
   flex-direction: row;
 }
 
+.flex--justify-fs {
+  justify-content: flex-start;
+}
+
 .flex--justify-between {
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
