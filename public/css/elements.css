@@ -14,6 +14,8 @@ body {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   color: #222;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /*
