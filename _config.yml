@@ -29,9 +29,9 @@ author:
   role:              '&middot Full-Stack Engineer'
   url:               https://github.com/yohanneshl
   email:             yohannes5@outlook.com
-
 github:              https://github.com/yohanneshl
 linkedin:            https://www.linkedin.com/in/yohanneslibanos
+
 # Custom vars
 
 plugins: [jekyll-paginate]
