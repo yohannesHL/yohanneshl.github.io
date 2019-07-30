@@ -156,9 +156,13 @@
 .projects__thumb.projects__thumb--fsb,
 .projects__thumb.projects__thumb--dd,
 .projects__thumb.projects__thumb--lbx {
-  width: 80%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+.projects__thumb--small {
+  max-width: 50%;
 }
 
 .projects__thumb.projects__thumb--fsb {
