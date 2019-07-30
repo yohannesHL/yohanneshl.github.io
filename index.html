@@ -287,35 +287,6 @@ title: Home
 </section>
 
 
-<section  class="col-xs-12">
-  <div class="col-md-8 col-xs-12 col-md-push-2">
-      <div>
-        <h2>Other projects</h2>
-        <hr class="animation__line animation--delay-2" />
-        <div class="flex-column">
-          <div class="flex--grow">
-            <!-- archived_url
-homepage
-description
-updated_at -->
-            <ul>
-
-              {% for repository in site.github.public_repositories %}
-              {% if repository.fork == false %}
-                <li>
-                <a href="{{ repository.html_url }}" title="{{ repository.name }}">
-                      {{ repository.name }}
-                </a>
-              </li>
-                {% endif %}
-              {% endfor %}
-                    
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="col-xs-12">
   <div class="col-md-8 col-xs-12 col-md-push-2">
