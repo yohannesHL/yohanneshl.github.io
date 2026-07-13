@@ -131,3 +131,14 @@ footer small {
 
 @media only screen and (max-width: 48em) {
 }
+
+.btn {
+    background: black;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.btn:hover,.btn:active {
+    text-decoration: none;
+}
