@@ -139,6 +139,7 @@ footer small {
     text-decoration: none;
 }
 
-.btn:hover,.btn:active {
+.btn:hover,.btn:active, .btn:visited {
     text-decoration: none;
+    color: white;
 }
