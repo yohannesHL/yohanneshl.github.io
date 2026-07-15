@@ -76,60 +76,35 @@ export default function Projects() {
 
       gsap.set(headerRef.current, { opacity: 0, y: 40 });
       gsap.set(cardElements, {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        xPercent: 100,
+        xPercent: 40,
         opacity: 0,
       });
 
-      const tl = gsap.timeline({
+      gsap.to(headerRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: section,
-          start: 'top top',
-          end: '+=250%',
-          scrub: 0.8,
-          pin: true,
-          anticipatePin: 1,
+          start: 'top 75%',
+          toggleActions: 'play none none reverse',
         },
       });
 
-      tl.to(headerRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.15,
-        ease: 'power2.out',
-      });
-
       cardElements.forEach((card, index) => {
-        const isLast = index === cardElements.length - 1;
-        const progress = 0.2 + index * 0.25;
-
-        tl.to(
-          card,
-          {
-            xPercent: 0,
-            opacity: 1,
-            duration: 0.25,
-            ease: 'power3.out',
+        gsap.to(card, {
+          xPercent: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
           },
-          progress
-        );
-
-        if (!isLast) {
-          tl.to(
-            card,
-            {
-              xPercent: -20,
-              opacity: 0.4,
-              duration: 0.2,
-              ease: 'power2.inOut',
-            },
-            progress + 0.22
-          );
-        }
+          delay: index * 0.1,
+        });
       });
     }, section);
 
@@ -139,15 +114,15 @@ export default function Projects() {
   return (
     <section
       ref={sectionRef}
-      className="projects h-screen w-full flex flex-col items-center justify-center overflow-hidden"
+      className="projects min-h-screen w-full flex flex-col items-center justify-center py-24"
     >
-      <div className="container mx-auto px-4 content-column h-full flex flex-col">
-        <div ref={headerRef} className="text-center pt-12 pb-6 shrink-0">
+      <div className="container mx-auto px-4 content-column">
+        <div ref={headerRef} className="text-center pt-12 pb-6">
           <h2 className="text-3xl md:text-5xl font-bold">Featured Work</h2>
           <hr className="animation__line animation--delay-2 mx-auto w-24" />
         </div>
 
-        <div className="relative flex-1 min-h-0 w-full">
+        <div className="flex flex-col gap-8">
           {projects.map((project, index) => (
             <div
               key={project.id}

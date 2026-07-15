@@ -1,6 +1,6 @@
 @layer components {
   .hero {
-    @apply overflow-hidden;
+    @apply overflow-hidden min-h-[60vh];
   }
 
   .hero__text {

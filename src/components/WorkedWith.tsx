@@ -1,6 +1,6 @@
-import { useRef, useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,11 +11,23 @@ interface Client {
 }
 
 const clients: Client[] = [
-  { name: 'FSB Technology', url: 'https://fsbtech.com/', logo: '/img/logos/fsb.png' },
-  { name: 'SES Global', url: 'https://www.ses.com', logo: '/img/logos/ses.svg' },
-  { name: 'Deloitte', url: 'https://www.deloitte.com/', logo: '/img/logos/deloitte.png' },
-  { name: 'Klekt', url: 'https://klekt.com', logo: '/img/logos/klekt.svg' },
-  { name: 'Sky', url: 'https://sky.com', logo: '/img/logos/sky.png' },
+  {
+    name: "FSB Technology",
+    url: "https://fsbtech.com/",
+    logo: "/img/logos/fsb.png",
+  },
+  {
+    name: "SES Global",
+    url: "https://www.ses.com",
+    logo: "/img/logos/ses.svg",
+  },
+  {
+    name: "Deloitte",
+    url: "https://www.deloitte.com/",
+    logo: "/img/logos/deloitte.png",
+  },
+  { name: "Klekt", url: "https://klekt.com", logo: "/img/logos/klekt.svg" },
+  { name: "Sky", url: "https://sky.com", logo: "/img/logos/sky.png" },
 ];
 
 export default function WorkedWith() {
@@ -28,7 +40,9 @@ export default function WorkedWith() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      const logoElements = logosRef.current.filter(Boolean) as HTMLAnchorElement[];
+      const logoElements = logosRef.current.filter(
+        Boolean,
+      ) as HTMLAnchorElement[];
 
       gsap.set(headerRef.current, { opacity: 0, y: 40 });
       gsap.set(logoElements, { opacity: 0, y: 30 });
@@ -36,8 +50,8 @@ export default function WorkedWith() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: 'top 70%',
-          end: 'top 20%',
+          start: "top 70%",
+          end: "top 20%",
           scrub: 0.6,
         },
       });
@@ -46,7 +60,7 @@ export default function WorkedWith() {
         opacity: 1,
         y: 0,
         duration: 0.3,
-        ease: 'power2.out',
+        ease: "power2.out",
       });
 
       tl.to(
@@ -56,9 +70,9 @@ export default function WorkedWith() {
           y: 0,
           stagger: 0.05,
           duration: 0.4,
-          ease: 'power2.out',
+          ease: "power2.out",
         },
-        '-=0.1'
+        "-=0.1",
       );
     }, section);
 
@@ -66,16 +80,10 @@ export default function WorkedWith() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="section-alt min-h-screen w-full flex flex-col items-center justify-center py-24"
-    >
-      <div className="container mx-auto px-4 content-column">
-        <div ref={headerRef} className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold">Worked with</h2>
-          <hr className="animation__line animation--delay-2 mx-auto w-24" />
-        </div>
-        <div className="work__logos flex flex-wrap items-center justify-center gap-8 md:gap-12">
+    <div className="container mx-auto px-4 content-column">
+      <div className="flex flex-col items-center justify-center">
+        <span>Trusted by</span>
+        <div className="flex items-center justify-center gap-8 md:gap-12">
           {clients.map((client, index) => (
             <a
               key={client.name}
@@ -89,13 +97,13 @@ export default function WorkedWith() {
               <img
                 src={client.logo}
                 alt={client.name}
-                className="h-10 md:h-14 w-auto"
+                className="w-24 aspect-auto"
                 loading="lazy"
               />
             </a>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

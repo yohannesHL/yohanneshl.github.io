@@ -42,6 +42,9 @@
     @apply text-lead;
   }
 
+  section {
+    @apply min-h-[40vh]
+  }
   p {
     @apply my-2 leading-normal;
   }
