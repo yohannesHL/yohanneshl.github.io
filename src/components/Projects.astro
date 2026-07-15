@@ -1,0 +1,126 @@
+---
+interface Project {
+  id: string;
+  title: string;
+  link?: string;
+  viewLabel?: string;
+  role: string;
+  type: string;
+  description: string;
+  tech: string;
+  images: { src: string; alt: string; variant?: string }[];
+  imgClass?: string;
+}
+
+const projects: Project[] = [
+  {
+    id: 'lbx',
+    title: 'LBX Mobile App',
+    link: 'https://digital-detox.co.uk/work/lbx/',
+    viewLabel: 'https://play.google.com/store/apps/details?id=com.lbx1.app&hl=en',
+    role: 'via Digital Detox',
+    type: 'Full-stack Development | Native Mobile App',
+    description: `Tasked with building a cross platform mobile app for a forthcoming launch of the UK's first Cryptocurrency Exchange: London Blockchain Exchange. Worked with LBX in a highly agile team to deliver a robust, secure and slick mobile app experience. <em>LBX Bitcoin Exchange and Wallet</em> is available in the Apple and Google app stores.`,
+    tech: 'React Native, React Native Web, Redux, Redux Saga, Alphapoint API, Websockets, NodeJS, NextJs, Jest, Expo, Sentry',
+    images: [
+      { src: '/img/projects/lbx/1.png', alt: 'LBX app screenshot 1' },
+      { src: '/img/projects/lbx/2.png', alt: 'LBX app screenshot 2' },
+    ],
+  },
+  {
+    id: 'dd',
+    title: 'Digital Detox',
+    link: 'https://digital-detox.agency/work',
+    role: '',
+    type: 'Full-stack development | Technical Consultancy',
+    description: `Worked with various clients and delivered top quality web and mobile apps such as:
+        <ul class="list">
+          <li>UK's First Cryptocurrency Mobile App</li>
+          <li>Frontend Framework</li>
+          <li>Mobile App (IoT) for a multinational telecoms provider</li>
+          <li>Web App for Education sector</li>
+        </ul>`,
+    tech: 'HTML, CSS, Javascript, React, React Native, React Native Web, Redux, Redux Saga, Alphapoint API, Websockets, NodeJS, PHP, Laravel 5, NextJs, Jest, Expo, Sentry, AWS Lambdas',
+    images: [
+      { src: '/img/projects/dd/1.png', alt: 'Digital Detox work screenshot 1' },
+      { src: '/img/projects/dd/2.png', alt: 'Digital Detox work screenshot 2' },
+    ],
+  },
+  {
+    id: 'fsb',
+    title: 'FSB SaaS',
+    role: '',
+    type: 'Frontend Development | Lead Developer',
+    description: `Lead the development of FSB Technology's Software as a Service (SaaS) platform and developed modules such as CRM, CMS, Analytics, Realtime Market Feeds, Dashboards/charts, etc. Built a highly performant and easy to use platform that enabled efficient management of core business activities.`,
+    tech: 'Javascript ES6, Sencha ExtJS, Jasmine, Karma, REST API, Websockets, Chrome Developer Tools, Bash, Ant, Jenkins, CI/CD, Docker',
+    images: [
+      { src: '/img/projects/010_fsbbo/1.png', alt: 'FSB SaaS screenshot 1' },
+      { src: '/img/projects/010_fsbbo/2.png', alt: 'FSB SaaS screenshot 2' },
+      { src: '/img/projects/010_fsbbo/3.png', alt: 'FSB SaaS screenshot 3', variant: 'small' },
+      { src: '/img/projects/010_fsbbo/4.png', alt: 'FSB SaaS screenshot 4', variant: 'small' },
+    ],
+    imgClass: 'projects__img--fsb',
+  },
+];
+---
+
+<section class="projects">
+  <div class="container content-column">
+    <h2>Featured Work</h2>
+    <hr class="animation__line animation--delay-2" />
+    <div class="projects__card">
+      <ul class="projects__list">
+        {
+          projects.map((project, index) => (
+            <li class={`projects__item ${index === 0 ? 'projects__item--active' : ''}`} data-project={project.id}>
+              {project.title}
+            </li>
+          ))
+        }
+      </ul>
+      <div class="projects__preview">
+        {
+          projects.map((project, index) => (
+            <div class={`projects__view ${index === 0 ? 'projects__view--active' : ''}`} data-project-view={project.id}>
+              <a
+                href={project.link}
+                title="More details"
+                class={`projects__img flex-row flex--justify-start flex--wrap ${project.imgClass ?? ''}`}
+              >
+                {project.images.map((image) => (
+                  <img
+                    class={`projects__thumb projects__thumb--${project.id} ${image.variant ? `projects__thumb--${image.variant}` : ''}`}
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                  />
+                ))}
+                {project.link && <p>Source: {project.link}</p>}
+              </a>
+              <div class="projects__description flex--grow">
+                <div>
+                  <strong>
+                    {project.title}
+                    {project.role && <small> ({project.role})</small>}
+                    {project.viewLabel && (
+                      <a class="view__link" href={project.viewLabel}>
+                        View
+                      </a>
+                    )}
+                  </strong>
+                </div>
+                <div>
+                  <small>{project.type}</small>
+                </div>
+                <p class="gs-vert-1" set:html={project.description} />
+                <p class="gs-vert-1">Tech: {project.tech}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/carousel.js"></script>

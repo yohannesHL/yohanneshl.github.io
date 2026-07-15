@@ -1,0 +1,29 @@
+.work__logos {
+  padding: var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.work__logos a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work__logos img {
+  height: 40px;
+  width: auto;
+}
+
+@media only screen and (max-width: 48em) {
+  .work__logos img {
+    height: 28px;
+  }
+}
+
+@media only screen and (max-width: 30rem) {
+  .work__logos img {
+    max-height: 20px;
+  }
+}

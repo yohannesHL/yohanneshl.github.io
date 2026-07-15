@@ -1,0 +1,72 @@
+---
+interface Skill {
+  title: string;
+  description: string;
+  variant: 'green' | 'yellow' | 'red';
+  tools: { src: string; title: string }[];
+}
+
+const skills: Skill[] = [
+  {
+    title: 'Frontend',
+    description: 'I develop impactful and intuitive user experiences adhering to industry best practices.',
+    variant: 'green',
+    tools: [
+      { src: '/img/logos/css-3.svg', title: 'CSS' },
+      { src: '/img/logos/html-5.svg', title: 'HTML' },
+      { src: '/img/logos/typescript-icon.svg', title: 'TypeScript' },
+      { src: '/img/logos/react.svg', title: 'React' },
+      { src: '/img/logos/vue.svg', title: 'Vue' },
+    ],
+  },
+  {
+    title: 'Backend',
+    description: 'I architect & build clean, robust & scalable services and APIs for either on-premises or cloud native systems.',
+    variant: 'yellow',
+    tools: [
+      { src: '/img/logos/typescript-icon.svg', title: 'TypeScript' },
+      { src: '/img/logos/nodejs.svg', title: 'NodeJS' },
+      { src: '/img/logos/python.svg', title: 'Python' },
+      { src: '/img/logos/docker.svg', title: 'Docker' },
+      { src: '/img/logos/nginx.svg', title: 'NginX' },
+      { src: '/img/logos/aws.svg', title: 'AWS' },
+    ],
+  },
+  {
+    title: 'Native Apps',
+    description: 'I deliver beautifully crafted experiences for iOS and Android devices using frameworks such as React Native.',
+    variant: 'red',
+    tools: [
+      { src: '/img/logos/react.svg', title: 'React Native' },
+      { src: '/img/logos/expo.svg', title: 'Expo' },
+      { src: '/img/logos/nativescript.svg', title: 'NativeScript' },
+      { src: '/img/logos/ios.svg', title: 'iOS' },
+      { src: '/img/logos/android.svg', title: 'Android OS' },
+    ],
+  },
+];
+---
+
+<section class="hero shadow--bg-alt">
+  <div class="container content-column">
+    <h2>What I do</h2>
+    <hr class="animation__line animation--delay-4" />
+    <ul class="hero__list">
+      {
+        skills.map((skill) => (
+          <li class={`hero__list-item hero__list-item--${skill.variant}`}>
+            <div class="hero__item-title">{skill.title}</div>
+            <div class="hero__item-body">
+              {skill.description}
+              <div class="hero__toolset">
+                {skill.tools.map((tool) => (
+                  <img src={tool.src} alt={tool.title} title={tool.title} loading="lazy" />
+                ))}
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

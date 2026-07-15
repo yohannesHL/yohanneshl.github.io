@@ -1,0 +1,21 @@
+{
+  "name": "yohanneshl.github.io",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
+  },
+  "packageManager": "yarn@4.16.0",
+  "dependencies": {
+    "astro": "^7.0.6"
+  }
+}

@@ -1,0 +1,39 @@
+---
+interface Client {
+  name: string;
+  url: string;
+  logo: string;
+  height?: number;
+  width?: number;
+}
+
+const clients: Client[] = [
+  { name: 'FSB Technology', url: 'https://fsbtech.com/', logo: '/img/logos/fsb.png', height: 40 },
+  { name: 'SES Global', url: 'https://www.ses.com', logo: '/img/logos/ses.svg', height: 40 },
+  { name: 'Deloitte', url: 'https://www.deloitte.com/', logo: '/img/logos/deloitte.png', width: 100 },
+  { name: 'Klekt', url: 'https://klekt.com', logo: '/img/logos/klekt.svg', width: 100 },
+  { name: 'Sky', url: 'https://sky.com', logo: '/img/logos/sky.png', height: 40 },
+];
+---
+
+<section class="work shadow--bg-alt">
+  <div class="container content-column">
+    <h2>Worked with</h2>
+    <hr class="animation__line animation--delay-2" />
+    <div class="work__logos flex-row flex--justify-around flex--align-center">
+      {
+        clients.map((client) => (
+          <a href={client.url} title={client.name}>
+            <img
+              src={client.logo}
+              alt={client.name}
+              loading="lazy"
+              height={client.height}
+              width={client.width}
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,138 @@
+/*
+ * Design Tokens
+ * Central source of truth for colors, typography, spacing, and effects.
+ */
+
+:root {
+  /* -------------------------------------------------------------------------
+   * Color primitives
+   * ------------------------------------------------------------------------- */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-gray-50: #fafaf8;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #f2f2f2;
+  --color-gray-300: #e9e9e9;
+  --color-gray-400: #dadada;
+  --color-gray-500: #9f9f9f;
+  --color-gray-600: #676666;
+  --color-gray-700: #555555;
+  --color-gray-800: #434343;
+  --color-gray-900: #333333;
+  --color-gray-950: #222222;
+
+  --color-red-400: rgba(191, 71, 68, 0.8);
+  --color-red-500: #960c0c;
+  --color-yellow-400: rgba(234, 197, 15, 0.8);
+  --color-green-400: rgba(62, 140, 75, 0.8);
+  --color-blue-400: rgba(87, 177, 255, 0.32);
+  --color-cyan-400: rgba(15, 234, 92, 0.4);
+  --color-gold-400: rgba(162, 140, 32, 0.31);
+
+  --color-linkedin: #23527c;
+  --color-rss: #da5225;
+
+  /* -------------------------------------------------------------------------
+   * Semantic colors
+   * ------------------------------------------------------------------------- */
+  --color-text: var(--color-gray-950);
+  --color-text-muted: var(--color-gray-700);
+  --color-text-heading: var(--color-gray-900);
+  --color-text-strong: var(--color-gray-900);
+  --color-text-inverse: var(--color-white);
+
+  --color-link: rgba(51, 51, 51, 0.53);
+  --color-link-hover: var(--color-gray-900);
+
+  --color-bg: var(--color-white);
+  --color-bg-alt: var(--color-gray-200);
+  --color-bg-soft: var(--color-gray-100);
+  --color-bg-card: var(--color-white);
+
+  --color-border: var(--color-gray-400);
+  --color-border-light: #eaeae3;
+
+  --color-skill-frontend-start: var(--color-blue-400);
+  --color-skill-frontend-end: var(--color-green-400);
+  --color-skill-backend-start: var(--color-cyan-400);
+  --color-skill-backend-end: var(--color-yellow-400);
+  --color-skill-native-start: var(--color-gold-400);
+  --color-skill-native-end: var(--color-red-400);
+
+  /* -------------------------------------------------------------------------
+   * Typography
+   * ------------------------------------------------------------------------- */
+  --font-sans: 'Lato', 'PT Sans', 'Roboto Slab', 'PT Serif', Helvetica, Arial,
+    sans-serif;
+  --font-mono: monospace;
+
+  --font-size-xs: 0.625rem; /* 10px */
+  --font-size-sm: 0.75rem; /* 12px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1.125rem; /* 18px */
+  --font-size-lg: 1.375rem; /* 22px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 1.75rem; /* 28px */
+
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+
+  /* -------------------------------------------------------------------------
+   * Spacing
+   * ------------------------------------------------------------------------- */
+  --space-1: 0.5rem; /* 8px */
+  --space-2: 1rem; /* 16px */
+  --space-3: 1.5rem; /* 24px */
+  --space-4: 2rem; /* 32px */
+  --space-5: 3rem; /* 48px */
+  --space-6: 3.125rem; /* 50px */
+
+  /* -------------------------------------------------------------------------
+   * Layout
+   * ------------------------------------------------------------------------- */
+  --container-max: 1200px;
+  --content-max: 66.6667%;
+  --content-offset: 16.6667%;
+  --section-padding: var(--space-6);
+
+  /* -------------------------------------------------------------------------
+   * Effects
+   * ------------------------------------------------------------------------- */
+  --radius-sm: 2px;
+  --radius-md: 5px;
+
+  --shadow-sm: 0px 3px 5px 5px rgba(51, 51, 51, 0.13);
+  --shadow-md: 0px 7px 10px 1px rgba(25, 25, 25, 0.35);
+  --shadow-inset: 0 3px 5px 1px inset var(--color-gray-400);
+  --shadow-inset-light: 5px 3px 5px 1px inset #e4e4e4;
+  --shadow-header: 0 10px 5px 1px rgba(51, 51, 51, 0.6);
+  --shadow-bg-alt: inset 1px 1px 20px 5px rgba(0, 0, 0, 0.07);
+
+  --transition-fast: 0.3s ease-in-out;
+  --transition-base: 0.5s ease-in-out;
+
+  /* -------------------------------------------------------------------------
+   * Animation
+   * ------------------------------------------------------------------------- */
+  --animation-fade-down: fade-down 0.3s normal forwards ease-in;
+  --animation-line: apear-line 1s normal forwards ease-in;
+  --animation-pulse: apear-pulse 0.5s both ease-in;
+  --animation-hero-list: hero-list 0.75s normal forwards ease-in;
+
+  --delay-1: 0.25s;
+  --delay-2: 0.5s;
+  --delay-3: 0.75s;
+  --delay-4: 1s;
+  --delay-5: 1.25s;
+
+  /* -------------------------------------------------------------------------
+   * Breakpoints (documented for reference; media queries use rem values)
+   * ------------------------------------------------------------------------- */
+  --breakpoint-sm: 30rem; /* 480px */
+  --breakpoint-md: 48rem; /* 768px */
+}
