@@ -34,7 +34,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24">
+    <section ref={sectionRef} className="w-full flex flex-col items-center justify-center  py-24">
       <div
         ref={contentRef}
         className="container flex flex-col items-center justify-center "

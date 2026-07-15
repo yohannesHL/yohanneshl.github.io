@@ -10,6 +10,8 @@ interface Client {
   logo: string;
 }
 
+
+
 const clients: Client[] = [
   {
     name: "FSB Technology",
@@ -80,8 +82,9 @@ export default function WorkedWith() {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 content-column">
-      <div className="flex flex-col items-center justify-center">
+    <div className="container flex justify-center mx-auto p-6 content-column">
+      <div className="flex flex-col items-center justify-center gap-6">
+ 
         <span>Trusted by</span>
         <div className="flex items-center justify-center gap-8 md:gap-12">
           {clients.map((client, index) => (
