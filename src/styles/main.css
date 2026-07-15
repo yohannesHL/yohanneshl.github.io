@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+@import './theme.css';
+@import './base.css';
+@import './layout.css';
+@import './header.css';
+@import './hero.css';
+@import './project.css';
+@import './work.css';
+@import './social.css';
+@import './button.css';
+@import './animations.css';

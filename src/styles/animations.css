@@ -87,13 +87,13 @@
 }
 
 .animation__drop-fade {
-  animation: var(--animation-fade-down);
+  animation: var(--animate-fade-down);
 }
 
 .animation__line {
   opacity: 0;
   animation-fill-mode: backwards;
-  animation: var(--animation-line);
+  animation: var(--animate-line);
 }
 
 .animation__line--after::after {
@@ -103,7 +103,7 @@
 .animation__pulse {
   animation-fill-mode: both;
   transform: scale(0);
-  animation: var(--animation-pulse);
+  animation: var(--animate-pulse);
 }
 
 .animation__pulse--hover:hover {

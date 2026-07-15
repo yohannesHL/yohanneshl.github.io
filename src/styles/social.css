@@ -1,48 +1,38 @@
-.social {
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
+@layer components {
+  .social {
+    @apply flex items-center uppercase;
+  }
 
-.social__list {
-  display: inline-flex;
-  margin: 0;
-  padding: 0;
-  gap: var(--space-2);
-}
+  .social__list {
+    @apply inline-flex gap-4 p-0 m-0;
+  }
 
-.social__link {
-  display: block;
-  color: var(--color-gray-900);
-  font-size: var(--font-size-sm);
-  margin: 0 5px;
-  text-align: center;
-  vertical-align: middle;
-  transition: color var(--transition-fast);
-}
+  .social__link {
+    @apply mx-1.5 block text-center text-sm text-gray-900;
+    transition: color 0.3s;
+  }
 
-.social__link:hover,
-.social__link:focus {
-  color: #2f2f2f;
-  text-decoration: none;
-}
+  .social__link:hover,
+  .social__link:focus {
+    @apply text-[#2f2f2f] no-underline;
+  }
 
-.social__link--github {
-  color: #2f2f2f;
-}
+  .social__link--github {
+    @apply text-[#2f2f2f];
+  }
 
-.social__link--linkedin:hover,
-.social__link--linkedin:focus {
-  color: var(--color-linkedin);
-}
+  .social__link--linkedin:hover,
+  .social__link--linkedin:focus {
+    @apply text-linkedin;
+  }
 
-.social__link--email:hover,
-.social__link--email:focus {
-  color: var(--color-red-500);
-}
+  .social__link--email:hover,
+  .social__link--email:focus {
+    @apply text-red-500;
+  }
 
-.social__link--rss:hover,
-.social__link--rss:focus {
-  color: var(--color-rss);
+  .social__link--rss:hover,
+  .social__link--rss:focus {
+    @apply text-rss;
+  }
 }

@@ -1,0 +1,13 @@
+@layer components {
+  .btn {
+    @apply inline-block rounded-sm bg-black px-3 py-3 text-white no-underline;
+    transition: opacity 0.3s;
+  }
+
+  .btn:hover,
+  .btn:active,
+  .btn:visited {
+    @apply text-white no-underline;
+    opacity: 0.85;
+  }
+}

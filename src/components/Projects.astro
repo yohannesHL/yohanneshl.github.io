@@ -65,7 +65,7 @@ const projects: Project[] = [
 ---
 
 <section class="projects">
-  <div class="container content-column">
+  <div class="container mx-auto px-4 content-column">
     <h2>Featured Work</h2>
     <hr class="animation__line animation--delay-2" />
     <div class="projects__card">
@@ -85,7 +85,7 @@ const projects: Project[] = [
               <a
                 href={project.link}
                 title="More details"
-                class={`projects__img flex-row flex--justify-start flex--wrap ${project.imgClass ?? ''}`}
+                class={`projects__img flex flex-row flex-wrap justify-start ${project.imgClass ?? ''}`}
               >
                 {project.images.map((image) => (
                   <img
@@ -97,7 +97,7 @@ const projects: Project[] = [
                 ))}
                 {project.link && <p>Source: {project.link}</p>}
               </a>
-              <div class="projects__description flex--grow">
+              <div class="projects__description flex-1">
                 <div>
                   <strong>
                     {project.title}
@@ -112,8 +112,8 @@ const projects: Project[] = [
                 <div>
                   <small>{project.type}</small>
                 </div>
-                <p class="gs-vert-1" set:html={project.description} />
-                <p class="gs-vert-1">Tech: {project.tech}</p>
+                <p class="my-2" set:html={project.description} />
+                <p class="my-2">Tech: {project.tech}</p>
               </div>
             </div>
           ))

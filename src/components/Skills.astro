@@ -47,18 +47,18 @@ const skills: Skill[] = [
 ];
 ---
 
-<section class="hero shadow--bg-alt">
-  <div class="container content-column">
+<section class="hero section-alt">
+  <div class="container mx-auto px-4 content-column">
     <h2>What I do</h2>
     <hr class="animation__line animation--delay-4" />
-    <ul class="hero__list">
+    <ul class="skills-list">
       {
         skills.map((skill) => (
-          <li class={`hero__list-item hero__list-item--${skill.variant}`}>
-            <div class="hero__item-title">{skill.title}</div>
-            <div class="hero__item-body">
+          <li class={`skill-card skill-card--${skill.variant}`}>
+            <div class="skill-card__title">{skill.title}</div>
+            <div class="skill-card__body">
               {skill.description}
-              <div class="hero__toolset">
+              <div class="skill-card__toolset">
                 {skill.tools.map((tool) => (
                   <img src={tool.src} alt={tool.title} title={tool.title} loading="lazy" />
                 ))}
