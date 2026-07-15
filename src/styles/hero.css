@@ -1,42 +1,19 @@
 @layer components {
   .hero {
-    @apply overflow-hidden pb-4 pt-0;
-  }
-
-  .hero__intro {
-    @apply mt-5;
+    @apply overflow-hidden;
   }
 
   .hero__text {
-    @apply m-4 mx-auto max-w-[50vw] p-4 font-mono text-lg text-text-muted;
-    animation: var(--animate-fade-down);
+    @apply font-mono text-text-muted;
   }
 
   .hero__link {
     @apply text-inherit underline;
   }
 
-  .skills-list {
-    @apply m-0 flex flex-row flex-nowrap justify-around p-0;
-  }
-
   .skill-card {
-    @apply relative z-[1] m-2 inline-block h-[220px] flex-1 cursor-pointer rounded-md p-4 pb-12 opacity-0;
-    box-shadow: var(--shadow-md);
-    animation: var(--animate-hero-list);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .skill-card:hover {
-    @apply -translate-y-[30px] text-[#3f3f3f];
-  }
-
-  .skill-card__title {
-    @apply block pb-3 text-center text-lead font-bold uppercase text-[#3f3f3f];
-  }
-
-  .skill-card__body {
-    @apply text-gray-900;
+    @apply rounded-2xl shadow-2xl;
+    will-change: transform, opacity;
   }
 
   .skill-card--frontend {
@@ -44,7 +21,6 @@
       rgba(87, 177, 255, 0.32) 10%,
       rgba(62, 140, 75, 0.8) 90%
     );
-    animation-delay: var(--delay-1);
   }
 
   .skill-card--backend {
@@ -52,7 +28,6 @@
       rgba(15, 234, 92, 0.4) 10%,
       rgba(234, 197, 15, 0.8) 90%
     );
-    animation-delay: var(--delay-3);
   }
 
   .skill-card--native {
@@ -60,54 +35,13 @@
       rgba(162, 140, 32, 0.31) 10%,
       rgba(191, 71, 68, 0.8) 90%
     );
-    animation-delay: var(--delay-5);
+  }
+
+  .skill-card__title {
+    @apply text-center font-bold uppercase text-[#3f3f3f];
   }
 
   .skill-card__toolset {
-    @apply absolute bottom-0 left-0 right-0 m-2 flex items-center justify-evenly rounded-md bg-white/70 p-2;
-  }
-
-  .skill-card__toolset img {
-    @apply h-6 w-6;
-  }
-
-  @media (max-width: 48em) {
-    .hero {
-      @apply h-auto;
-    }
-
-    .hero__text {
-      @apply max-w-[80vw] p-5;
-    }
-
-    .skills-list {
-      @apply w-auto flex-col;
-    }
-
-    .skill-card {
-      @apply mx-auto w-full max-w-[20rem] flex-1;
-    }
-
-    .skill-card__toolset img {
-      @apply h-7 w-7;
-    }
-  }
-
-  @media (max-width: 30rem) {
-    .hero__intro {
-      @apply m-0;
-    }
-
-    .hero__text {
-      @apply max-w-full p-0;
-    }
-
-    .skill-card {
-      @apply flex-none;
-    }
-
-    .skill-card__toolset img {
-      @apply h-6 w-6;
-    }
+    @apply flex items-center justify-center flex-wrap;
   }
 }

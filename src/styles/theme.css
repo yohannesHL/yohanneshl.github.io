@@ -83,14 +83,8 @@
   /* -------------------------------------------------------------------------
    * Animation
    * ------------------------------------------------------------------------- */
-  --animate-fade-down: fade-down 0.3s normal forwards ease-in;
   --animate-line: apear-line 1s normal forwards ease-in;
-  --animate-pulse: apear-pulse 0.5s both ease-in;
-  --animate-hero-list: hero-list 0.75s normal forwards ease-in;
 
-  --delay-1: 0.25s;
   --delay-2: 0.5s;
-  --delay-3: 0.75s;
   --delay-4: 1s;
-  --delay-5: 1.25s;
 }

@@ -1,133 +1,43 @@
 @layer components {
   .projects__card {
-    @apply flex rounded-md border border-transparent bg-bg-soft p-0;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .projects__list {
-    @apply m-0 w-[200px] -mt-0.5 -ml-0.5 -mb-0.5 rounded-l-md border border-border-light bg-bg-card p-0;
-  }
-
-  .projects__item {
-    @apply -m-px w-full cursor-pointer border-b border-border-light bg-[#dadada22] p-3 text-sm font-semibold text-[#515151];
-    transition: background 0.3s, color 0.3s;
-  }
-
-  .projects__item:first-child {
-    @apply rounded-tl-md;
-  }
-
-  .projects__item:hover,
-  .projects__item:active,
-  .projects__item:focus,
-  .projects__item--active {
-    @apply text-[#393939];
-  }
-
-  .projects__item:active,
-  .projects__item:focus,
-  .projects__item--active {
-    @apply font-bold;
-    box-shadow: var(--shadow-inset-light);
-  }
-
-  .projects__preview {
-    @apply relative flex h-[450px] flex-1 overflow-hidden p-[5px];
-  }
-
-  .projects__view {
-    @apply mx-auto hidden w-full overflow-y-auto p-[5px];
-  }
-
-  .projects__view--active {
-    @apply block;
-  }
-
-  .projects__description {
-    @apply absolute bottom-0 -right-px h-[150px] overflow-auto bg-gray-300 p-4 font-mono text-sm;
-    left: 229px;
-    transform: translateX(-16px);
-    box-shadow: var(--shadow-inset);
+    @apply rounded-2xl shadow-2xl overflow-hidden bg-bg-soft;
+    will-change: transform, opacity;
   }
 
   .projects__img {
-    @apply relative h-[290px] w-full overflow-y-auto p-2;
+    @apply block w-full overflow-hidden;
   }
 
   .projects__img--fsb {
-    @apply overflow-y-auto text-white;
+    @apply text-white;
     background-image: url('/img/projects/010_fsbbo/5.png');
     background-blend-mode: multiply;
     background-color: #368;
   }
 
-  .projects__img--fsb:focus,
-  .projects__img--fsb:hover {
-    @apply text-white;
-  }
-
   .projects__thumb {
-    @apply relative m-2 h-auto w-auto max-w-full p-4;
+    @apply h-full w-auto object-cover;
     transition: transform 0.35s;
-  }
-
-  .projects__thumb--lbx,
-  .projects__thumb--dd,
-  .projects__thumb--fsb {
-    @apply mx-auto h-auto w-full;
-  }
-
-  .projects__thumb--small {
-    @apply max-w-[50%];
-  }
-
-  .projects__thumb.projects__thumb--fsb {
-    @apply w-auto;
   }
 
   .projects__thumb:hover {
     @apply scale-[1.08];
   }
 
+  .projects__thumb--small {
+    @apply max-w-[50%];
+  }
+
+  .projects__description {
+    @apply overflow-auto font-mono;
+  }
+
   .view__link {
-    @apply absolute right-4 top-3.5 border border-[#4442] p-1 text-[10px] uppercase text-[#3339] no-underline;
+    @apply border border-[#4442] uppercase text-[#3339] no-underline;
     transition: border-color 0.3s, color 0.3s;
   }
 
   .view__link:hover {
     @apply border-gray-500 text-gray-900;
-  }
-
-  @media (max-width: 48em) {
-    .projects__card {
-      @apply flex-col;
-    }
-
-    .projects__list {
-      @apply flex w-full rounded-t-md rounded-bl-none;
-    }
-
-    .projects__item:first-child {
-      @apply rounded-tl-md rounded-tr-none;
-    }
-
-    .projects__preview {
-      @apply h-auto min-h-[450px];
-    }
-
-    .projects__description {
-      @apply relative left-0 h-auto;
-      transform: none;
-    }
-  }
-
-  @media (max-width: 30rem) {
-    .projects__list {
-      @apply flex-col;
-    }
-
-    .projects__preview {
-      @apply min-h-0;
-    }
   }
 }
