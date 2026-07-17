@@ -4,21 +4,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const words = [
-  "I'm",
-  "Yohannes,",
-  "a",
-  "full-stack",
-  "software",
-  "developer",
-  "based",
-  "in",
-  "London.",
-  "Now",
-  "available",
-  "for",
-  "hire.",
-];
+// const words = [
+//   "I'm",
+//   "Yohannes,",
+//   "a",
+//   "full-stack",
+//   "software",
+//   "developer",
+//   "based",
+//   "in",
+//   "London.",
+//   "Now",
+//   "available",
+//   "for",
+//   "hire.",
+// ];
+
+// other of based in London. I craft and ship software products fast. Whether you need to get your idea off the ground (end to end delivery), qualiity asurance and scalability of end product, need extra help with scaling or inproving quality or audit. i am your trusted expert that delivers reliable results. Schedule a quick call and  Do you have an exciting project you need delivered in a in working with me?
+const copy =
+  "I'm Yohannes, a senior full-stack software developer with expertise in crafting & delivering scalable solutions for startups and enterprises in fintech and eccomerce space ";
+const words = copy.split(" ").filter(Boolean);
 
 const callUrl = "https://calendly.com/yohannes-7/15min";
 const stats = [
@@ -55,12 +60,7 @@ export default function Hero() {
         filter: "blur(0px)",
         stagger: 0.06,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 75%",
-          end: "top 25%",
-          scrub: 0.6,
-        },
+        animationDelay: 1
       });
     }, section);
 
@@ -68,16 +68,25 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={divRef} className="hero flex justify-center p-20">
-      <div ref={divRef} className=" flex flex-col gap-42 ">
-        <div className="container flex flex-col gap-10">
-          <div className="text-2xl capitalize">Yohannes Libanos</div>
+    <div ref={divRef} className="hero flex flex-col items-center justify-center ">
+        <div className="container h-full ">
           <p className="hero__text text-black text-6xl md:text-6xl leading-relaxed font-sans">
-            expert full-stack engineer for your webapp/enterprise app/mobile
-            app/ai integration/platform,
+       
+
+                {words.map((word, index) => (
+              <span
+                key={index}
+                ref={(el) => {
+                  wordsRef.current[index] = el;
+                }}
+                className="inline-block mr-[0.35em] will-change-[opacity,filter]"
+              >
+                {word}
+              </span>
+            ))}
           </p>
 
-          <div className="grid gap-6 grid-cols-[1fr_180px]">
+          {/* <div className="grid gap-6 grid-cols-[1fr_180px]">
             <span className="inline-flex gap-2 text-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,9 +120,9 @@ export default function Hero() {
                 Let's talk
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="grid grid-cols-3 gap-36">
+        {/* <div className="grid grid-cols-3 gap-36">
           {stats.map(({ stat, text }) => (
             <div className="flex flex-wrap items-center justify-center">
               <span className="text-5xl font-bold"> {stat}</span>
@@ -123,8 +132,7 @@ export default function Hero() {
               </span>
             </div>
           ))}
-        </div>
-      </div>
+        </div> */}
     </div>
   );
 }
