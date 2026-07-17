@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect, type MutableRefObject } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,6 +8,7 @@ interface Skill {
   title: string;
   description: string;
   variant: 'frontend' | 'backend' | 'native';
+  capabilities: string[];
   tools: { src: string; title: string }[];
 }
 
@@ -16,6 +17,7 @@ const skills: Skill[] = [
     title: 'Frontend',
     description: 'I develop impactful and intuitive user experiences adhering to industry best practices.',
     variant: 'frontend',
+    capabilities: ['Product interfaces', 'Design systems', 'Performance & accessibility'],
     tools: [
       { src: '/img/logos/css-3.svg', title: 'CSS' },
       { src: '/img/logos/html-5.svg', title: 'HTML' },
@@ -28,6 +30,7 @@ const skills: Skill[] = [
     title: 'Backend',
     description: 'I architect & build clean, robust & scalable services and APIs for either on-premises or cloud native systems.',
     variant: 'backend',
+    capabilities: ['Service architecture', 'APIs & integrations', 'Cloud delivery'],
     tools: [
       { src: '/img/logos/typescript-icon.svg', title: 'TypeScript' },
       { src: '/img/logos/nodejs.svg', title: 'NodeJS' },
@@ -41,6 +44,7 @@ const skills: Skill[] = [
     title: 'Native Apps',
     description: 'I deliver beautifully crafted experiences for iOS and Android devices using frameworks such as React Native.',
     variant: 'native',
+    capabilities: ['Cross-platform apps', 'Native integrations', 'Store-ready delivery'],
     tools: [
       { src: '/img/logos/react.svg', title: 'React Native' },
       { src: '/img/logos/expo.svg', title: 'Expo' },
@@ -54,14 +58,14 @@ const skills: Skill[] = [
 export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardsRef = useRef<(HTMLElement | null)[]>([]);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      const cardElements = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+      const cardElements = cardsRef.current.filter(Boolean) as HTMLElement[];
 
       gsap.set(headerRef.current, { opacity: 0, y: 40 });
       gsap.set(cardElements, {
@@ -111,37 +115,68 @@ export default function Skills() {
           <hr className="animation__line animation--delay-2 mx-auto w-24" />
         </div>
 
-        <div className="flex flex-col gap-8">
+        <div className="services__list">
           {skills.map((skill, index) => (
-            <div
+            <Service
               key={skill.title}
-              ref={(el) => {
-                cardsRef.current[index] = el;
-              }}
-              className={`skill-card skill-card--${skill.variant} rounded-2xl shadow-2xl flex flex-col items-center justify-center p-8 md:p-16`}
-            >
-              <h3 className="skill-card__title text-3xl md:text-5xl font-bold uppercase mb-6">
-                {skill.title}
-              </h3>
-              <p className="text-center text-lg md:text-2xl max-w-3xl mb-8">
-                {skill.description}
-              </p>
-              <div className="skill-card__toolset flex items-center justify-center gap-6 flex-wrap">
-                {skill.tools.map((tool) => (
-                  <img
-                    key={tool.title}
-                    src={tool.src}
-                    alt={tool.title}
-                    title={tool.title}
-                    className="h-10 w-10 md:h-14 md:w-14"
-                    loading="lazy"
-                  />
-                ))}
-              </div>
-            </div>
+              skill={skill}
+              index={index}
+              cardsRef={cardsRef}
+            />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+interface ServiceProps {
+  skill: Skill;
+  index: number;
+  cardsRef: MutableRefObject<(HTMLElement | null)[]>;
+}
+
+function Service({ skill, index, cardsRef }: ServiceProps) {
+  return (
+    <article
+      ref={(element) => {
+        cardsRef.current[index] = element;
+      }}
+      className={`service service--${skill.variant}`}
+    >
+      <div className="service__number" aria-label={`Service ${index + 1}`}>
+        {String(index + 1).padStart(2, '0')}
+      </div>
+
+      <div className="service__statement">
+        <p className="service__eyebrow">Studio capability</p>
+        <h3>{skill.title}</h3>
+        <p className="service__description">{skill.description}</p>
+
+        <ul className="service__capabilities" aria-label={`${skill.title} deliverables`}>
+          {skill.capabilities.map((capability) => (
+            <li key={capability}>{capability}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="service__stack">
+        <div className="service__stack-heading">
+          <span>Working stack</span>
+          <span>{String(skill.tools.length).padStart(2, '0')} tools</span>
+        </div>
+        <div className="service__cloud">
+          {skill.tools.map((tool, toolIndex) => (
+            <div
+              key={tool.title}
+              className={`service__tool service__tool--${(toolIndex % 3) + 1}`}
+            >
+              <img src={tool.src} alt="" loading="lazy" />
+              <span>{tool.title}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </article>
   );
 }
