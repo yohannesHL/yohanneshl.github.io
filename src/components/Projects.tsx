@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, type MutableRefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -74,14 +74,14 @@ const projects: Project[] = [
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardsRef = useRef<(HTMLElement | null)[]>([]);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      const cardElements = cardsRef.current.filter(Boolean) as HTMLDivElement[];
+      const cardElements = cardsRef.current.filter(Boolean) as HTMLElement[];
 
       gsap.set(headerRef.current, { opacity: 0, y: 40 });
       gsap.set(cardElements, {
@@ -123,17 +123,21 @@ export default function Projects() {
   return (
     <section
       ref={sectionRef}
-      className="projects min-h-screen w-full flex flex-col items-center justify-center py-24"
+      className="projects min-h-screen w-full flex flex-col items-center justify-center "
     >
       <div className="container mx-auto px-4 content-column">
-        <div ref={headerRef} className="text-center pt-12 pb-6">
+        <div ref={headerRef} className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold">Featured Work</h2>
-          <hr className="animation__line animation--delay-2 mx-auto w-24" />
         </div>
 
         <div className="flex flex-col gap-8">
           {projects.map((project, index) => (
-            <Project project={project} index={index} cardsRef={cardsRef} />
+            <Project
+              key={project.id}
+              project={project}
+              index={index}
+              cardsRef={cardsRef}
+            />
           ))}
         </div>
       </div>
@@ -141,49 +145,95 @@ export default function Projects() {
   );
 }
 
-const Project = ({ project, cardsRef, index }) => (
-  <div
-    key={project.id}
+interface ProjectProps {
+  project: Project;
+  index: number;
+  cardsRef: MutableRefObject<(HTMLElement | null)[]>;
+}
+
+function Project({ project, cardsRef, index }: ProjectProps) {
+  const gallery = (
+    <div
+      className={`project__gallery ${project.imgClass ?? ""}`}
+      aria-label={`${project.title} project gallery`}
+    >
+      {project.images.map((image, imageIndex) => (
+        <figure
+          key={image.src}
+          className={`project__frame ${
+            image.variant ? "project__frame--small" : ""
+          } ${imageIndex === 0 ? "project__frame--lead" : ""}`}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="project__image"
+            loading="lazy"
+          />
+        </figure>
+      ))}
+    </div>
+  );
+
+  return (
+    <article
     ref={(el) => {
       cardsRef.current[index] = el;
     }}
-    className="projects__card rounded-2xl shadow-2xl overflow-hidden bg-bg-soft"
+    className="projects__card"
   >
-    <a
-      href={project.link}
-      title="More details"
-      className={`projects__img block h-1/2 w-full overflow-hidden ${project.imgClass ?? ""}`}
-    >
-      {project.images.map((image) => (
-        <img
-          key={image.src}
-          src={image.src}
-          alt={image.alt}
-          className={`projects__thumb h-full w-auto object-cover ${image.variant ? "projects__thumb--small" : ""}`}
-          loading="lazy"
-        />
-      ))}
-    </a>
-    <div className="projects__description h-1/2 overflow-auto p-6 font-mono text-sm md:text-base">
-      <div className="mb-2">
-        <strong className="text-lg">
-          {project.title}
-          {project.role && <small> ({project.role})</small>}
-          {project.viewLabel && (
-            <a
-              className="view__link ml-4 text-xs uppercase border px-2 py-1"
-              href={project.viewLabel}
-            >
-              View
-            </a>
-          )}
-        </strong>
+      <header className="project__masthead">
+   
+        <div className="project__heading">
+          <h3>{project.title}</h3>
+        </div>
+        <p className="project__discipline">{project.type}</p>
+        {project.viewLabel && (
+          <a
+            className="project__visit"
+            href={project.viewLabel}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View project <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </header>
+
+      <div className="project__body">
+        {project.link ? (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="project__gallery-link"
+            aria-label={`View ${project.title} case study`}
+          >
+            {gallery}
+          </a>
+        ) : (
+          gallery
+        )}
+
+        <div className="project__details">
+          <div className="project__copy">
+            <p className="project__label">The brief</p>
+            <p className="project__description">{project.description}</p>
+          </div>
+          <dl className="project__credits">
+            {project.role && (
+              <div>
+                <dt>Collaboration</dt>
+                <dd>{project.role.replace(/^via\s+/i, "")}</dd>
+              </div>
+            )}
+            <div>
+              <dt>Built with</dt>
+              <dd>{project.tech}</dd>
+            </div>
+          </dl>
+        </div>
       </div>
-      <div className="mb-3 text-text-muted">
-        <small>{project.type}</small>
-      </div>
-      <p className="mb-3">{project.description}</p>
-      <p className="text-text-muted">Tech: {project.tech}</p>
-    </div>
-  </div>
-);
+    </article>
+  );
+}

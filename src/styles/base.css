@@ -43,7 +43,7 @@
   }
 
   section {
-    @apply min-h-[40vh]
+    @apply min-h-[30vh] py-6;
   }
   p {
     @apply my-2 leading-normal;

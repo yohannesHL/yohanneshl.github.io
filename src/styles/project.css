@@ -1,43 +1,129 @@
 @layer components {
   .projects__card {
-    @apply rounded-2xl shadow-2xl overflow-hidden bg-bg-soft;
+    @apply overflow-hidden border border-border-light bg-bg-card;
     will-change: transform, opacity;
   }
 
-  .projects__img {
-    @apply block w-full overflow-hidden;
+  .project__masthead {
+    @apply grid items-end gap-x-5 gap-y-3 border-b border-border-light px-5 py-5;
+    grid-template-columns: auto minmax(0, 1fr);
   }
 
-  .projects__img--fsb {
-    @apply text-white;
-    background-image: url('/img/projects/010_fsbbo/5.png');
-    background-blend-mode: multiply;
-    background-color: #368;
+  .project__index {
+    @apply font-mono text-xs text-text-muted;
+    letter-spacing: 0.16em;
   }
 
-  .projects__thumb {
-    @apply h-full w-auto object-cover;
-    transition: transform 0.35s;
+  .project__heading h3 {
+    @apply m-0 text-2xl font-bold tracking-[-0.035em] text-text-heading;
   }
 
-  .projects__thumb:hover {
-    @apply scale-[1.08];
+  .project__eyebrow,
+  .project__label {
+    @apply m-0 font-mono text-xs uppercase text-text-muted;
+    letter-spacing: 0.12em;
   }
 
-  .projects__thumb--small {
-    @apply max-w-[50%];
+  .project__discipline {
+    @apply col-span-2 m-0 max-w-xl text-sm leading-normal text-text-muted;
   }
 
-  .projects__description {
-    @apply overflow-auto font-mono;
+  .project__visit {
+    @apply col-span-2 inline-flex w-fit items-center gap-2 border-b border-text-heading pb-1 font-mono text-xs uppercase text-text-heading no-underline;
+    letter-spacing: 0.08em;
   }
 
-  .view__link {
-    @apply border border-[#4442] uppercase text-[#3339] no-underline;
-    transition: border-color 0.3s, color 0.3s;
+  .project__visit:hover,
+  .project__visit:focus-visible {
+    @apply border-text-muted text-text-muted;
   }
 
-  .view__link:hover {
-    @apply border-gray-500 text-gray-900;
+  .project__body {
+    @apply grid;
+  }
+
+  .project__gallery-link {
+    @apply block text-inherit no-underline;
+  }
+
+  .project__gallery {
+    @apply grid min-h-64 grid-cols-2 gap-px bg-border-light;
+  }
+
+  .project__frame {
+    @apply m-0 min-h-40 overflow-hidden bg-bg-alt;
+  }
+
+  .project__frame--lead {
+    @apply col-span-2 min-h-60;
+  }
+
+  .project__image {
+    @apply h-full w-full object-cover transition-transform duration-500;
+  }
+
+  .project__gallery-link:hover .project__image,
+  .project__gallery-link:focus-visible .project__image {
+    @apply scale-[1.035];
+  }
+
+  .project__details {
+    @apply grid gap-6 px-5 py-6;
+  }
+
+  .project__description {
+    @apply mt-3 mb-0 text-base leading-normal text-text;
+  }
+
+  .project__credits {
+    @apply m-0 grid gap-4 border-t border-border-light pt-4;
+  }
+
+  .project__credits div {
+    @apply grid gap-1;
+  }
+
+  .project__credits dt {
+    @apply font-mono text-xs uppercase text-text-muted;
+    letter-spacing: 0.1em;
+  }
+
+  .project__credits dd {
+    @apply m-0 text-sm leading-normal text-text-muted;
+  }
+
+  @media (min-width: 48rem) {
+    .project__masthead {
+      @apply grid-cols-[auto_minmax(0,1fr)_minmax(12rem,0.7fr)_auto] px-8 py-6;
+    }
+
+    .project__discipline,
+    .project__visit {
+      @apply col-span-1;
+    }
+
+    .project__discipline {
+      @apply self-end;
+    }
+
+    .project__visit {
+      @apply justify-self-end;
+    }
+
+    .project__body {
+      @apply grid-cols-[minmax(0,1.35fr)_minmax(17rem,0.65fr)];
+    }
+
+    .project__gallery {
+      @apply min-h-full;
+    }
+
+    .project__frame--lead {
+      @apply min-h-72;
+    }
+
+    .project__details {
+      @apply content-between gap-10 px-8 py-8;
+    }
   }
 }

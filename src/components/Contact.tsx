@@ -34,12 +34,12 @@ export default function Contact() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full flex flex-col items-center justify-center  py-24">
+    <section ref={sectionRef} className="flex items-center justify-center py-24 px-20">
       <div
         ref={contentRef}
         className="container flex flex-col items-center justify-center "
       >
-        <h2 className="text-3xl md:text-6xl font-bold mb-4 w-120 text-black">
+        <h2 className="text-3xl md:text-6xl font-bold mb-4 w-full md:w-130 text-black">
           Have an exciting project? Let's talk
         </h2>
         <div>

@@ -68,9 +68,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={divRef} className="hero flex flex-col items-center justify-center ">
-        <div className="container h-full ">
-          <p className="hero__text text-black text-6xl md:text-6xl leading-relaxed font-sans">
+    <section ref={divRef} className="hero flex items-center mt-6">
+        <div className="container mx-auto px-4  ">
+          <p className="hero__text text-black text-4xl md:text-6xl leading-relaxed font-sans">
        
 
                 {words.map((word, index) => (
@@ -133,6 +133,6 @@ export default function Hero() {
             </div>
           ))}
         </div> */}
-    </div>
+    </section>
   );
 }

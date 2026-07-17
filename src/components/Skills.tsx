@@ -103,10 +103,10 @@ export default function Skills() {
   return (
     <section
       ref={sectionRef}
-      className="section-alt min-h-screen w-full flex flex-col items-center justify-center py-24"
+      className="section-alt min-h-screen w-full flex flex-col items-center justify-center"
     >
       <div className="container mx-auto px-4 content-column">
-        <div ref={headerRef} className="text-center pt-12 pb-6">
+        <div ref={headerRef} className="text-center">
           <h2 className="text-3xl md:text-5xl font-bold">What I do</h2>
           <hr className="animation__line animation--delay-2 mx-auto w-24" />
         </div>

@@ -53,20 +53,18 @@ export default function Stats() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className=" grid grid-cols-3 gap-38"
-    >
-       
-          {stats.map(({ stat, text }) => (
-            <div className="flex flex-wrap items-center justify-center">
-              <span className="text-5xl font-bold"> {stat}</span>
-              <span className="font-semibold wrap-break-word whitespace-break-spaces ">
-                {" "}
-                {text}
-              </span>
-            </div>
-          ))}
+    <section ref={sectionRef} className="flex items-center">
+      <div className="container mx-auto px-4 flex w-full justify-between ">
+        {stats.map(({ stat, text }) => (
+          <div className="flex flex-wrap items-baseline md:items-center ">
+            <span className="text-5xl font-bold"> {stat}</span>
+            <span className="font-semibold wrap-break-word whitespace-break-spaces ">
+              {" "}
+              {text}
+            </span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
