@@ -1,19 +1,32 @@
 @layer components {
   .site-header {
-    @apply relative bg-white;
+    @apply border-b border-border-light bg-bg;
   }
 
-  .site-header::after {
-    content: '';
-    @apply absolute -z-10 bottom-3 left-0 right-0 mx-auto h-0 max-w-[95%];
-    box-shadow: var(--shadow-header);
+  .site-header__inner {
+    @apply flex min-h-20 items-center justify-between gap-4;
   }
 
-  .site-header__title {
-    @apply flex items-center p-4 text-lead font-bold;
+  .site-header__link,
+  .site-footer__mark {
+    @apply inline-flex min-h-11 min-w-11 items-center justify-center font-display text-xl font-bold tracking-[-0.04em] text-text-heading no-underline;
   }
 
-  .site-header__link {
-    @apply text-gray-900 no-underline;
+  .site-header__actions {
+    @apply flex min-w-0 items-center gap-3;
+  }
+
+  .site-header__availability {
+    @apply m-0 hidden items-center gap-2 font-mono text-xs uppercase text-text-muted sm:flex;
+    letter-spacing: 0.08em;
+  }
+
+  .site-header__availability span {
+    @apply h-2.5 w-2.5 rounded-full bg-emerald-600;
+    box-shadow: 0 0 0 3px var(--color-availability-ring);
+  }
+
+  .site-header__cta {
+    @apply px-4 py-2.5;
   }
 }

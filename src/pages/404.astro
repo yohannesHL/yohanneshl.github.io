@@ -2,13 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="404: Page not found · Yohannes Libanos">
-  <section>
-    <div class="container content-column">
-      <p class="lead">
-        Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.{' '}
-        <a href="/">Head back home</a> to try finding it again.
-      </p>
+<Layout
+  title="404: Page not found · Yohannes Libanos"
+  description="The requested page could not be found."
+  noindex={true}
+>
+  <section class="not-found" aria-labelledby="not-found-title">
+    <div class="container mx-auto px-4 content-column">
+      <p class="not-found__code">404</p>
+      <h1 id="not-found-title">That page isn’t here.</h1>
+      <p class="lead">The address may have changed, or the page may no longer exist.</p>
+      <a class="btn" href="/">Back to the portfolio</a>
     </div>
   </section>
 </Layout>

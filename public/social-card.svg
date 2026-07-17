@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Yohannes Libanos — full-stack and AI contractor</title>
+  <desc id="description">Social sharing card for Yohannes Libanos.</desc>
+  <rect width="1200" height="630" fill="#fafaf8" />
+  <path d="M72 72h1056v486H72z" fill="none" stroke="#dadada" stroke-width="2" />
+  <circle cx="102" cy="102" r="8" fill="#960c0c" />
+  <text x="126" y="111" fill="#555555" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="3">LONDON · INDEPENDENT CONTRACTOR</text>
+  <text x="96" y="250" fill="#222222" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" letter-spacing="-3">Full-stack + AI</text>
+  <text x="96" y="334" fill="#222222" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" letter-spacing="-3">contractor.</text>
+  <text x="100" y="413" fill="#555555" font-family="Arial, Helvetica, sans-serif" font-size="30">Production software · cloud systems · applied AI</text>
+  <line x1="96" y1="494" x2="1104" y2="494" stroke="#dadada" stroke-width="2" />
+  <text x="96" y="543" fill="#333333" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">YOHANNES LIBANOS</text>
+  <text x="1104" y="543" text-anchor="end" fill="#555555" font-family="Arial, Helvetica, sans-serif" font-size="22">yohanneshl.github.io</text>
+</svg>

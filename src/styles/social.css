@@ -14,11 +14,11 @@
 
   .social__link:hover,
   .social__link:focus {
-    @apply text-[#2f2f2f] no-underline;
+    @apply text-text-heading no-underline;
   }
 
   .social__link--github {
-    @apply text-[#2f2f2f];
+    @apply text-text-heading;
   }
 
   .social__link--linkedin:hover,

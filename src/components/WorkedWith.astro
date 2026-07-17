@@ -1,0 +1,85 @@
+---
+const clients = [
+  {
+    name: 'Sky',
+    url: 'https://www.sky.com/',
+    logo: '/img/logos/sky.webp',
+    width: 240,
+    height: 147,
+  },
+  {
+    name: 'SES Global',
+    url: 'https://www.ses.com/',
+    logo: '/img/logos/ses.svg',
+    width: 220,
+    height: 71,
+  },
+  {
+    name: 'Klekt',
+    url: 'https://klekt.com/',
+    logo: '/img/logos/klekt.svg',
+    width: 106,
+    height: 32,
+  },
+  {
+    name: 'Mode',
+    url: 'https://modebanking.com/',
+    logo: '/img/logos/mode.png',
+    width: 264,
+    height: 96,
+  },
+  {
+    name: 'Deloitte',
+    url: 'https://www.deloitte.com/',
+    logo: '/img/logos/deloitte.avif',
+    width: 182,
+    height: 34,
+  },
+  {
+    name: 'FSB Technology',
+    logo: '/img/logos/fsb.png',
+    width: 148,
+    height: 73,
+  },
+];
+---
+
+<section class="trusted" aria-labelledby="trusted-title">
+  <div class="container mx-auto px-4 content-column">
+    <h2 id="trusted-title">Selected clients</h2>
+    <div class="trusted__logos">
+      {
+        clients.map((client) => {
+          const logo = (
+            <img
+              class="trusted__logo"
+              src={client.logo}
+              alt={client.name}
+              width={client.width}
+              height={client.height}
+              loading="lazy"
+              decoding="async"
+            />
+          );
+
+          return client.url ? (
+            <a
+              class="trusted__logo-link"
+              href={client.url}
+              title={client.name}
+              aria-label={`Visit ${client.name} (opens in a new tab)`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {logo}
+            </a>
+          ) : (
+            <span class="trusted__logo-link" title={client.name}>
+              {logo}
+            </span>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

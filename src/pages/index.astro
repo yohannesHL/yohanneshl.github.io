@@ -1,20 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero';
-import About from '../components/About';
-import Stats from '../components/Stats';
+import Stats from '../components/Stats.astro';
 import Skills from '../components/Skills';
-import Projects from '../components/Projects';
-import WorkedWith from '../components/WorkedWith';
-import Contact from '../components/Contact';
+import WorkedWith from '../components/WorkedWith.astro';
+import FeaturedWork from '../components/FeaturedWork.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Layout>
-  <Hero client:load />
-  <Stats client:load />
-  <!-- <About client:load /> -->
-  <Skills client:load />
-  <WorkedWith client:load />
-  <Projects client:load />
-  <Contact client:load />
+  <Hero client:load/>
+  <Stats />
+  <Skills client:media="(min-width: 40rem) and (prefers-reduced-motion: no-preference)" />
+  <WorkedWith />
+  <FeaturedWork />
+  <Contact />
 </Layout>

@@ -3,19 +3,9 @@
     @apply mx-auto my-0 p-0;
   }
 
-  .content-column {
-    @apply w-full;
-  }
-
-  @media (min-width: 48rem) {
-    .content-column {
-      @apply w-2/3;
-      margin-left: 16.6667%;
-    }
-  }
-
   .section-alt {
-    @apply bg-bg-alt shadow-[inset_1px_1px_20px_5px_rgba(0,0,0,0.07)];
+    @apply bg-bg-alt;
+    box-shadow: var(--shadow-bg-alt);
   }
 
   .lead {
@@ -28,5 +18,18 @@
 
   .list li {
     @apply p-0.5;
+  }
+}
+
+@layer utilities {
+  .container.content-column {
+    width: 100%;
+  }
+
+  @media (min-width: 48rem) {
+    .container.content-column {
+      width: 66.6667%;
+      margin-left: 16.6667%;
+    }
   }
 }

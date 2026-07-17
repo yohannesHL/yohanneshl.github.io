@@ -1,8 +1,9 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 interface Service {
   title: string;
@@ -92,76 +93,61 @@ const callUrl = 'https://calendly.com/yohannes-7/15min';
 export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useLayoutEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+  useGSAP(
+    () => {
+      const section = sectionRef.current;
+      if (!section) return;
 
-    const media = gsap.matchMedia();
-    const context = gsap.context(() => {
+      const media = gsap.matchMedia();
+
       media.add(
         '(min-width: 40rem) and (prefers-reduced-motion: no-preference)',
         () => {
-          const header = section.querySelector('.services__header');
-          const serviceStatements = gsap.utils.toArray<HTMLElement>(
-            section.querySelectorAll('.service__statement'),
-          );
-          const closingBlocks = gsap.utils.toArray<HTMLElement>(
-            section.querySelectorAll('.services__engagement, .services__stack'),
-          );
-
-          if (!header || serviceStatements.length === 0) return;
-
-          const timeline = gsap.timeline({
-            defaults: { ease: 'power3.out' },
-            scrollTrigger: {
-              trigger: section,
-              start: 'top 72%',
-              once: true,
-            },
-          });
-
-          timeline.from(header, {
-            opacity: 0,
-            y: 24,
-            duration: 0.5,
-          });
-
-          serviceStatements.forEach((statement, index) => {
-            const statementOffset = index % 2 === 0 ? -28 : 28;
-            const position = index === 0 ? '-=0.12' : '-=0.32';
-
-            timeline.from(
-              statement,
+          const revealOnScroll = (
+            target: HTMLElement,
+            trigger: HTMLElement,
+            offset = 18,
+          ) => {
+            gsap.fromTo(
+              target,
+              { opacity: 0, y: offset },
               {
-                opacity: 0,
-                x: statementOffset,
+                opacity: 1,
+                y: 0,
                 duration: 0.5,
+                ease: 'power3.out',
+                clearProps: 'opacity,transform',
+                scrollTrigger: {
+                  trigger,
+                  start: 'top 82%',
+                  once: true,
+                },
               },
-              position,
             );
-          });
+          };
 
-          if (closingBlocks.length > 0) {
-            timeline.from(
-              closingBlocks,
-              {
-                opacity: 0,
-                y: 16,
-                duration: 0.45,
-                stagger: 0.08,
-              },
-              '-=0.2',
-            );
-          }
+          const header = section.querySelector<HTMLElement>('.services__header');
+          if (header) revealOnScroll(header, header, 20);
+
+          gsap.utils
+            .toArray<HTMLElement>(section.querySelectorAll('.service'))
+            .forEach((row) => {
+              const statement = row.querySelector<HTMLElement>('.service__statement');
+              if (statement) revealOnScroll(statement, row);
+            });
+
+          gsap.utils
+            .toArray<HTMLElement>(
+              section.querySelectorAll('.services__engagement, .services__stack'),
+            )
+            .forEach((block) => revealOnScroll(block, block, 16));
         },
       );
-    }, section);
 
-    return () => {
-      media.revert();
-      context.revert();
-    };
-  }, []);
+      return () => media.revert();
+    },
+    { scope: sectionRef },
+  );
 
   return (
     <section
@@ -175,8 +161,7 @@ export default function Skills() {
           <h2 id="services-title">How I can help</h2>
           <div className="services__introduction">
             <p className="services__lede">
-              I design, build and improve production software for startups and product
-              teams—from full-stack products to reliable AI features.
+              I design, build and improve production software for startups and product teams, from full-stack web and mobile applications to AI integrations.
             </p>
             <p className="services__availability">
               Available for fixed-scope delivery, embedded contracts and technical rescue

@@ -1,47 +1,75 @@
 @layer components {
   .hero {
-    @apply overflow-hidden min-h-[70vh];
+    @apply pt-16 pb-24 md:pt-20 md:pb-32;
   }
 
-  .hero__text {
-    @apply font-mono text-text-muted;
+  .hero__layout {
+    @apply grid min-w-0 gap-10;
   }
 
-  .hero__link {
-    @apply text-inherit underline;
+  .hero__heading,
+  .hero__introduction {
+    @apply min-w-0;
   }
 
-  .skill-card {
-    @apply rounded-2xl shadow-2xl;
-    will-change: transform, opacity;
+  .hero__meta {
+    @apply m-0 font-mono text-xs uppercase text-text-muted;
+    letter-spacing: 0.12em;
   }
 
-  .skill-card--frontend {
-    background: linear-gradient(
-      rgba(87, 177, 255, 0.32) 10%,
-      rgba(62, 140, 75, 0.8) 90%
-    );
+  .hero h1 {
+    @apply mt-4 mb-0 max-w-3xl font-display font-bold leading-[1.02] tracking-[-0.045em] text-text-heading;
+    font-size: clamp(3rem, 7vw, 5.25rem);
   }
 
-  .skill-card--backend {
-    background: linear-gradient(
-      rgba(15, 234, 92, 0.4) 10%,
-      rgba(234, 197, 15, 0.8) 90%
-    );
+  .hero__rotating-wrap {
+    display: grid;
+    line-height: inherit;
+    min-block-size: 1.05em;
+    width: 100%;
   }
 
-  .skill-card--native {
-    background: linear-gradient(
-      rgba(162, 140, 32, 0.31) 10%,
-      rgba(191, 71, 68, 0.8) 90%
-    );
+  .hero__rotating-word {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    line-height: inherit;
   }
 
-  .skill-card__title {
-    @apply text-center font-bold uppercase text-[#3f3f3f];
+  .hero__rotating-word:not(:first-child) {
+    visibility: hidden;
   }
 
-  .skill-card__toolset {
-    @apply flex items-center justify-center flex-wrap;
+  .hero__rotating-token {
+    display: inline-flex;
+  }
+
+  .hero__rotating-character {
+    display: inline-block;
+  }
+
+
+  .hero__introduction {
+    @apply grid content-end gap-8;
+  }
+
+  .hero__introduction p {
+    @apply m-0 max-w-2xl text-lg leading-normal text-text-muted md:text-xl;
+  }
+
+  .hero__actions {
+    @apply flex flex-wrap items-center gap-4;
+  }
+
+  .hero__secondary {
+    @apply inline-flex min-h-11 items-center border-b border-text-heading py-2 font-semibold text-text-heading no-underline;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 60rem) {
+    .hero__layout {
+      grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.92fr);
+      gap: clamp(3rem, 7vw, 7rem);
+    }
   }
 }

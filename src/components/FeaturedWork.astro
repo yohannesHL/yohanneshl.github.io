@@ -1,0 +1,21 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+
+<section id="work" class="projects" aria-labelledby="work-title">
+  <div class="container mx-auto px-4 content-column">
+    <header class="projects__header">
+      <h2 id="work-title">Featured work</h2>
+ 
+    </header>
+
+    <div class="projects__list">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>
+
+<script>
+  import '../scripts/reveal';
+</script>

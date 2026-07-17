@@ -6,31 +6,83 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
 const {
-  title = 'Yohannes Libanos · Full-Stack Engineer',
-  description = 'Personal website of Yohannes Libanos, a full-stack software developer based in London.',
+  title = 'Yohannes Libanos · Full-stack and AI contractor',
+  description = 'Independent full-stack and AI contractor in London, delivering production software, cloud systems and reliable AI features for startups and enterprises.',
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL('/social-card.png', Astro.site);
+const robots = noindex
+  ? 'noindex, nofollow'
+  : 'index, follow, max-image-preview:large';
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://yohanneshl.github.io/#person',
+    name: 'Yohannes Libanos',
+    url: 'https://yohanneshl.github.io',
+    jobTitle: 'Independent full-stack and AI contractor',
+    sameAs: [
+      'https://github.com/yohanneshl',
+      'https://www.linkedin.com/in/yohanneslibanos',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://yohanneshl.github.io/#services',
+    name: 'Full-stack and AI contracting services',
+    url: 'https://yohanneshl.github.io',
+    areaServed: 'United Kingdom',
+    provider: {
+      '@id': 'https://yohanneshl.github.io/#person',
+    },
+    serviceType: [
+      'Full-stack product delivery',
+      'AI features and automation',
+      'Cloud architecture and integrations',
+      'Software modernisation',
+    ],
+  },
+];
 ---
 
 <!doctype html>
-<html lang="en-us">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
-    <meta name="robots" content="noindex, noimageindex, nosnippet, nofollow, noarchive" />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#fafaf8" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="Yohannes Libanos" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Yohannes Libanos — full-stack and AI contractor" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
 
     <title>{title}</title>
 
     <link rel="canonical" href={canonicalURL} />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-precomposed.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,36 +92,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       rel="stylesheet"
     />
 
-    <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-88XTDR7X8B"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-88XTDR7X8B');
-    </script>
-    <!-- End Google Tag Manager -->
+    {!noindex && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PV7KSX7"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"
-      >
-      </iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
 
-    <div class="container-fluid">
+    <main id="main-content" class="container-fluid" tabindex="-1">
       <slot />
-    </div>
+    </main>
 
     <Footer />
   </body>

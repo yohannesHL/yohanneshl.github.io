@@ -1,32 +1,14 @@
----
-const author = {
-  github: "https://github.com/yohanneshl",
-  linkedin: "https://www.linkedin.com/in/yohanneslibanos",
-};
----
-
 <header class="site-header">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-between">
-      <div class="site-header__title">
-        <a href="/" title="Yohannes Libanos" class="site-header__link">Y·L</a>
+  <div class="container mx-auto px-4 site-header__inner">
+    <a href="/" class="site-header__link" aria-label="Yohannes Libanos — home">Y·L</a>
+    <div class="site-header__actions">
+      <p class="site-header__availability">
+        <span aria-hidden="true"></span>
+        Available for contracts
+      </p>
+      <a class="btn site-header__cta" href="https://calendly.com/yohannes-7/15min">
+        Let’s talk
+      </a>
       </div>
-      <div
-        class="flex gap-2 items-center justify-center text-center align-middle"
-      >
-        <div
-          class="uppercase text-xs text-link grid grid-cols-[16px_1fr] items-center"
-        >
-          <div class="rounded-full bg-emerald-500 w-3 h-3"></div>
-          <span class=""> Available </span>
-        </div>
-        <a
-          class="btn inline-block px-4 py-2 rounded-full"
-          href="https://calendly.com/yohannes-7/15min"
-        >
-          Let's talk
-        </a>
-      </div>
-    </div>
   </div>
 </header>

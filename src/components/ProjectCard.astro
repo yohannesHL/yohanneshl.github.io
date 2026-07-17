@@ -1,0 +1,131 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="projects__card" data-reveal>
+  <header class="project__masthead">
+    <div class="project__heading">
+      <h3>{project.title}</h3>
+    </div>
+
+    <ul class="project__disciplines" aria-label={`${project.title} disciplines`}>
+      {project.services.map((service) => <li>{service}</li>)}
+    </ul>
+  </header>
+
+  <div class="project__body">
+    {
+      project.visual.kind === 'gallery' ? (
+        <figure class="project__visual">
+          <div
+            class:list={[
+              'project__gallery',
+              project.visual.images.length === 1 && 'project__gallery--single',
+            ]}
+          >
+            {project.visual.images.map((image, index) => (
+              <div
+                class:list={[
+                  'project__frame',
+                  index === 0 && 'project__frame--lead',
+                  image.variant === 'mobile' && 'project__frame--mobile',
+                  image.variant === 'support' && 'project__frame--support',
+                ]}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  loading="lazy"
+                  decoding="async"
+                  class:list={[
+                    'project__image',
+                    image.fit === 'contain' && 'project__image--contain',
+                  ]}
+                  style={`object-position: ${image.position ?? 'center'};`}
+                />
+              </div>
+            ))}
+          </div>
+          {project.visual.caption && (
+            <figcaption>{project.visual.caption}</figcaption>
+          )}
+        </figure>
+      ) : (
+        <figure class="project__placeholder">
+          <img
+            src={project.visual.logo.src}
+            alt={project.visual.logo.alt}
+            width={project.visual.logo.width}
+            height={project.visual.logo.height}
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <strong>{project.visual.label}</strong>
+            {project.visual.note && <span>{project.visual.note}</span>}
+          </figcaption>
+        </figure>
+      )
+    }
+
+    <div class="project__details">
+      <div class="project__copy">
+        <p class="project__summary">{project.summary}</p>
+
+        {
+          project.outcomes && project.outcomes.length > 0 && (
+            <section class="project__outcome" aria-labelledby={`${project.id}-outcome`}>
+              <h4 id={`${project.id}-outcome`}>
+                {project.outcomes.length === 1 ? 'Outcome' : 'Outcomes'}
+              </h4>
+              <ul>
+                {project.outcomes.map((outcome) => <li>{outcome}</li>)}
+              </ul>
+            </section>
+          )
+        }
+      </div>
+
+      <dl class="project__credits">
+        <div>
+          <dt>Role</dt>
+          <dd>{project.role}</dd>
+        </div>
+        <div>
+          <dt>Built with</dt>
+          <dd>
+            <ul class="project__technologies" aria-label={`${project.title} technologies`}>
+              {project.technologies.map((technology) => <li>{technology}</li>)}
+            </ul>
+          </dd>
+        </div>
+      </dl>
+
+      {
+        project.links && project.links.length > 0 && (
+          <div class="project__links">
+            {project.links.map((link) => (
+              <a
+                class="project__visit"
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noopener noreferrer' : undefined}
+              >
+                {link.label} <span aria-hidden="true">↗</span>
+                {link.external && <span class="sr-only"> (opens in a new tab)</span>}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</article>

@@ -1,9 +1,17 @@
+/* Hallmark · macrostructure: Contractor proof ledger · genre: modern-minimal
+ * theme: existing Quiet · tone: technical · anchor hue: neutral
+ * pre-emit critique: P5 H5 E4 S5 R5 V4 · contrast: pass (46–50)
+ * honest: pass (56) · chrome: pass (57) · tokens: pass (58)
+ * responsive: pass (59) · icons: pass (60) · mobile: pass (36, 59, 61–69)
+ */
+
 @import 'tailwindcss';
 @import './theme.css';
 @import './base.css';
 @import './layout.css';
 @import './header.css';
 @import './hero.css';
+@import './sections.css';
 @import './skills.css';
 @import './project.css';
 @import './social.css';

@@ -1,7 +1,10 @@
 @layer components {
   .btn {
-    @apply inline-block rounded-sm bg-black px-3 py-3 text-white no-underline;
-    transition: opacity 0.3s;
+    @apply inline-flex min-h-11 items-center justify-center rounded-sm bg-black px-5 py-3 font-semibold text-white no-underline;
+    white-space: nowrap;
+    transition:
+      opacity var(--dur-short) var(--ease-out),
+      transform var(--dur-micro) var(--ease-out);
   }
 
   .btn:hover,
@@ -9,5 +12,42 @@
   .btn:visited {
     @apply text-white no-underline;
     opacity: 0.85;
+  }
+
+  .btn:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+  }
+
+  @media (pointer: coarse) {
+    .btn {
+      min-height: 3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn,
+    .btn:hover,
+    .btn:active {
+      transform: none;
+      transition: none;
+    }
   }
 }
