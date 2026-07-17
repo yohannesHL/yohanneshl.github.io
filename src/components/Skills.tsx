@@ -1,181 +1,247 @@
-import { useRef, useLayoutEffect, type MutableRefObject } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Skill {
+interface Service {
   title: string;
   description: string;
-  variant: 'frontend' | 'backend' | 'native';
-  capabilities: string[];
-  tools: { src: string; title: string }[];
+  deliverables: string[];
 }
 
-const skills: Skill[] = [
+const services: Service[] = [
   {
-    title: 'Frontend',
-    description: 'I develop impactful and intuitive user experiences adhering to industry best practices.',
-    variant: 'frontend',
-    capabilities: ['Product interfaces', 'Design systems', 'Performance & accessibility'],
-    tools: [
-      { src: '/img/logos/css-3.svg', title: 'CSS' },
-      { src: '/img/logos/html-5.svg', title: 'HTML' },
-      { src: '/img/logos/typescript-icon.svg', title: 'TypeScript' },
-      { src: '/img/logos/react.svg', title: 'React' },
-      { src: '/img/logos/vue.svg', title: 'Vue' },
+    title: 'Full-stack product delivery',
+    description:
+      'Build or extend production-ready web and mobile products, from discovery and architecture through launch and handover.',
+    deliverables: [
+      'MVPs and product features',
+      'Accessible interfaces and design systems',
+      'Web and cross-platform mobile delivery',
     ],
   },
   {
-    title: 'Backend',
-    description: 'I architect & build clean, robust & scalable services and APIs for either on-premises or cloud native systems.',
-    variant: 'backend',
-    capabilities: ['Service architecture', 'APIs & integrations', 'Cloud delivery'],
-    tools: [
-      { src: '/img/logos/typescript-icon.svg', title: 'TypeScript' },
-      { src: '/img/logos/nodejs.svg', title: 'NodeJS' },
-      { src: '/img/logos/python.svg', title: 'Python' },
-      { src: '/img/logos/docker.svg', title: 'Docker' },
-      { src: '/img/logos/nginx.svg', title: 'NginX' },
-      { src: '/img/logos/aws.svg', title: 'AWS' },
+    title: 'AI features and automation',
+    description:
+      'Add useful AI to products and workflows, with the safeguards needed to move beyond a fragile demonstration.',
+    deliverables: [
+      'AI discovery and working prototypes',
+      'Agents, RAG and knowledge search',
+      'Evaluation, guardrails and human approval flows',
     ],
   },
   {
-    title: 'Native Apps',
-    description: 'I deliver beautifully crafted experiences for iOS and Android devices using frameworks such as React Native.',
-    variant: 'native',
-    capabilities: ['Cross-platform apps', 'Native integrations', 'Store-ready delivery'],
-    tools: [
-      { src: '/img/logos/react.svg', title: 'React Native' },
-      { src: '/img/logos/expo.svg', title: 'Expo' },
-      { src: '/img/logos/nativescript.svg', title: 'NativeScript' },
-      { src: '/img/logos/ios.svg', title: 'iOS' },
-      { src: '/img/logos/android.svg', title: 'Android OS' },
+    title: 'APIs, cloud and integrations',
+    description:
+      'Connect products to the services and data they rely on, then deploy them on maintainable cloud infrastructure.',
+    deliverables: [
+      'REST, GraphQL, gRPC and WebSocket APIs',
+      'System and data integrations',
+      'Microservices, infrastructure as code and CI/CD',
+    ],
+  },
+  {
+    title: 'Modernisation and technical leadership',
+    description:
+      'Stabilise existing products, remove delivery bottlenecks and leave teams with maintainable software.',
+    deliverables: [
+      'Architecture and code audits',
+      'Testing, reliability and performance improvements',
+      'Embedded leadership, mentoring and handover',
     ],
   },
 ];
 
+const engagementOptions = [
+  'Discovery sprint',
+  'Fixed-scope build',
+  'Embedded contract',
+  'Modernisation or rescue',
+];
+
+const stacks = [
+  {
+    label: 'Core',
+    items: [
+      'TypeScript',
+      'React / Next.js',
+      'React Native / Expo',
+      'NestJS / Fastify / Hono',
+      'Node.js',
+      'Python',
+      'Go',
+      'PostgreSQL',
+      'MySQL',
+      'SQLServer',
+      'MongoDB',
+      'Redis',
+      'AWS / Azure / GCP',
+      'Docker',
+      'Terraform',
+    ],
+  },
+  {
+    label: 'Applied AI',
+    items: ['LangGraph', 'Qdrant', 'Mem0', 'Vertex AI', 'OpenAI API', 'Claude API'],
+  },
+];
+
+const callUrl = 'https://calendly.com/yohannes-7/15min';
+
 export default function Skills() {
   const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLElement | null)[]>([]);
 
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
-    const ctx = gsap.context(() => {
-      const cardElements = cardsRef.current.filter(Boolean) as HTMLElement[];
+    const media = gsap.matchMedia();
+    const context = gsap.context(() => {
+      media.add(
+        '(min-width: 40rem) and (prefers-reduced-motion: no-preference)',
+        () => {
+          const header = section.querySelector('.services__header');
+          const serviceStatements = gsap.utils.toArray<HTMLElement>(
+            section.querySelectorAll('.service__statement'),
+          );
+          const closingBlocks = gsap.utils.toArray<HTMLElement>(
+            section.querySelectorAll('.services__engagement, .services__stack'),
+          );
 
-      gsap.set(headerRef.current, { opacity: 0, y: 40 });
-      gsap.set(cardElements, {
-        yPercent: 40,
-        opacity: 0,
-      });
+          if (!header || serviceStatements.length === 0) return;
 
-      gsap.to(headerRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top 75%',
-          toggleActions: 'play none none reverse',
+          const timeline = gsap.timeline({
+            defaults: { ease: 'power3.out' },
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 72%',
+              once: true,
+            },
+          });
+
+          timeline.from(header, {
+            opacity: 0,
+            y: 24,
+            duration: 0.5,
+          });
+
+          serviceStatements.forEach((statement, index) => {
+            const statementOffset = index % 2 === 0 ? -28 : 28;
+            const position = index === 0 ? '-=0.12' : '-=0.32';
+
+            timeline.from(
+              statement,
+              {
+                opacity: 0,
+                x: statementOffset,
+                duration: 0.5,
+              },
+              position,
+            );
+          });
+
+          if (closingBlocks.length > 0) {
+            timeline.from(
+              closingBlocks,
+              {
+                opacity: 0,
+                y: 16,
+                duration: 0.45,
+                stagger: 0.08,
+              },
+              '-=0.2',
+            );
+          }
         },
-      });
-
-      cardElements.forEach((card, index) => {
-        gsap.to(card, {
-          yPercent: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-          delay: index * 0.08,
-        });
-      });
+      );
     }, section);
 
-    return () => ctx.revert();
+    return () => {
+      media.revert();
+      context.revert();
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="section-alt min-h-screen w-full flex flex-col items-center justify-center"
+      id="services"
+      className="services section-alt w-full"
+      aria-labelledby="services-title"
     >
       <div className="container mx-auto px-4 content-column">
-        <div ref={headerRef} className="text-center">
-          <h2 className="text-3xl md:text-5xl font-bold">What I do</h2>
-          <hr className="animation__line animation--delay-2 mx-auto w-24" />
-        </div>
+        <header className="services__header">
+          <h2 id="services-title">How I can help</h2>
+          <div className="services__introduction">
+            <p className="services__lede">
+              I design, build and improve production software for startups and product
+              teams—from full-stack products to reliable AI features.
+            </p>
+            <p className="services__availability">
+              Available for fixed-scope delivery, embedded contracts and technical rescue
+              work.
+            </p>
+          </div>
+        </header>
 
         <div className="services__list">
-          {skills.map((skill, index) => (
-            <Service
-              key={skill.title}
-              skill={skill}
-              index={index}
-              cardsRef={cardsRef}
-            />
+          {services.map((service) => (
+            <Service key={service.title} service={service} />
           ))}
+        </div>
+
+        <aside
+          className="services__engagement"
+          aria-labelledby="services-engagement-title"
+        >
+          <div className="services__engagement-copy">
+            <h3 id="services-engagement-title">Ways to work together</h3>
+            <ul className="services__engagement-list">
+              {engagementOptions.map((option) => (
+                <li key={option}>{option}</li>
+              ))}
+            </ul>
+          </div>
+          <a className="services__cta" href={callUrl}>
+            Discuss your project <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+
+        <div className="services__stack" aria-labelledby="services-stack-title">
+          <h3 id="services-stack-title">Working stack</h3>
+          <div className="services__stack-groups">
+            {stacks.map((stack) => (
+              <div key={stack.label} className="services__stack-group">
+                <p className="services__stack-label">{stack.label}</p>
+                <ul>
+                  {stack.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-interface ServiceProps {
-  skill: Skill;
-  index: number;
-  cardsRef: MutableRefObject<(HTMLElement | null)[]>;
-}
-
-function Service({ skill, index, cardsRef }: ServiceProps) {
+function Service({ service }: { service: Service }) {
   return (
-    <article
-      ref={(element) => {
-        cardsRef.current[index] = element;
-      }}
-      className={`service service--${skill.variant}`}
-    >
-      <div className="service__number" aria-label={`Service ${index + 1}`}>
-        {String(index + 1).padStart(2, '0')}
-      </div>
-
+    <article className="service">
       <div className="service__statement">
-        <p className="service__eyebrow">Studio capability</p>
-        <h3>{skill.title}</h3>
-        <p className="service__description">{skill.description}</p>
-
-        <ul className="service__capabilities" aria-label={`${skill.title} deliverables`}>
-          {skill.capabilities.map((capability) => (
-            <li key={capability}>{capability}</li>
+        <h3>{service.title}</h3>
+        <p className="service__description">{service.description}</p>
+        <ul
+          className="service__deliverables"
+          aria-label={`${service.title} deliverables`}
+        >
+          {service.deliverables.map((deliverable) => (
+            <li key={deliverable}>{deliverable}</li>
           ))}
         </ul>
-      </div>
-
-      <div className="service__stack">
-        <div className="service__stack-heading">
-          <span>Working stack</span>
-          <span>{String(skill.tools.length).padStart(2, '0')} tools</span>
-        </div>
-        <div className="service__cloud">
-          {skill.tools.map((tool, toolIndex) => (
-            <div
-              key={tool.title}
-              className={`service__tool service__tool--${(toolIndex % 3) + 1}`}
-            >
-              <img src={tool.src} alt="" loading="lazy" />
-              <span>{tool.title}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </article>
   );

@@ -45,6 +45,7 @@
    * ------------------------------------------------------------------------- */
   --font-sans: 'Lato', 'PT Sans', 'Roboto Slab', 'PT Serif', Helvetica, Arial,
     sans-serif;
+  --font-display: 'PT Sans', 'Lato', Helvetica, Arial, sans-serif;
   --font-mono: monospace;
 
   --text-xs: 0.625rem;
