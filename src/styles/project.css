@@ -19,6 +19,10 @@
     @apply grid gap-10 pt-10 md:gap-14 md:pt-14;
   }
 
+  .projects__stage {
+    min-width: 0;
+  }
+
   .projects__card {
     @apply min-w-0 overflow-hidden border border-border bg-bg-card;
     container: project / inline-size;
@@ -248,6 +252,69 @@
     .project__details {
       border-top: 0;
       border-left: 1px solid var(--color-border);
+    }
+  }
+
+  @media (min-width: 64rem) and (min-height: 44rem) {
+    .projects--stacked .projects__pin {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      block-size: calc(100svh - 2rem);
+      min-block-size: 42rem;
+      max-block-size: 56rem;
+    }
+
+    .projects--stacked .projects__header {
+      padding-block-end: 1rem;
+    }
+
+    .projects--stacked .projects__header h2 {
+      font-size: clamp(2.5rem, 4vw, 3.75rem);
+    }
+
+    .projects--stacked .projects__stage {
+      min-block-size: 0;
+      overflow: clip;
+    }
+
+    .projects--stacked .projects__list {
+      position: relative;
+      display: block;
+      block-size: 100%;
+      padding-block-start: 0;
+      perspective: 80rem;
+    }
+
+    .projects--stacked .projects__card {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      block-size: 100%;
+      will-change: transform;
+    }
+
+    .projects--stacked .project__body {
+      min-block-size: 0;
+    }
+
+    .projects--stacked .project__details,
+    .projects--stacked .project__visual,
+    .projects--stacked .project__placeholder {
+      min-block-size: 0;
+    }
+
+    .projects--stacked .project__details {
+      overflow-y: auto;
+      scrollbar-gutter: stable;
+    }
+
+    .projects--stacked .project__gallery:not(.project__gallery--single) {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+
+    .projects--stacked .project__gallery--single {
+      grid-template-rows: minmax(0, 1fr);
     }
   }
 

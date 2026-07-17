@@ -377,7 +377,8 @@ export const projects: Project[] = [
     summary:
       'Led frontend delivery for a multi-tenant back-office SaaS platform and contributed to customer-facing white-label applications for global clients.',
     outcomes: [
-      'Contributed to 40 bespoke back-office applications across sportsbook, CRM, CMS, analytics, site management and operations.',
+      'Built 40 bespoke back-office applications across sportsbook, CRM, CMS, analytics, site management and operations.',
+      'Built customer facing web app and managed deployements for 15+ global clients.',
       'Caching reduced XHR requests by 40%.',
     ],
     technologies: [
